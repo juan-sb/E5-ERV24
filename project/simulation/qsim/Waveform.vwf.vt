@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "05/02/2024 13:25:36"
+// Generated on "05/02/2024 17:11:15"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          ERV24
 // 
@@ -33,20 +33,22 @@ module ERV24_vlg_vec_tst();
 reg [11:0] address;
 reg clk;
 reg [31:0] data;
+reg [31:0] treg_PORT;
 reg rden;
 reg wren;
 // wires                                               
-wire P0;
+wire [31:0] PORT;
 wire [31:0] q;
 wire [31:0] qDM;
 
 // assign statements (if any)                          
+assign PORT = treg_PORT;
 ERV24 i1 (
 // port map - connection between master ports and signals/registers   
 	.address(address),
 	.clk(clk),
 	.data(data),
-	.P0(P0),
+	.PORT(PORT),
 	.q(q),
 	.qDM(qDM),
 	.rden(rden),
@@ -60,8 +62,10 @@ end
 initial
 begin
 	address[11] = 1'b1;
-	address[11] = #310000 1'b0;
-	address[11] = #490000 1'b1;
+	address[11] = #90000 1'b0;
+	address[11] = #360000 1'b1;
+	address[11] = #530000 1'b0;
+	address[11] = #10000 1'b1;
 end 
 // address[ 10 ]
 initial
@@ -107,219 +111,424 @@ end
 initial
 begin
 	address[2] = 1'b0;
+	address[2] = #90000 1'b1;
+	address[2] = #40000 1'b0;
+	address[2] = #250000 1'b1;
+	address[2] = #70000 1'b0;
+	address[2] = #530000 1'b1;
+	address[2] = #10000 1'b0;
 end 
 // address[ 1 ]
 initial
 begin
 	address[1] = 1'b0;
+	address[1] = #170000 1'b1;
+	address[1] = #170000 1'b0;
 end 
 // address[ 0 ]
 initial
 begin
 	address[0] = 1'b0;
+	address[0] = #90000 1'b1;
+	address[0] = #40000 1'b0;
+	address[0] = #40000 1'b1;
+	address[0] = #170000 1'b0;
 end 
 // data[ 31 ]
 initial
 begin
 	data[31] = 1'b0;
-	data[31] = #310000 1'b1;
 end 
 // data[ 30 ]
 initial
 begin
 	data[30] = 1'b0;
-	data[30] = #310000 1'b1;
 end 
 // data[ 29 ]
 initial
 begin
 	data[29] = 1'b1;
+	data[29] = #90000 1'b0;
+	data[29] = #890000 1'b1;
 end 
 // data[ 28 ]
 initial
 begin
 	data[28] = 1'b0;
-	data[28] = #310000 1'b1;
 end 
 // data[ 27 ]
 initial
 begin
 	data[27] = 1'b0;
-	data[27] = #310000 1'b1;
 end 
 // data[ 26 ]
 initial
 begin
 	data[26] = 1'b0;
-	data[26] = #310000 1'b1;
 end 
 // data[ 25 ]
 initial
 begin
 	data[25] = 1'b1;
+	data[25] = #90000 1'b0;
+	data[25] = #890000 1'b1;
 end 
 // data[ 24 ]
 initial
 begin
 	data[24] = 1'b1;
+	data[24] = #90000 1'b0;
+	data[24] = #890000 1'b1;
 end 
 // data[ 23 ]
 initial
 begin
 	data[23] = 1'b0;
-	data[23] = #310000 1'b1;
 end 
 // data[ 22 ]
 initial
 begin
 	data[22] = 1'b1;
+	data[22] = #90000 1'b0;
+	data[22] = #890000 1'b1;
 end 
 // data[ 21 ]
 initial
 begin
 	data[21] = 1'b0;
-	data[21] = #310000 1'b1;
 end 
 // data[ 20 ]
 initial
 begin
 	data[20] = 1'b0;
-	data[20] = #310000 1'b1;
 end 
 // data[ 19 ]
 initial
 begin
 	data[19] = 1'b0;
-	data[19] = #310000 1'b1;
 end 
 // data[ 18 ]
 initial
 begin
 	data[18] = 1'b1;
+	data[18] = #90000 1'b0;
+	data[18] = #890000 1'b1;
 end 
 // data[ 17 ]
 initial
 begin
 	data[17] = 1'b0;
-	data[17] = #310000 1'b1;
 end 
 // data[ 16 ]
 initial
 begin
 	data[16] = 1'b1;
+	data[16] = #90000 1'b0;
+	data[16] = #890000 1'b1;
 end 
 // data[ 15 ]
 initial
 begin
 	data[15] = 1'b0;
-	data[15] = #310000 1'b1;
 end 
 // data[ 14 ]
 initial
 begin
 	data[14] = 1'b1;
+	data[14] = #90000 1'b0;
+	data[14] = #890000 1'b1;
 end 
 // data[ 13 ]
 initial
 begin
 	data[13] = 1'b1;
+	data[13] = #90000 1'b0;
+	data[13] = #890000 1'b1;
 end 
 // data[ 12 ]
 initial
 begin
 	data[12] = 1'b0;
-	data[12] = #310000 1'b1;
 end 
 // data[ 11 ]
 initial
 begin
 	data[11] = 1'b0;
-	data[11] = #310000 1'b1;
 end 
 // data[ 10 ]
 initial
 begin
 	data[10] = 1'b1;
+	data[10] = #90000 1'b0;
+	data[10] = #890000 1'b1;
 end 
 // data[ 9 ]
 initial
 begin
 	data[9] = 1'b1;
+	data[9] = #90000 1'b0;
+	data[9] = #890000 1'b1;
 end 
 // data[ 8 ]
 initial
 begin
 	data[8] = 1'b1;
+	data[8] = #90000 1'b0;
+	data[8] = #890000 1'b1;
 end 
 // data[ 7 ]
 initial
 begin
 	data[7] = 1'b1;
+	data[7] = #90000 1'b0;
+	data[7] = #890000 1'b1;
 end 
 // data[ 6 ]
 initial
 begin
 	data[6] = 1'b0;
-	data[6] = #310000 1'b1;
 end 
 // data[ 5 ]
 initial
 begin
 	data[5] = 1'b0;
-	data[5] = #310000 1'b1;
 end 
 // data[ 4 ]
 initial
 begin
 	data[4] = 1'b0;
-	data[4] = #310000 1'b1;
 end 
 // data[ 3 ]
 initial
 begin
 	data[3] = 1'b1;
+	data[3] = #90000 1'b0;
+	data[3] = #890000 1'b1;
 end 
 // data[ 2 ]
 initial
 begin
 	data[2] = 1'b0;
-	data[2] = #310000 1'b1;
 end 
 // data[ 1 ]
 initial
 begin
 	data[1] = 1'b0;
-	data[1] = #310000 1'b1;
+	data[1] = #90000 1'b1;
+	data[1] = #250000 1'b0;
 end 
 // data[ 0 ]
 initial
 begin
 	data[0] = 1'b0;
-	data[0] = #310000 1'b1;
+	data[0] = #90000 1'b1;
+	data[0] = #40000 1'b0;
+	data[0] = #40000 1'b1;
+	data[0] = #170000 1'b0;
 end 
 
 // clk
-always
+initial
 begin
+	repeat(8)
+	begin
+		clk = 1'b0;
+		clk = #20000 1'b1;
+		# 20000;
+	end
 	clk = 1'b0;
-	clk = #20000 1'b1;
-	#20000;
+	clk = #10000 1'b1;
+	# 20000;
+	repeat(2)
+	begin
+		clk = 1'b0;
+		clk = #20000 1'b1;
+		# 20000;
+	end
+	clk = 1'b0;
+	clk = #10000 1'b1;
+	# 20000;
+	repeat(13)
+	begin
+		clk = 1'b0;
+		clk = #20000 1'b1;
+		# 20000;
+	end
+	clk = 1'b0;
 end 
 
 // wren
 initial
 begin
-	wren = 1'b0;
-	wren = #140000 1'b1;
-	wren = #400000 1'b0;
+	wren = 1'b1;
+	wren = #350000 1'b0;
 end 
 
 // rden
 initial
 begin
 	rden = 1'b0;
-	rden = #580000 1'b1;
-	rden = #280000 1'b0;
+	rden = #350000 1'b1;
+end 
+// PORT[ 31 ]
+initial
+begin
+	treg_PORT[31] = 1'b1;
+end 
+// PORT[ 30 ]
+initial
+begin
+	treg_PORT[30] = 1'b0;
+end 
+// PORT[ 29 ]
+initial
+begin
+	treg_PORT[29] = 1'b1;
+end 
+// PORT[ 28 ]
+initial
+begin
+	treg_PORT[28] = 1'b0;
+end 
+// PORT[ 27 ]
+initial
+begin
+	treg_PORT[27] = 1'bZ;
+end 
+// PORT[ 26 ]
+initial
+begin
+	treg_PORT[26] = 1'bZ;
+end 
+// PORT[ 25 ]
+initial
+begin
+	treg_PORT[25] = 1'bZ;
+end 
+// PORT[ 24 ]
+initial
+begin
+	treg_PORT[24] = 1'bZ;
+end 
+// PORT[ 23 ]
+initial
+begin
+	treg_PORT[23] = 1'bZ;
+end 
+// PORT[ 22 ]
+initial
+begin
+	treg_PORT[22] = 1'bZ;
+end 
+// PORT[ 21 ]
+initial
+begin
+	treg_PORT[21] = 1'bZ;
+end 
+// PORT[ 20 ]
+initial
+begin
+	treg_PORT[20] = 1'bZ;
+end 
+// PORT[ 19 ]
+initial
+begin
+	treg_PORT[19] = 1'bZ;
+end 
+// PORT[ 18 ]
+initial
+begin
+	treg_PORT[18] = 1'bZ;
+end 
+// PORT[ 17 ]
+initial
+begin
+	treg_PORT[17] = 1'bZ;
+end 
+// PORT[ 16 ]
+initial
+begin
+	treg_PORT[16] = 1'bZ;
+end 
+// PORT[ 15 ]
+initial
+begin
+	treg_PORT[15] = 1'bZ;
+end 
+// PORT[ 14 ]
+initial
+begin
+	treg_PORT[14] = 1'bZ;
+end 
+// PORT[ 13 ]
+initial
+begin
+	treg_PORT[13] = 1'bZ;
+end 
+// PORT[ 12 ]
+initial
+begin
+	treg_PORT[12] = 1'bZ;
+end 
+// PORT[ 11 ]
+initial
+begin
+	treg_PORT[11] = 1'bZ;
+end 
+// PORT[ 10 ]
+initial
+begin
+	treg_PORT[10] = 1'bZ;
+end 
+// PORT[ 9 ]
+initial
+begin
+	treg_PORT[9] = 1'bZ;
+end 
+// PORT[ 8 ]
+initial
+begin
+	treg_PORT[8] = 1'bZ;
+end 
+// PORT[ 7 ]
+initial
+begin
+	treg_PORT[7] = 1'bZ;
+end 
+// PORT[ 6 ]
+initial
+begin
+	treg_PORT[6] = 1'bZ;
+end 
+// PORT[ 5 ]
+initial
+begin
+	treg_PORT[5] = 1'bZ;
+end 
+// PORT[ 4 ]
+initial
+begin
+	treg_PORT[4] = 1'bZ;
+end 
+// PORT[ 3 ]
+initial
+begin
+	treg_PORT[3] = 1'bZ;
+end 
+// PORT[ 2 ]
+initial
+begin
+	treg_PORT[2] = 1'bZ;
+end 
+// PORT[ 1 ]
+initial
+begin
+	treg_PORT[1] = 1'bZ;
+end 
+// PORT[ 0 ]
+initial
+begin
+	treg_PORT[0] = 1'bZ;
 end 
 endmodule
 

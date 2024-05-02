@@ -31,9 +31,9 @@
  --                  Bank 2:       2.5V
  --                  Bank 3:       2.5V
  --                  Bank 4:       2.5V
- --                  Bank 5:       2.5V
- --                  Bank 6:       2.5V
- --                  Bank 7:       2.5V
+ --                  Bank 5:       3.0V
+ --                  Bank 6:       3.0V
+ --                  Bank 7:       3.0V
  --                  Bank 8:       2.5V
  -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
  --                  It can also be used to report unused dedicated pins. The connection
@@ -70,106 +70,106 @@ CHIP  "ERV24"  ASSIGNED TO AN: EP4CE22F17C6
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A1        : power  :                   : 2.5V    : 8         :                
-qDM[10]                      : A2        : output : 2.5 V             :         : 8         : N              
-data[23]                     : A3        : input  : 2.5 V             :         : 8         : N              
-q[30]                        : A4        : output : 2.5 V             :         : 8         : N              
-data[1]                      : A5        : input  : 2.5 V             :         : 8         : N              
-q[24]                        : A6        : output : 2.5 V             :         : 8         : N              
-rden                         : A7        : input  : 2.5 V             :         : 8         : N              
-GND+                         : A8        :        :                   :         : 8         :                
-data[26]                     : A9        : input  : 2.5 V             :         : 7         : N              
-data[15]                     : A10       : input  : 2.5 V             :         : 7         : N              
-q[13]                        : A11       : output : 2.5 V             :         : 7         : N              
-qDM[14]                      : A12       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A13       :        :                   :         : 7         :                
-qDM[8]                       : A14       : output : 2.5 V             :         : 7         : N              
-q[9]                         : A15       : output : 2.5 V             :         : 7         : N              
-VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B1        :        :                   :         : 1         :                
+qDM[13]                      : A2        : output : 2.5 V             :         : 8         : N              
+data[27]                     : A3        : input  : 2.5 V             :         : 8         : N              
+q[16]                        : A4        : output : 2.5 V             :         : 8         : N              
+data[29]                     : A5        : input  : 2.5 V             :         : 8         : N              
+qDM[15]                      : A6        : output : 2.5 V             :         : 8         : N              
+q[3]                         : A7        : output : 2.5 V             :         : 8         : N              
+address[4]                   : A8        : input  : 2.5 V             :         : 8         : N              
+rden                         : A9        : input  : 2.5 V             :         : 7         : N              
+PORT[29]                     : A10       : bidir  : 3.0-V PCI         :         : 7         : N              
+PORT[2]                      : A11       : bidir  : 3.0-V PCI         :         : 7         : N              
+data[3]                      : A12       : input  : 2.5 V             :         : 7         : N              
+data[18]                     : A13       : input  : 2.5 V             :         : 7         : N              
+data[13]                     : A14       : input  : 2.5 V             :         : 7         : N              
+PORT[26]                     : A15       : bidir  : 3.0-V PCI         :         : 7         : N              
+VCCIO7                       : A16       : power  :                   : 3.0V    : 7         :                
+qDM[0]                       : B1        : output : 2.5 V             :         : 1         : N              
 GND                          : B2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 8         :                
-qDM[13]                      : B4        : output : 2.5 V             :         : 8         : N              
-qDM[3]                       : B5        : output : 2.5 V             :         : 8         : N              
-address[1]                   : B6        : input  : 2.5 V             :         : 8         : N              
-address[9]                   : B7        : input  : 2.5 V             :         : 8         : N              
-GND+                         : B8        :        :                   :         : 8         :                
-data[25]                     : B9        : input  : 2.5 V             :         : 7         : N              
-qDM[6]                       : B10       : output : 2.5 V             :         : 7         : N              
-q[15]                        : B11       : output : 2.5 V             :         : 7         : N              
-qDM[9]                       : B12       : output : 2.5 V             :         : 7         : N              
-q[11]                        : B13       : output : 2.5 V             :         : 7         : N              
-q[4]                         : B14       : output : 2.5 V             :         : 7         : N              
+qDM[31]                      : B4        : output : 2.5 V             :         : 8         : N              
+q[18]                        : B5        : output : 2.5 V             :         : 8         : N              
+qDM[1]                       : B6        : output : 2.5 V             :         : 8         : N              
+q[1]                         : B7        : output : 2.5 V             :         : 8         : N              
+address[5]                   : B8        : input  : 2.5 V             :         : 8         : N              
+data[31]                     : B9        : input  : 2.5 V             :         : 7         : N              
+PORT[28]                     : B10       : bidir  : 3.0-V PCI         :         : 7         : N              
+PORT[0]                      : B11       : bidir  : 3.0-V PCI         :         : 7         : N              
+data[2]                      : B12       : input  : 2.5 V             :         : 7         : N              
+data[14]                     : B13       : input  : 2.5 V             :         : 7         : N              
+data[23]                     : B14       : input  : 2.5 V             :         : 7         : N              
 GND                          : B15       : gnd    :                   :         :           :                
-qDM[15]                      : B16       : output : 2.5 V             :         : 6         : N              
+PORT[4]                      : B16       : bidir  : 3.0-V PCI         :         : 6         : N              
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C1        : input  : 2.5 V             :         : 1         : N              
-data[10]                     : C2        : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
+q[15]                        : C2        : output : 2.5 V             :         : 1         : N              
+qDM[28]                      : C3        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : C4        : power  :                   : 2.5V    : 8         :                
 GND                          : C5        : gnd    :                   :         :           :                
-address[2]                   : C6        : input  : 2.5 V             :         : 8         : N              
+qDM[25]                      : C6        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
-address[0]                   : C8        : input  : 2.5 V             :         : 8         : N              
-address[5]                   : C9        : input  : 2.5 V             :         : 7         : N              
-VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
-data[9]                      : C11       : input  : 2.5 V             :         : 7         : N              
+qDM[27]                      : C8        : output : 2.5 V             :         : 8         : N              
+PORT[24]                     : C9        : bidir  : 3.0-V PCI         :         : 7         : N              
+VCCIO7                       : C10       : power  :                   : 3.0V    : 7         :                
+PORT[31]                     : C11       : bidir  : 3.0-V PCI         :         : 7         : N              
 GND                          : C12       : gnd    :                   :         :           :                
-VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
-q[14]                        : C14       : output : 2.5 V             :         : 7         : N              
-q[8]                         : C15       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 6         :                
-qDM[1]                       : D1        : output : 2.5 V             :         : 1         : N              
+VCCIO7                       : C13       : power  :                   : 3.0V    : 7         :                
+data[1]                      : C14       : input  : 2.5 V             :         : 7         : N              
+data[21]                     : C15       : input  : 2.5 V             :         : 6         : N              
+data[19]                     : C16       : input  : 2.5 V             :         : 6         : N              
+q[25]                        : D1        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D2        : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 8         :                
+q[19]                        : D3        : output : 2.5 V             :         : 8         : N              
 VCCD_PLL3                    : D4        : power  :                   : 1.2V    :           :                
-qDM[5]                       : D5        : output : 2.5 V             :         : 8         : N              
-q[23]                        : D6        : output : 2.5 V             :         : 8         : N              
+qDM[12]                      : D5        : output : 2.5 V             :         : 8         : N              
+q[20]                        : D6        : output : 2.5 V             :         : 8         : N              
 GND                          : D7        : gnd    :                   :         :           :                
-address[7]                   : D8        : input  : 2.5 V             :         : 8         : N              
-wren                         : D9        : input  : 2.5 V             :         : 7         : N              
+qDM[26]                      : D8        : output : 2.5 V             :         : 8         : N              
+PORT[27]                     : D9        : bidir  : 3.0-V PCI         :         : 7         : N              
 GND                          : D10       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D11       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 7         :                
+data[20]                     : D11       : input  : 2.5 V             :         : 7         : N              
+data[26]                     : D12       : input  : 2.5 V             :         : 7         : N              
 VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
-q[12]                        : D14       : output : 2.5 V             :         : 7         : N              
-data[12]                     : D15       : input  : 2.5 V             :         : 6         : N              
-data[11]                     : D16       : input  : 2.5 V             :         : 6         : N              
+data[15]                     : D14       : input  : 2.5 V             :         : 7         : N              
+PORT[1]                      : D15       : bidir  : 3.0-V PCI         :         : 6         : N              
+data[28]                     : D16       : input  : 2.5 V             :         : 6         : N              
 clk                          : E1        : input  : 2.5 V             :         : 1         : N              
 GND                          : E2        : gnd    :                   :         :           :                
 VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
 GND                          : E4        : gnd    :                   :         :           :                
 GNDA3                        : E5        : gnd    :                   :         :           :                
-q[2]                         : E6        : output : 2.5 V             :         : 8         : N              
-qDM[30]                      : E7        : output : 2.5 V             :         : 8         : N              
-address[3]                   : E8        : input  : 2.5 V             :         : 8         : N              
-address[4]                   : E9        : input  : 2.5 V             :         : 7         : N              
-q[10]                        : E10       : output : 2.5 V             :         : 7         : N              
-data[13]                     : E11       : input  : 2.5 V             :         : 7         : N              
+data[0]                      : E6        : input  : 2.5 V             :         : 8         : N              
+q[14]                        : E7        : output : 2.5 V             :         : 8         : N              
+q[29]                        : E8        : output : 2.5 V             :         : 8         : N              
+PORT[25]                     : E9        : bidir  : 3.0-V PCI         :         : 7         : N              
+PORT[15]                     : E10       : bidir  : 3.0-V PCI         :         : 7         : N              
+PORT[18]                     : E11       : bidir  : 3.0-V PCI         :         : 7         : N              
 GNDA2                        : E12       : gnd    :                   :         :           :                
 GND                          : E13       : gnd    :                   :         :           :                
-VCCIO6                       : E14       : power  :                   : 2.5V    : 6         :                
-data[4]                      : E15       : input  : 2.5 V             :         : 6         : N              
-data[5]                      : E16       : input  : 2.5 V             :         : 6         : N              
-data[24]                     : F1        : input  : 2.5 V             :         : 1         : N              
-address[10]                  : F2        : input  : 2.5 V             :         : 1         : N              
-q[3]                         : F3        : output : 2.5 V             :         : 1         : N              
+VCCIO6                       : E14       : power  :                   : 3.0V    : 6         :                
+wren                         : E15       : input  : 2.5 V             :         : 6         : N              
+address[11]                  : E16       : input  : 2.5 V             :         : 6         : N              
+data[4]                      : F1        : input  : 2.5 V             :         : 1         : N              
+q[13]                        : F2        : output : 2.5 V             :         : 1         : N              
+q[27]                        : F3        : output : 2.5 V             :         : 1         : N              
 nSTATUS                      : F4        :        :                   :         : 1         :                
 VCCA3                        : F5        : power  :                   : 2.5V    :           :                
 GND                          : F6        : gnd    :                   :         :           :                
 VCCINT                       : F7        : power  :                   : 1.2V    :           :                
-address[8]                   : F8        : input  : 2.5 V             :         : 8         : N              
-data[14]                     : F9        : input  : 2.5 V             :         : 7         : N              
+data[25]                     : F8        : input  : 2.5 V             :         : 8         : N              
+PORT[30]                     : F9        : bidir  : 3.0-V PCI         :         : 7         : N              
 GND                          : F10       : gnd    :                   :         :           :                
 VCCINT                       : F11       : power  :                   : 1.2V    :           :                
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
-qDM[11]                      : F13       : output : 2.5 V             :         : 6         : N              
-q[6]                         : F14       : output : 2.5 V             :         : 6         : N              
-qDM[12]                      : F15       : output : 2.5 V             :         : 6         : N              
-~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : F16       : output : 2.5 V             :         : 6         : N              
-qDM[0]                       : G1        : output : 2.5 V             :         : 1         : N              
-address[11]                  : G2        : input  : 2.5 V             :         : 1         : N              
+PORT[19]                     : F13       : bidir  : 3.0-V PCI         :         : 6         : N              
+data[22]                     : F14       : input  : 2.5 V             :         : 6         : N              
+PORT[3]                      : F15       : bidir  : 3.0-V PCI         :         : 6         : N              
+~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : F16       : output : 3.0-V LVTTL       :         : 6         : N              
+data[24]                     : G1        : input  : 2.5 V             :         : 1         : N              
+q[31]                        : G2        : output : 2.5 V             :         : 1         : N              
 VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
 GND                          : G4        : gnd    :                   :         :           :                
-data[19]                     : G5        : input  : 2.5 V             :         : 1         : N              
+q[2]                         : G5        : output : 2.5 V             :         : 1         : N              
 VCCINT                       : G6        : power  :                   : 1.2V    :           :                
 VCCINT                       : G7        : power  :                   : 1.2V    :           :                
 VCCINT                       : G8        : power  :                   : 1.2V    :           :                
@@ -178,9 +178,9 @@ VCCINT                       : G10       : power  :                   : 1.2V    
 GND                          : G11       : gnd    :                   :         :           :                
 MSEL2                        : G12       :        :                   :         : 6         :                
 GND                          : G13       : gnd    :                   :         :           :                
-VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
-qDM[7]                       : G15       : output : 2.5 V             :         : 6         : N              
-data[6]                      : G16       : input  : 2.5 V             :         : 6         : N              
+VCCIO6                       : G14       : power  :                   : 3.0V    : 6         :                
+PORT[21]                     : G15       : bidir  : 3.0-V PCI         :         : 6         : N              
+PORT[20]                     : G16       : bidir  : 3.0-V PCI         :         : 6         : N              
 ~ALTERA_DCLK~                : H1        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V             :         : 1         : N              
 TCK                          : H3        : input  :                   :         : 1         :                
@@ -197,8 +197,8 @@ MSEL0                        : H13       :        :                   :         
 CONF_DONE                    : H14       :        :                   :         : 6         :                
 GND                          : H15       : gnd    :                   :         :           :                
 GND                          : H16       : gnd    :                   :         :           :                
-data[2]                      : J1        : input  : 2.5 V             :         : 2         : N              
-qDM[21]                      : J2        : output : 2.5 V             :         : 2         : N              
+qDM[29]                      : J1        : output : 2.5 V             :         : 2         : N              
+qDM[30]                      : J2        : output : 2.5 V             :         : 2         : N              
 nCE                          : J3        :        :                   :         : 1         :                
 TDO                          : J4        : output :                   :         : 1         :                
 TMS                          : J5        : input  :                   :         : 1         :                
@@ -209,15 +209,15 @@ GND                          : J9        : gnd    :                   :         
 GND                          : J10       : gnd    :                   :         :           :                
 GND                          : J11       : gnd    :                   :         :           :                
 VCCINT                       : J12       : power  :                   : 1.2V    :           :                
-address[6]                   : J13       : input  : 2.5 V             :         : 5         : N              
-data[27]                     : J14       : input  : 2.5 V             :         : 5         : N              
-q[7]                         : J15       : output : 2.5 V             :         : 5         : N              
-qDM[18]                      : J16       : output : 2.5 V             :         : 5         : N              
-data[22]                     : K1        : input  : 2.5 V             :         : 2         : N              
-qDM[23]                      : K2        : output : 2.5 V             :         : 2         : N              
+PORT[12]                     : J13       : bidir  : 3.0-V PCI         :         : 5         : N              
+PORT[13]                     : J14       : bidir  : 3.0-V PCI         :         : 5         : N              
+PORT[16]                     : J15       : bidir  : 3.0-V PCI         :         : 5         : N              
+PORT[17]                     : J16       : bidir  : 3.0-V PCI         :         : 5         : N              
+q[24]                        : K1        : output : 2.5 V             :         : 2         : N              
+qDM[21]                      : K2        : output : 2.5 V             :         : 2         : N              
 VCCIO2                       : K3        : power  :                   : 2.5V    : 2         :                
 GND                          : K4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K5        :        :                   :         : 2         :                
+q[21]                        : K5        : output : 2.5 V             :         : 2         : N              
 GND                          : K6        : gnd    :                   :         :           :                
 VCCINT                       : K7        : power  :                   : 1.2V    :           :                
 GND                          : K8        : gnd    :                   :         :           :                
@@ -226,102 +226,102 @@ VCCINT                       : K10       : power  :                   : 1.2V    
 VCCINT                       : K11       : power  :                   : 1.2V    :           :                
 GND                          : K12       : gnd    :                   :         :           :                
 GND                          : K13       : gnd    :                   :         :           :                
-VCCIO5                       : K14       : power  :                   : 2.5V    : 5         :                
-qDM[17]                      : K15       : output : 2.5 V             :         : 5         : N              
-q[5]                         : K16       : output : 2.5 V             :         : 5         : N              
-qDM[28]                      : L1        : output : 2.5 V             :         : 2         : N              
-data[20]                     : L2        : input  : 2.5 V             :         : 2         : N              
-P0                           : L3        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 2         :                
+VCCIO5                       : K14       : power  :                   : 3.0V    : 5         :                
+PORT[22]                     : K15       : bidir  : 3.0-V PCI         :         : 5         : N              
+PORT[23]                     : K16       : bidir  : 3.0-V PCI         :         : 5         : N              
+qDM[4]                       : L1        : output : 2.5 V             :         : 2         : N              
+qDM[6]                       : L2        : output : 2.5 V             :         : 2         : N              
+qDM[9]                       : L3        : output : 2.5 V             :         : 2         : N              
+q[8]                         : L4        : output : 2.5 V             :         : 2         : N              
 VCCA1                        : L5        : power  :                   : 2.5V    :           :                
 VCCINT                       : L6        : power  :                   : 1.2V    :           :                
-data[29]                     : L7        : input  : 2.5 V             :         : 3         : N              
+data[6]                      : L7        : input  : 2.5 V             :         : 3         : N              
 qDM[22]                      : L8        : output : 2.5 V             :         : 3         : N              
 GND                          : L9        : gnd    :                   :         :           :                
 GND                          : L10       : gnd    :                   :         :           :                
 GND                          : L11       : gnd    :                   :         :           :                
 VCCA4                        : L12       : power  :                   : 2.5V    :           :                
-data[18]                     : L13       : input  : 2.5 V             :         : 5         : N              
-qDM[16]                      : L14       : output : 2.5 V             :         : 5         : N              
-q[27]                        : L15       : output : 2.5 V             :         : 5         : N              
-q[25]                        : L16       : output : 2.5 V             :         : 5         : N              
+PORT[14]                     : L13       : bidir  : 3.0-V PCI         :         : 5         : N              
+PORT[11]                     : L14       : bidir  : 3.0-V PCI         :         : 5         : N              
+PORT[5]                      : L15       : bidir  : 3.0-V PCI         :         : 5         : N              
+PORT[7]                      : L16       : bidir  : 3.0-V PCI         :         : 5         : N              
 GND+                         : M1        :        :                   :         : 2         :                
 GND+                         : M2        :        :                   :         : 2         :                
 VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
 GND                          : M4        : gnd    :                   :         :           :                
 GNDA1                        : M5        : gnd    :                   :         :           :                
-qDM[2]                       : M6        : output : 2.5 V             :         : 3         : N              
-data[0]                      : M7        : input  : 2.5 V             :         : 3         : N              
-qDM[31]                      : M8        : output : 2.5 V             :         : 3         : N              
+qDM[17]                      : M6        : output : 2.5 V             :         : 3         : N              
+q[28]                        : M7        : output : 2.5 V             :         : 3         : N              
+qDM[10]                      : M8        : output : 2.5 V             :         : 3         : N              
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
-qDM[24]                      : M10       : output : 2.5 V             :         : 4         : N              
+q[22]                        : M10       : output : 2.5 V             :         : 4         : N              
 VCCINT                       : M11       : power  :                   : 1.2V    :           :                
 GNDA4                        : M12       : gnd    :                   :         :           :                
 GND                          : M13       : gnd    :                   :         :           :                
-VCCIO5                       : M14       : power  :                   : 2.5V    : 5         :                
-data[7]                      : M15       : input  : 2.5 V             :         : 5         : N              
-data[8]                      : M16       : input  : 2.5 V             :         : 5         : N              
-q[29]                        : N1        : output : 2.5 V             :         : 2         : N              
-data[21]                     : N2        : input  : 2.5 V             :         : 2         : N              
+VCCIO5                       : M14       : power  :                   : 3.0V    : 5         :                
+GND+                         : M15       :        :                   :         : 5         :                
+GND+                         : M16       :        :                   :         : 5         :                
+q[17]                        : N1        : output : 2.5 V             :         : 2         : N              
+qDM[24]                      : N2        : output : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N3        :        :                   :         : 3         :                
 VCCD_PLL1                    : N4        : power  :                   : 1.2V    :           :                
-q[1]                         : N5        : output : 2.5 V             :         : 3         : N              
-q[31]                        : N6        : output : 2.5 V             :         : 3         : N              
+q[30]                        : N5        : output : 2.5 V             :         : 3         : N              
+qDM[18]                      : N6        : output : 2.5 V             :         : 3         : N              
 GND                          : N7        : gnd    :                   :         :           :                
-qDM[29]                      : N8        : output : 2.5 V             :         : 3         : N              
-q[22]                        : N9        : output : 2.5 V             :         : 4         : N              
+qDM[19]                      : N8        : output : 2.5 V             :         : 3         : N              
+qDM[11]                      : N9        : output : 2.5 V             :         : 4         : N              
 GND                          : N10       : gnd    :                   :         :           :                
-q[17]                        : N11       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N12       :        :                   :         : 4         :                
+data[16]                     : N11       : input  : 2.5 V             :         : 4         : N              
+data[7]                      : N12       : input  : 2.5 V             :         : 4         : N              
 VCCD_PLL4                    : N13       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N14       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N15       :        :                   :         : 5         :                
-q[21]                        : N16       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : P1        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P2        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P3        :        :                   :         : 3         :                
+data[8]                      : N14       : input  : 2.5 V             :         : 5         : N              
+PORT[10]                     : N15       : bidir  : 3.0-V PCI         :         : 5         : N              
+PORT[6]                      : N16       : bidir  : 3.0-V PCI         :         : 5         : N              
+q[26]                        : P1        : output : 2.5 V             :         : 2         : N              
+qDM[7]                       : P2        : output : 2.5 V             :         : 2         : N              
+qDM[3]                       : P3        : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : P4        : power  :                   : 2.5V    : 3         :                
 GND                          : P5        : gnd    :                   :         :           :                
-data[3]                      : P6        : input  : 2.5 V             :         : 3         : N              
+qDM[16]                      : P6        : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : P7        : power  :                   : 2.5V    : 3         :                
-qDM[20]                      : P8        : output : 2.5 V             :         : 3         : N              
-q[26]                        : P9        : output : 2.5 V             :         : 4         : N              
+address[8]                   : P8        : input  : 2.5 V             :         : 3         : N              
+q[9]                         : P9        : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : P10       : power  :                   : 2.5V    : 4         :                
-qDM[27]                      : P11       : output : 2.5 V             :         : 4         : N              
+q[0]                         : P11       : output : 2.5 V             :         : 4         : N              
 GND                          : P12       : gnd    :                   :         :           :                
 VCCIO4                       : P13       : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P14       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P15       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P16       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R1        :        :                   :         : 2         :                
+data[10]                     : P14       : input  : 2.5 V             :         : 4         : N              
+address[6]                   : P15       : input  : 2.5 V             :         : 5         : N              
+PORT[9]                      : P16       : bidir  : 3.0-V PCI         :         : 5         : N              
+qDM[23]                      : R1        : output : 2.5 V             :         : 2         : N              
 GND                          : R2        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R3        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 3         :                
-data[30]                     : R5        : input  : 2.5 V             :         : 3         : N              
-q[0]                         : R6        : output : 2.5 V             :         : 3         : N              
-data[31]                     : R7        : input  : 2.5 V             :         : 3         : N              
-GND+                         : R8        :        :                   :         : 3         :                
-GND+                         : R9        :        :                   :         : 4         :                
-data[17]                     : R10       : input  : 2.5 V             :         : 4         : N              
-qDM[26]                      : R11       : output : 2.5 V             :         : 4         : N              
-qDM[19]                      : R12       : output : 2.5 V             :         : 4         : N              
-qDM[25]                      : R13       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :         : 4         :                
+q[12]                        : R3        : output : 2.5 V             :         : 3         : N              
+qDM[14]                      : R4        : output : 2.5 V             :         : 3         : N              
+q[5]                         : R5        : output : 2.5 V             :         : 3         : N              
+q[6]                         : R6        : output : 2.5 V             :         : 3         : N              
+data[12]                     : R7        : input  : 2.5 V             :         : 3         : N              
+address[0]                   : R8        : input  : 2.5 V             :         : 3         : N              
+address[2]                   : R9        : input  : 2.5 V             :         : 4         : N              
+address[9]                   : R10       : input  : 2.5 V             :         : 4         : N              
+address[10]                  : R11       : input  : 2.5 V             :         : 4         : N              
+qDM[20]                      : R12       : output : 2.5 V             :         : 4         : N              
+q[23]                        : R13       : output : 2.5 V             :         : 4         : N              
+data[9]                      : R14       : input  : 2.5 V             :         : 4         : N              
 GND                          : R15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R16       :        :                   :         : 5         :                
+PORT[8]                      : R16       : bidir  : 3.0-V PCI         :         : 5         : N              
 VCCIO3                       : T1        : power  :                   : 2.5V    : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T2        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 3         :                
-q[28]                        : T5        : output : 2.5 V             :         : 3         : N              
-q[20]                        : T6        : output : 2.5 V             :         : 3         : N              
-data[28]                     : T7        : input  : 2.5 V             :         : 3         : N              
-GND+                         : T8        :        :                   :         : 3         :                
-GND+                         : T9        :        :                   :         : 4         :                
-qDM[4]                       : T10       : output : 2.5 V             :         : 4         : N              
-q[16]                        : T11       : output : 2.5 V             :         : 4         : N              
-data[16]                     : T12       : input  : 2.5 V             :         : 4         : N              
-q[19]                        : T13       : output : 2.5 V             :         : 4         : N              
-q[18]                        : T14       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : T15       :        :                   :         : 4         :                
+qDM[2]                       : T2        : output : 2.5 V             :         : 3         : N              
+q[7]                         : T3        : output : 2.5 V             :         : 3         : N              
+data[30]                     : T4        : input  : 2.5 V             :         : 3         : N              
+q[10]                        : T5        : output : 2.5 V             :         : 3         : N              
+q[4]                         : T6        : output : 2.5 V             :         : 3         : N              
+q[11]                        : T7        : output : 2.5 V             :         : 3         : N              
+address[1]                   : T8        : input  : 2.5 V             :         : 3         : N              
+address[3]                   : T9        : input  : 2.5 V             :         : 4         : N              
+address[7]                   : T10       : input  : 2.5 V             :         : 4         : N              
+qDM[5]                       : T11       : output : 2.5 V             :         : 4         : N              
+qDM[8]                       : T12       : output : 2.5 V             :         : 4         : N              
+data[5]                      : T13       : input  : 2.5 V             :         : 4         : N              
+data[11]                     : T14       : input  : 2.5 V             :         : 4         : N              
+data[17]                     : T15       : input  : 2.5 V             :         : 4         : N              
 VCCIO4                       : T16       : power  :                   : 2.5V    : 4         :                

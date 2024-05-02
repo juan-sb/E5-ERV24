@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ERV24
-Thu May  2 13:25:19 2024
+Thu May  2 17:02:10 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -17,14 +17,17 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   9. Analysis & Synthesis IP Cores Summary
  10. User-Specified and Inferred Latches
  11. General Register Statistics
- 12. Source assignments for DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vjg1:auto_generated
- 13. Parameter Settings for User Entity Instance: LPM_LATCH:inst8
- 14. Parameter Settings for User Entity Instance: PeripheralMux:inst|lpm_mux:LPM_MUX_component
- 15. Parameter Settings for User Entity Instance: DataMemory:inst1|altsyncram:altsyncram_component
- 16. altsyncram Parameter Settings by Entity Instance
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for GPIO:inst4
+ 14. Source assignments for DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vjg1:auto_generated
+ 15. Parameter Settings for User Entity Instance: GPIO:inst4
+ 16. Parameter Settings for User Entity Instance: LPM_LATCH:inst8
+ 17. Parameter Settings for User Entity Instance: PeripheralMux:inst|lpm_mux:LPM_MUX_component
+ 18. Parameter Settings for User Entity Instance: DataMemory:inst1|altsyncram:altsyncram_component
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -51,16 +54,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May  2 13:25:19 2024          ;
+; Analysis & Synthesis Status        ; Successful - Thu May  2 17:02:10 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ERV24                                          ;
 ; Top-level Entity Name              ; ERV24                                          ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 134                                            ;
-;     Total combinational functions  ; 102                                            ;
-;     Dedicated logic registers      ; 64                                             ;
-; Total registers                    ; 64                                             ;
-; Total pins                         ; 112                                            ;
+; Total logic elements               ; 196                                            ;
+;     Total combinational functions  ; 164                                            ;
+;     Dedicated logic registers      ; 96                                             ;
+; Total registers                    ; 96                                             ;
+; Total pins                         ; 143                                            ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 65,536                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -159,15 +162,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -178,8 +181,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
 ; ERV24.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/sbruz/E5-ERV24/project/ERV24.bdf                                       ;         ;
 ; DataMemory.v                     ; yes             ; User Wizard-Generated File         ; C:/Users/sbruz/E5-ERV24/project/DataMemory.v                                    ;         ;
-; TestPeripheral1.v                ; yes             ; User Verilog HDL File              ; C:/Users/sbruz/E5-ERV24/project/TestPeripheral1.v                               ;         ;
 ; PeripheralMux.v                  ; yes             ; User Wizard-Generated File         ; C:/Users/sbruz/E5-ERV24/project/PeripheralMux.v                                 ;         ;
+; custom_peripherals/GPIO/GPIO.v   ; yes             ; User Verilog HDL File              ; C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO.v                  ;         ;
 ; lpm_latch.tdf                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_latch.tdf         ;         ;
 ; lpm_constant.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_constant.inc      ;         ;
 ; lpm_mux.tdf                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf           ;         ;
@@ -205,31 +208,31 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 134       ;
+; Estimated Total logic elements              ; 196       ;
 ;                                             ;           ;
-; Total combinational functions               ; 102       ;
+; Total combinational functions               ; 164       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 4         ;
-;     -- 3 input functions                    ; 97        ;
+;     -- 4 input functions                    ; 67        ;
+;     -- 3 input functions                    ; 96        ;
 ;     -- <=2 input functions                  ; 1         ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 102       ;
+;     -- normal mode                          ; 164       ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
-; Total registers                             ; 64        ;
-;     -- Dedicated logic registers            ; 64        ;
+; Total registers                             ; 96        ;
+;     -- Dedicated logic registers            ; 96        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 112       ;
+; I/O pins                                    ; 143       ;
 ; Total memory bits                           ; 65536     ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 128       ;
-; Total fan-out                               ; 1190      ;
-; Average fan-out                             ; 2.82      ;
+; Maximum fan-out                             ; 160       ;
+; Total fan-out                               ; 1725      ;
+; Average fan-out                             ; 2.83      ;
 +---------------------------------------------+-----------+
 
 
@@ -238,14 +241,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
-; |ERV24                                    ; 102 (0)             ; 64 (0)                    ; 65536       ; 0            ; 0       ; 0         ; 112  ; 0            ; |ERV24                                                                                 ; ERV24           ; work         ;
+; |ERV24                                    ; 164 (0)             ; 96 (0)                    ; 65536       ; 0            ; 0       ; 0         ; 143  ; 0            ; |ERV24                                                                                 ; ERV24           ; work         ;
 ;    |DataMemory:inst1|                     ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|DataMemory:inst1                                                                ; DataMemory      ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|DataMemory:inst1|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_vjg1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vjg1:auto_generated ; altsyncram_vjg1 ; work         ;
+;    |GPIO:inst4|                           ; 100 (100)           ; 96 (96)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|GPIO:inst4                                                                      ; GPIO            ; work         ;
 ;    |PeripheralMux:inst|                   ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|PeripheralMux:inst                                                              ; PeripheralMux   ; work         ;
 ;       |lpm_mux:LPM_MUX_component|         ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|PeripheralMux:inst|lpm_mux:LPM_MUX_component                                    ; lpm_mux         ; work         ;
 ;          |mux_rsc:auto_generated|         ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|PeripheralMux:inst|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated             ; mux_rsc         ; work         ;
-;    |TestPeripheral1:inst2|                ; 38 (38)             ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|TestPeripheral1:inst2                                                           ; TestPeripheral1 ; work         ;
 ;    |lpm_latch:inst8|                      ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|lpm_latch:inst8                                                                 ; lpm_latch       ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -317,14 +320,96 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 64    ;
+; Total registers                              ; 96    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 32    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 64    ;
+; Number of registers using Clock Enable       ; 96    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; 10:1               ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |ERV24|GPIO:inst4|q[31]        ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 64 LEs               ; 160 LEs                ; Yes        ; |ERV24|GPIO:inst4|out_port[31] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Source assignments for GPIO:inst4                                        ;
++----------------------+-----------------+------+--------------------------+
+; Assignment           ; Value           ; From ; To                       ;
++----------------------+-----------------+------+--------------------------+
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[0].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[0].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[1].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[1].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[2].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[2].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[3].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[3].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[4].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[4].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[5].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[5].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[6].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[6].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[7].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[7].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[8].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[8].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[9].io0  ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[9].io0  ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[10].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[10].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[11].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[11].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[12].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[12].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[13].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[13].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[14].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[14].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[15].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[15].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[16].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[16].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[17].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[17].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[18].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[18].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[19].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[19].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[20].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[20].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[21].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[21].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[22].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[22].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[23].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[23].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[24].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[24].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[25].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[25].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[26].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[26].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[27].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[27].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[28].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[28].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[29].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[29].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[30].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[30].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[31].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[31].io0 ;
++----------------------+-----------------+------+--------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------+
@@ -334,6 +419,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------+--------------------+------+------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
 +---------------------------------+--------------------+------+------------------------------------------+
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: GPIO:inst4 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; WIDTH          ; 32    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------+
@@ -452,18 +547,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 112                         ;
-; cycloneiii_ff         ; 64                          ;
+; boundary_port         ; 143                         ;
+; cycloneiii_ff         ; 96                          ;
 ;     ENA               ; 64                          ;
-; cycloneiii_lcell_comb ; 102                         ;
-;     normal            ; 102                         ;
+;     ENA SLD           ; 32                          ;
+; cycloneiii_io_ibuf    ; 32                          ;
+; cycloneiii_io_obuf    ; 32                          ;
+; cycloneiii_lcell_comb ; 164                         ;
+;     normal            ; 164                         ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 97                          ;
-;         4 data inputs ; 4                           ;
+;         3 data inputs ; 96                          ;
+;         4 data inputs ; 67                          ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.82                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.27                        ;
 +-----------------------+-----------------------------+
 
 
@@ -472,7 +570,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -482,10 +580,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu May  2 13:25:13 2024
+    Info: Processing started: Thu May  2 17:01:53 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ERV24 -c ERV24
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file programmemory.v
     Info (12023): Found entity 1: ProgramMemory File: C:/Users/sbruz/E5-ERV24/project/ProgramMemory.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file erv24.bdf
@@ -501,9 +599,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file periphe
     Info (12023): Found entity 1: PeripheralMux File: C:/Users/sbruz/E5-ERV24/project/PeripheralMux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file singlebitmux.v
     Info (12023): Found entity 1: SingleBitMux File: C:/Users/sbruz/E5-ERV24/project/SingleBitMux.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file custom_peripherals/gpio/gpio.v
+    Info (12023): Found entity 1: GPIO File: C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO.v Line: 1
 Info (12127): Elaborating entity "ERV24" for the top level hierarchy
 Warning (275011): Block or symbol "NOT" of instance "inst5" overlaps another block or symbol
-Info (12128): Elaborating entity "TestPeripheral1" for hierarchy "TestPeripheral1:inst2"
+Info (12128): Elaborating entity "GPIO" for hierarchy "GPIO:inst4"
 Info (12128): Elaborating entity "LPM_LATCH" for hierarchy "LPM_LATCH:inst8"
 Info (12130): Elaborated megafunction instantiation "LPM_LATCH:inst8"
 Info (12133): Instantiated megafunction "LPM_LATCH:inst8" with the following parameter:
@@ -543,15 +643,16 @@ Info (12128): Elaborating entity "altsyncram_vjg1" for hierarchy "DataMemory:ins
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 310 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 403 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 47 input pins
-    Info (21059): Implemented 65 output pins
-    Info (21061): Implemented 166 logic cells
+    Info (21059): Implemented 64 output pins
+    Info (21060): Implemented 32 bidirectional pins
+    Info (21061): Implemented 228 logic cells
     Info (21064): Implemented 32 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Thu May  2 13:25:19 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Peak virtual memory: 4785 megabytes
+    Info: Processing ended: Thu May  2 17:02:10 2024
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:31
 
 

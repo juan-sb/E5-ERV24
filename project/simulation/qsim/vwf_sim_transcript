@@ -1,6 +1,6 @@
 Determining the location of the ModelSim executable...
 
-Using: C:/intelFPGA/20.1/modelsim_ase/win32aloem
+Using: C:\intelFPGA\20.1\modelsim_ase\win32aloem
 
 To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
 Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
@@ -26,13 +26,11 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu May  2 13:25:36 2024
+    Info: Processing started: Thu May  2 17:11:14 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=C:/Users/sbruz/E5-ERV24/project/peripheral_test.vwf --testbench_file=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/Waveform.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-vector source file when writing test bench files
-
- bench files
+n vector source file when writing test bench files
 
 Completed successfully. 
 
@@ -59,7 +57,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu May  2 13:25:36 2024
+    Info: Processing started: Thu May  2 17:11:15 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file ERV24_6_1200mv_85c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
@@ -71,8 +69,8 @@ Info (204019): Generated file ERV24_6_1200mv_0c_v_slow.sdo in folder "C:/Users/s
 Info (204019): Generated file ERV24_min_1200mv_0c_v_fast.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info (204019): Generated file ERV24_v.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4644 megabytes
-    Info: Processing ended: Thu May  2 13:25:37 2024
+    Info: Peak virtual memory: 4648 megabytes
+    Info: Processing ended: Thu May  2 17:11:16 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -100,7 +98,7 @@ Reading pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 13:25:37 on May 02,2024
+# Start time: 17:11:18 on May 02,2024
 # vlog -work work ERV24.vo 
 
 # -- Compiling module ERV24
@@ -108,16 +106,18 @@ Reading pref.tcl
 # -- Compiling module hard_block
 
 # 
-
 # Top level modules:
+
 # 	ERV24
 
-# End time: 13:25:38 on May 02,2024, Elapsed time: 0:00:01
+# End time: 17:11:18 on May 02,2024, Elapsed time: 0:00:00
+
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 13:25:38 on May 02,2024
+# Start time: 17:11:18 on May 02,2024
+
 # vlog -work work Waveform.vwf.vt 
 
 # -- Compiling module ERV24_vlg_vec_tst
@@ -127,12 +127,12 @@ Reading pref.tcl
 # Top level modules:
 # 	ERV24_vlg_vec_tst
 
-# End time: 13:25:38 on May 02,2024, Elapsed time: 0:00:00
+# End time: 17:11:18 on May 02,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ERV24_vlg_vec_tst 
-# Start time: 13:25:38 on May 02,2024
+# Start time: 17:11:18 on May 02,2024
 # Loading work.ERV24_vlg_vec_tst
 # Loading work.ERV24
 # Loading work.hard_block
@@ -156,14 +156,14 @@ Reading pref.tcl
 
 # after#26
 
-# ** Note: $stop    : Waveform.vwf.vt(57)
+# ** Note: $stop    : Waveform.vwf.vt(59)
 #    Time: 1 us  Iteration: 0  Instance: /ERV24_vlg_vec_tst
 
-# Break in Module ERV24_vlg_vec_tst at Waveform.vwf.vt line 57
+# Break in Module ERV24_vlg_vec_tst at Waveform.vwf.vt line 59
 
-# Stopped at Waveform.vwf.vt line 57
+# Stopped at Waveform.vwf.vt line 59
 
-# End time: 13:25:38 on May 02,2024, Elapsed time: 0:00:00
+# End time: 17:11:19 on May 02,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -176,7 +176,7 @@ Reading C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24_20240502132538.sim.vwf
+Writing the resulting VWF to C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24_20240502171119.sim.vwf
 
 Finished VCD to VWF conversion.
 

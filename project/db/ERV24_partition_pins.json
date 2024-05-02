@@ -4,10 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "P0",
-					"strict" : false
-				},
-				{
 					"name" : "q[31]",
 					"strict" : false
 				},
@@ -264,55 +260,135 @@
 					"strict" : false
 				},
 				{
-					"name" : "data[0]",
+					"name" : "PORT[31]",
 					"strict" : false
 				},
 				{
-					"name" : "wren",
+					"name" : "PORT[30]",
 					"strict" : false
 				},
 				{
-					"name" : "address[10]",
+					"name" : "PORT[29]",
 					"strict" : false
 				},
 				{
-					"name" : "address[9]",
+					"name" : "PORT[28]",
 					"strict" : false
 				},
 				{
-					"name" : "address[8]",
+					"name" : "PORT[27]",
 					"strict" : false
 				},
 				{
-					"name" : "address[7]",
+					"name" : "PORT[26]",
 					"strict" : false
 				},
 				{
-					"name" : "address[6]",
+					"name" : "PORT[25]",
 					"strict" : false
 				},
 				{
-					"name" : "address[5]",
+					"name" : "PORT[24]",
 					"strict" : false
 				},
 				{
-					"name" : "address[4]",
+					"name" : "PORT[23]",
 					"strict" : false
 				},
 				{
-					"name" : "address[3]",
+					"name" : "PORT[22]",
 					"strict" : false
 				},
 				{
-					"name" : "address[2]",
+					"name" : "PORT[21]",
 					"strict" : false
 				},
 				{
-					"name" : "address[1]",
+					"name" : "PORT[20]",
 					"strict" : false
 				},
 				{
-					"name" : "address[0]",
+					"name" : "PORT[19]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[18]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[17]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[16]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[15]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[14]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[13]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[12]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[11]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[10]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[9]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[8]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PORT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address[11]",
 					"strict" : false
 				},
 				{
@@ -320,7 +396,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[11]",
+					"name" : "wren",
 					"strict" : false
 				},
 				{
@@ -329,6 +405,50 @@
 				},
 				{
 					"name" : "data[31]",
+					"strict" : false
+				},
+				{
+					"name" : "address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "address[7]",
+					"strict" : false
+				},
+				{
+					"name" : "address[8]",
+					"strict" : false
+				},
+				{
+					"name" : "address[9]",
+					"strict" : false
+				},
+				{
+					"name" : "address[10]",
 					"strict" : false
 				},
 				{
@@ -449,6 +569,10 @@
 				},
 				{
 					"name" : "data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data[0]",
 					"strict" : false
 				}
 			]

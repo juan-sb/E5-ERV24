@@ -59,7 +59,6 @@ set_global_assignment -name QIP_FILE ProgramMemory.qip
 set_global_assignment -name BDF_FILE ERV24.bdf
 set_global_assignment -name QIP_FILE x0.qip
 set_global_assignment -name QIP_FILE DataMemory.qip
-set_global_assignment -name VERILOG_FILE TestPeripheral1.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -68,4 +67,6 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VECTOR_WAVEFORM_FILE peripheral_test.vwf
 set_global_assignment -name QIP_FILE SingleBitMux.qip
+set_global_assignment -name VERILOG_FILE custom_peripherals/GPIO/GPIO.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name QIP_FILE core/CSRCounters.qip
