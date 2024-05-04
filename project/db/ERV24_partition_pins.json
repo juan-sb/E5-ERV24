@@ -132,263 +132,155 @@
 					"strict" : false
 				},
 				{
-					"name" : "qDM[31]",
+					"name" : "PORTA[31]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[30]",
+					"name" : "PORTA[30]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[29]",
+					"name" : "PORTA[29]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[28]",
+					"name" : "PORTA[28]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[27]",
+					"name" : "PORTA[27]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[26]",
+					"name" : "PORTA[26]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[25]",
+					"name" : "PORTA[25]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[24]",
+					"name" : "PORTA[24]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[23]",
+					"name" : "PORTA[23]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[22]",
+					"name" : "PORTA[22]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[21]",
+					"name" : "PORTA[21]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[20]",
+					"name" : "PORTA[20]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[19]",
+					"name" : "PORTA[19]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[18]",
+					"name" : "PORTA[18]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[17]",
+					"name" : "PORTA[17]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[16]",
+					"name" : "PORTA[16]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[15]",
+					"name" : "PORTA[15]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[14]",
+					"name" : "PORTA[14]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[13]",
+					"name" : "PORTA[13]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[12]",
+					"name" : "PORTA[12]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[11]",
+					"name" : "PORTA[11]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[10]",
+					"name" : "PORTA[10]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[9]",
+					"name" : "PORTA[9]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[8]",
+					"name" : "PORTA[8]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[7]",
+					"name" : "PORTA[7]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[6]",
+					"name" : "PORTA[6]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[5]",
+					"name" : "PORTA[5]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[4]",
+					"name" : "PORTA[4]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[3]",
+					"name" : "PORTA[3]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[2]",
+					"name" : "PORTA[2]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[1]",
+					"name" : "PORTA[1]",
 					"strict" : false
 				},
 				{
-					"name" : "qDM[0]",
+					"name" : "PORTA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "PORT[31]",
+					"name" : "address[23]",
 					"strict" : false
 				},
 				{
-					"name" : "PORT[30]",
+					"name" : "address[22]",
 					"strict" : false
 				},
 				{
-					"name" : "PORT[29]",
+					"name" : "address[21]",
 					"strict" : false
 				},
 				{
-					"name" : "PORT[28]",
+					"name" : "address[20]",
 					"strict" : false
 				},
 				{
-					"name" : "PORT[27]",
+					"name" : "address[19]",
 					"strict" : false
 				},
 				{
-					"name" : "PORT[26]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[25]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[24]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[23]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[22]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[21]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[20]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[19]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[18]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[17]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[16]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[15]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[14]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[13]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[12]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[11]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[10]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[9]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[8]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[7]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[6]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[5]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[4]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[3]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[2]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[1]",
-					"strict" : false
-				},
-				{
-					"name" : "PORT[0]",
-					"strict" : false
-				},
-				{
-					"name" : "address[11]",
+					"name" : "address[18]",
 					"strict" : false
 				},
 				{
@@ -396,15 +288,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "wren",
-					"strict" : false
-				},
-				{
-					"name" : "rden",
-					"strict" : false
-				},
-				{
 					"name" : "data[31]",
+					"strict" : false
+				},
+				{
+					"name" : "wren",
 					"strict" : false
 				},
 				{
@@ -412,11 +300,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[1]",
+					"name" : "address[27]",
 					"strict" : false
 				},
 				{
-					"name" : "address[2]",
+					"name" : "address[26]",
+					"strict" : false
+				},
+				{
+					"name" : "address[25]",
+					"strict" : false
+				},
+				{
+					"name" : "address[24]",
+					"strict" : false
+				},
+				{
+					"name" : "address[31]",
+					"strict" : false
+				},
+				{
+					"name" : "address[30]",
+					"strict" : false
+				},
+				{
+					"name" : "address[29]",
+					"strict" : false
+				},
+				{
+					"name" : "address[28]",
 					"strict" : false
 				},
 				{
@@ -424,31 +336,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[4]",
+					"name" : "address[2]",
 					"strict" : false
 				},
 				{
-					"name" : "address[5]",
+					"name" : "address[1]",
 					"strict" : false
 				},
 				{
-					"name" : "address[6]",
+					"name" : "rden",
 					"strict" : false
 				},
 				{
-					"name" : "address[7]",
-					"strict" : false
-				},
-				{
-					"name" : "address[8]",
-					"strict" : false
-				},
-				{
-					"name" : "address[9]",
-					"strict" : false
-				},
-				{
-					"name" : "address[10]",
+					"name" : "GPIO_reset",
 					"strict" : false
 				},
 				{
