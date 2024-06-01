@@ -260,11 +260,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[23]",
-					"strict" : false
-				},
-				{
-					"name" : "address[22]",
+					"name" : "address[28]",
 					"strict" : false
 				},
 				{
@@ -272,15 +268,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[20]",
+					"name" : "address[22]",
 					"strict" : false
 				},
 				{
-					"name" : "address[19]",
-					"strict" : false
-				},
-				{
-					"name" : "address[18]",
+					"name" : "address[23]",
 					"strict" : false
 				},
 				{
@@ -297,6 +289,42 @@
 				},
 				{
 					"name" : "address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "address[7]",
+					"strict" : false
+				},
+				{
+					"name" : "address[8]",
+					"strict" : false
+				},
+				{
+					"name" : "address[9]",
+					"strict" : false
+				},
+				{
+					"name" : "address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "address[1]",
 					"strict" : false
 				},
 				{
@@ -328,19 +356,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[28]",
-					"strict" : false
-				},
-				{
-					"name" : "address[3]",
-					"strict" : false
-				},
-				{
-					"name" : "address[2]",
-					"strict" : false
-				},
-				{
-					"name" : "address[1]",
+					"name" : "GPIO_reset",
 					"strict" : false
 				},
 				{
@@ -348,7 +364,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "GPIO_reset",
+					"name" : "address[10]",
+					"strict" : false
+				},
+				{
+					"name" : "address[11]",
+					"strict" : false
+				},
+				{
+					"name" : "address[12]",
 					"strict" : false
 				},
 				{

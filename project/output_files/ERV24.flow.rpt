@@ -1,5 +1,5 @@
 Flow report for ERV24
-Fri May  3 12:17:06 2024
+Fri May 31 22:27:58 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Fri May  3 12:17:06 2024          ;
+; Flow Status                        ; Successful - Fri May 31 22:27:58 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ERV24                                          ;
 ; Top-level Entity Name              ; ERV24                                          ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE22F17C6                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 172 / 22,320 ( < 1 % )                         ;
-;     Total combinational functions  ; 138 / 22,320 ( < 1 % )                         ;
+; Total logic elements               ; 182 / 22,320 ( < 1 % )                         ;
+;     Total combinational functions  ; 147 / 22,320 ( < 1 % )                         ;
 ;     Dedicated logic registers      ; 96 / 22,320 ( < 1 % )                          ;
 ; Total registers                    ; 96                                             ;
-; Total pins                         ; 132 / 154 ( 86 % )                             ;
+; Total pins                         ; 133 / 154 ( 86 % )                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0 / 608,256 ( 0 % )                            ;
+; Total memory bits                  ; 262,144 / 608,256 ( 43 % )                     ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                                ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
 +------------------------------------+------------------------------------------------+
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/03/2024 12:16:44 ;
+; Start date & time ; 05/31/2024 22:27:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ERV24               ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                    ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 198112243188460.171474940417252          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 198112243188460.171720524808140          ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -86,23 +86,16 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TIME_SCALE                      ; 1 ps                                     ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                       ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                        ; --            ; --          ; --                                ;
-; MISC_FILE                           ; ProgramMemory.bsf                        ; --            ; --          ; --                                ;
-; MISC_FILE                           ; ProgramMemory_bb.v                       ; --            ; --          ; --                                ;
-; MISC_FILE                           ; x0.bsf                                   ; --            ; --          ; --                                ;
-; MISC_FILE                           ; x0_bb.v                                  ; --            ; --          ; --                                ;
-; MISC_FILE                           ; DataMemory.bsf                           ; --            ; --          ; --                                ;
-; MISC_FILE                           ; DataMemory_bb.v                          ; --            ; --          ; --                                ;
-; MISC_FILE                           ; PeripheralMux.bsf                        ; --            ; --          ; --                                ;
-; MISC_FILE                           ; PeripheralMux_bb.v                       ; --            ; --          ; --                                ;
-; MISC_FILE                           ; PeripheralMux_syn.v                      ; --            ; --          ; --                                ;
-; MISC_FILE                           ; SingleBitMux.bsf                         ; --            ; --          ; --                                ;
-; MISC_FILE                           ; SingleBitMux_bb.v                        ; --            ; --          ; --                                ;
+; MISC_FILE                           ; memory_mapping/MemoryPeriphMux.bsf       ; --            ; --          ; --                                ;
+; MISC_FILE                           ; memory_mapping/MemoryPeriphMux_bb.v      ; --            ; --          ; --                                ;
 ; MISC_FILE                           ; core/CSRCounters.bsf                     ; --            ; --          ; --                                ;
 ; MISC_FILE                           ; core/CSRCounters_bb.v                    ; --            ; --          ; --                                ;
 ; MISC_FILE                           ; memory_mapping/GPIO_address_decoder.bsf  ; --            ; --          ; --                                ;
 ; MISC_FILE                           ; memory_mapping/GPIO_address_decoder_bb.v ; --            ; --          ; --                                ;
 ; MISC_FILE                           ; memory_mapping/peripheral_addr_dec.bsf   ; --            ; --          ; --                                ;
 ; MISC_FILE                           ; memory_mapping/peripheral_addr_dec_bb.v  ; --            ; --          ; --                                ;
+; MISC_FILE                           ; memory_mapping/peripheral_mux.bsf        ; --            ; --          ; --                                ;
+; MISC_FILE                           ; memory_mapping/peripheral_mux_bb.v       ; --            ; --          ; --                                ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                     ; --            ; --          ; --                                ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family)   ; --            ; --          ; Top                               ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)   ; --            ; --          ; Top                               ;
@@ -118,12 +111,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4886 MB             ; 00:00:17                           ;
-; Fitter               ; 00:00:08     ; 1.0                     ; 6493 MB             ; 00:00:11                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4859 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:08     ; 1.1                     ; 6513 MB             ; 00:00:13                           ;
 ; Assembler            ; 00:00:01     ; 1.0                     ; 4700 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 4928 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4648 MB             ; 00:00:00                           ;
-; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:30                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.2                     ; 4932 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4635 MB             ; 00:00:00                           ;
+; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:32                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

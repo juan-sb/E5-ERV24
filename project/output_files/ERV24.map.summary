@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri May  3 12:16:52 2024
+Analysis & Synthesis Status : Successful - Fri May 31 22:27:35 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : ERV24
 Top-level Entity Name : ERV24
 Family : Cyclone IV E
-Total logic elements : 170
-    Total combinational functions : 138
+Total logic elements : 179
+    Total combinational functions : 147
     Dedicated logic registers : 96
 Total registers : 96
-Total pins : 132
+Total pins : 133
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 262,144
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

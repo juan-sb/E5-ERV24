@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ERV24
-Fri May  3 12:16:52 2024
+Fri May 31 22:27:35 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -13,19 +13,24 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Source assignments for GPIO:inst4
- 12. Source assignments for DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated
- 13. Parameter Settings for User Entity Instance: GPIO:inst4
- 14. Parameter Settings for User Entity Instance: peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component
- 15. Parameter Settings for User Entity Instance: PeripheralMux:inst|lpm_mux:LPM_MUX_component
- 16. Parameter Settings for User Entity Instance: DataMemory:inst1|altsyncram:altsyncram_component
- 17. altsyncram Parameter Settings by Entity Instance
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for GPIO:inst4
+ 14. Source assignments for DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_7kg1:auto_generated
+ 15. Source assignments for IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated
+ 16. Parameter Settings for User Entity Instance: GPIO:inst4
+ 17. Parameter Settings for User Entity Instance: peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component
+ 18. Parameter Settings for User Entity Instance: MemoryPeriphMux:inst10|lpm_mux:LPM_MUX_component
+ 19. Parameter Settings for User Entity Instance: peripheral_mux:inst|lpm_mux:LPM_MUX_component
+ 20. Parameter Settings for User Entity Instance: DataMemory:inst1|altsyncram:altsyncram_component
+ 21. Parameter Settings for User Entity Instance: IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -52,18 +57,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May  3 12:16:52 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri May 31 22:27:35 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ERV24                                          ;
 ; Top-level Entity Name              ; ERV24                                          ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 170                                            ;
-;     Total combinational functions  ; 138                                            ;
+; Total logic elements               ; 179                                            ;
+;     Total combinational functions  ; 147                                            ;
 ;     Dedicated logic registers      ; 96                                             ;
 ; Total registers                    ; 96                                             ;
-; Total pins                         ; 132                                            ;
+; Total pins                         ; 133                                            ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
+; Total memory bits                  ; 262,144                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
@@ -172,89 +177,111 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
-+------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path         ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
-+------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
-; ERV24.bdf                                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/sbruz/E5-ERV24/project/ERV24.bdf                                       ;         ;
-; DataMemory.v                             ; yes             ; User Wizard-Generated File         ; C:/Users/sbruz/E5-ERV24/project/DataMemory.v                                    ;         ;
-; PeripheralMux.v                          ; yes             ; User Wizard-Generated File         ; C:/Users/sbruz/E5-ERV24/project/PeripheralMux.v                                 ;         ;
-; custom_peripherals/GPIO/GPIO.v           ; yes             ; User Verilog HDL File              ; C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO.v                  ;         ;
-; memory_mapping/peripheral_addr_dec.v     ; yes             ; User Wizard-Generated File         ; C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v            ;         ;
-; memory_mapping/PeripheralAdressMatcher.v ; yes             ; User Verilog HDL File              ; C:/Users/sbruz/E5-ERV24/project/memory_mapping/PeripheralAdressMatcher.v        ;         ;
-; lpm_decode.tdf                           ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf        ;         ;
-; declut.inc                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/declut.inc            ;         ;
-; altshift.inc                             ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc          ;         ;
-; lpm_compare.inc                          ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_compare.inc       ;         ;
-; lpm_constant.inc                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_constant.inc      ;         ;
-; aglobal231.inc                           ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc        ;         ;
-; db/decode_a1g.tdf                        ; yes             ; Auto-Generated Megafunction        ; C:/Users/sbruz/E5-ERV24/project/db/decode_a1g.tdf                               ;         ;
-; lpm_mux.tdf                              ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf           ;         ;
-; muxlut.inc                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/muxlut.inc            ;         ;
-; bypassff.inc                             ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc          ;         ;
-; db/mux_ouc.tdf                           ; yes             ; Auto-Generated Megafunction        ; C:/Users/sbruz/E5-ERV24/project/db/mux_ouc.tdf                                  ;         ;
-; altsyncram.tdf                           ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                              ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                           ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; a_rdenreg.inc                            ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                             ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_vlg1.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf                          ;         ;
-; db/decode_rsa.tdf                        ; yes             ; Auto-Generated Megafunction        ; C:/Users/sbruz/E5-ERV24/project/db/decode_rsa.tdf                               ;         ;
-; db/mux_oob.tdf                           ; yes             ; Auto-Generated Megafunction        ; C:/Users/sbruz/E5-ERV24/project/db/mux_oob.tdf                                  ;         ;
-+------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path         ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                    ; Library ;
++------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+---------+
+; utils/ProgramMemory.v                    ; yes             ; User Wizard-Generated File             ; C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v                           ;         ;
+; utils/DataMemory.v                       ; yes             ; User Wizard-Generated File             ; C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v                              ;         ;
+; utils/reg32.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/sbruz/E5-ERV24/project/utils/reg32.v                                   ;         ;
+; instruction_parsing/imm_builder.v        ; yes             ; User Verilog HDL File                  ; C:/Users/sbruz/E5-ERV24/project/instruction_parsing/imm_builder.v               ;         ;
+; instruction_parsing/decoder.v            ; yes             ; User Verilog HDL File                  ; C:/Users/sbruz/E5-ERV24/project/instruction_parsing/decoder.v                   ;         ;
+; ifu/IFU.bdf                              ; yes             ; User Block Diagram/Schematic File      ; C:/Users/sbruz/E5-ERV24/project/ifu/IFU.bdf                                     ;         ;
+; ifu/fetch.v                              ; yes             ; User Verilog HDL File                  ; C:/Users/sbruz/E5-ERV24/project/ifu/fetch.v                                     ;         ;
+; memory_mapping/MemoryPeriphMux.v         ; yes             ; User Wizard-Generated File             ; C:/Users/sbruz/E5-ERV24/project/memory_mapping/MemoryPeriphMux.v                ;         ;
+; ERV24.bdf                                ; yes             ; User Block Diagram/Schematic File      ; C:/Users/sbruz/E5-ERV24/project/ERV24.bdf                                       ;         ;
+; custom_peripherals/GPIO/GPIO.v           ; yes             ; User Verilog HDL File                  ; C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO.v                  ;         ;
+; memory_mapping/peripheral_addr_dec.v     ; yes             ; User Wizard-Generated File             ; C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v            ;         ;
+; memory_mapping/PeripheralAdressMatcher.v ; yes             ; User Verilog HDL File                  ; C:/Users/sbruz/E5-ERV24/project/memory_mapping/PeripheralAdressMatcher.v        ;         ;
+; memory_mapping/peripheral_mux.v          ; yes             ; User Wizard-Generated File             ; C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v                 ;         ;
+; lpm_decode.tdf                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf        ;         ;
+; declut.inc                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/declut.inc            ;         ;
+; altshift.inc                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc          ;         ;
+; lpm_compare.inc                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_compare.inc       ;         ;
+; lpm_constant.inc                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_constant.inc      ;         ;
+; aglobal231.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc        ;         ;
+; db/decode_lvf.tdf                        ; yes             ; Auto-Generated Megafunction            ; C:/Users/sbruz/E5-ERV24/project/db/decode_lvf.tdf                               ;         ;
+; lpm_mux.tdf                              ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf           ;         ;
+; muxlut.inc                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/muxlut.inc            ;         ;
+; bypassff.inc                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc          ;         ;
+; db/mux_rsc.tdf                           ; yes             ; Auto-Generated Megafunction            ; C:/Users/sbruz/E5-ERV24/project/db/mux_rsc.tdf                                  ;         ;
+; db/mux_3tc.tdf                           ; yes             ; Auto-Generated Megafunction            ; C:/Users/sbruz/E5-ERV24/project/db/mux_3tc.tdf                                  ;         ;
+; altsyncram.tdf                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                              ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; a_rdenreg.inc                            ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_7kg1.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/sbruz/E5-ERV24/project/db/altsyncram_7kg1.tdf                          ;         ;
+; db/altsyncram_40b1.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf                          ;         ;
+; program.hex                              ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/sbruz/E5-ERV24/project/program.hex                                     ;         ;
++------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 170              ;
-;                                             ;                  ;
-; Total combinational functions               ; 138              ;
-; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 103              ;
-;     -- 3 input functions                    ; 33               ;
-;     -- <=2 input functions                  ; 2                ;
-;                                             ;                  ;
-; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 138              ;
-;     -- arithmetic mode                      ; 0                ;
-;                                             ;                  ;
-; Total registers                             ; 96               ;
-;     -- Dedicated logic registers            ; 96               ;
-;     -- I/O registers                        ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 132              ;
-;                                             ;                  ;
-; Embedded Multiplier 9-bit elements          ; 0                ;
-;                                             ;                  ;
-; Maximum fan-out node                        ; address[0]~input ;
-; Maximum fan-out                             ; 98               ;
-; Total fan-out                               ; 1191             ;
-; Average fan-out                             ; 2.25             ;
-+---------------------------------------------+------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 179       ;
+;                                             ;           ;
+; Total combinational functions               ; 147       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 107       ;
+;     -- 3 input functions                    ; 38        ;
+;     -- <=2 input functions                  ; 2         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 147       ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 96        ;
+;     -- Dedicated logic registers            ; 96        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 133       ;
+; Total memory bits                           ; 262144    ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 128       ;
+; Total fan-out                               ; 1799      ;
+; Average fan-out                             ; 3.14      ;
++---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                   ;
-+-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                         ; Entity Name         ; Library Name ;
-+-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+---------------------+--------------+
-; |ERV24                                  ; 138 (0)             ; 96 (0)                    ; 0           ; 0            ; 0       ; 0         ; 132  ; 0            ; |ERV24                                                                                      ; ERV24               ; work         ;
-;    |GPIO:inst4|                         ; 102 (102)           ; 96 (96)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|GPIO:inst4                                                                           ; GPIO                ; work         ;
-;    |PeripheralMux:inst|                 ; 34 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|PeripheralMux:inst                                                                   ; PeripheralMux       ; work         ;
-;       |lpm_mux:LPM_MUX_component|       ; 34 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|PeripheralMux:inst|lpm_mux:LPM_MUX_component                                         ; lpm_mux             ; work         ;
-;          |mux_ouc:auto_generated|       ; 34 (34)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|PeripheralMux:inst|lpm_mux:LPM_MUX_component|mux_ouc:auto_generated                  ; mux_ouc             ; work         ;
-;    |peripheral_addr_dec:inst14|         ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|peripheral_addr_dec:inst14                                                           ; peripheral_addr_dec ; work         ;
-;       |lpm_decode:LPM_DECODE_component| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component                           ; lpm_decode          ; work         ;
-;          |decode_a1g:auto_generated|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component|decode_a1g:auto_generated ; decode_a1g          ; work         ;
-+-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                          ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                         ; Entity Name              ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+--------------------------+--------------+
+; |ERV24                                    ; 147 (0)             ; 96 (0)                    ; 262144      ; 0            ; 0       ; 0         ; 133  ; 0            ; |ERV24                                                                                      ; ERV24                    ; work         ;
+;    |DataMemory:inst1|                     ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|DataMemory:inst1                                                                     ; DataMemory               ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|DataMemory:inst1|altsyncram:altsyncram_component                                     ; altsyncram               ; work         ;
+;          |altsyncram_7kg1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_7kg1:auto_generated      ; altsyncram_7kg1          ; work         ;
+;    |GPIO:inst4|                           ; 110 (110)           ; 96 (96)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|GPIO:inst4                                                                           ; GPIO                     ; work         ;
+;    |MemoryPeriphMux:inst10|               ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|MemoryPeriphMux:inst10                                                               ; MemoryPeriphMux          ; work         ;
+;       |lpm_mux:LPM_MUX_component|         ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|MemoryPeriphMux:inst10|lpm_mux:LPM_MUX_component                                     ; lpm_mux                  ; work         ;
+;          |mux_rsc:auto_generated|         ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|MemoryPeriphMux:inst10|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated              ; mux_rsc                  ; work         ;
+;    |PeripheralAddressMatcher:inst11|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|PeripheralAddressMatcher:inst11                                                      ; PeripheralAddressMatcher ; work         ;
+;    |peripheral_addr_dec:inst14|           ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|peripheral_addr_dec:inst14                                                           ; peripheral_addr_dec      ; work         ;
+;       |lpm_decode:LPM_DECODE_component|   ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component                           ; lpm_decode               ; work         ;
+;          |decode_lvf:auto_generated|      ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component|decode_lvf:auto_generated ; decode_lvf               ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                            ;
++--------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                       ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++--------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------+
+; DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_7kg1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 8192         ; 32           ; --           ; --           ; 262144 ; None ;
++--------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
@@ -262,10 +289,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-----------------------------------+--------------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                   ; IP Include File                      ;
 +--------+--------------+---------+--------------+--------------+-----------------------------------+--------------------------------------+
-; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|PeripheralMux:inst         ; PeripheralMux.v                      ;
-; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |ERV24|DataMemory:inst1           ; DataMemory.v                         ;
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|peripheral_mux:inst        ; memory_mapping/peripheral_mux.v      ;
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|MemoryPeriphMux:inst10     ; memory_mapping/MemoryPeriphMux.v     ;
 ; Altera ; LPM_DECODE   ; 23.1    ; N/A          ; N/A          ; |ERV24|peripheral_addr_dec:inst14 ; memory_mapping/peripheral_addr_dec.v ;
 +--------+--------------+---------+--------------+--------------+-----------------------------------+--------------------------------------+
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; IFU:inst2|fetch:inst|q[0..31]          ; Lost fanout        ;
+; IFU:inst2|reg32:PCreg|q[0..31]         ; Lost fanout        ;
+; Total Number of Removed Registers = 64 ;                    ;
++----------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -283,14 +321,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |ERV24|GPIO:inst4|q[31]        ;
-; 19:1               ; 32 bits   ; 384 LEs       ; 64 LEs               ; 320 LEs                ; Yes        ; |ERV24|GPIO:inst4|out_port[31] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |ERV24|GPIO:inst4|q[31]                                                                        ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; Yes        ; |ERV24|GPIO:inst4|out_port[7]                                                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ERV24|MemoryPeriphMux:inst10|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated|result_node[15] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -366,12 +405,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +--------------------------------------------------------------------------------------------------------+
-; Source assignments for DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated ;
+; Source assignments for DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_7kg1:auto_generated ;
 +---------------------------------+--------------------+------+------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                       ;
 +---------------------------------+--------------------+------+------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
 +---------------------------------+--------------------+------+------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Source assignments for IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                    ;
++---------------------------------+--------------------+------+-------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                     ;
++---------------------------------+--------------------+------+-------------------------------------------------------+
 
 
 +---------------------------------------------------------+
@@ -389,12 +437,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+--------------+-----------------------------------------------------------------+
 ; Parameter Name         ; Value        ; Type                                                            ;
 +------------------------+--------------+-----------------------------------------------------------------+
-; LPM_WIDTH              ; 6            ; Signed Integer                                                  ;
-; LPM_DECODES            ; 64           ; Signed Integer                                                  ;
+; LPM_WIDTH              ; 3            ; Signed Integer                                                  ;
+; LPM_DECODES            ; 8            ; Signed Integer                                                  ;
 ; LPM_PIPELINE           ; 0            ; Untyped                                                         ;
 ; CASCADE_CHAIN          ; MANUAL       ; Untyped                                                         ;
 ; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                         ;
-; CBXI_PARAMETER         ; decode_a1g   ; Untyped                                                         ;
+; CBXI_PARAMETER         ; decode_lvf   ; Untyped                                                         ;
 ; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                      ;
 ; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                    ;
 ; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                    ;
@@ -403,22 +451,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: PeripheralMux:inst|lpm_mux:LPM_MUX_component ;
-+------------------------+--------------+---------------------------------------------------+
-; Parameter Name         ; Value        ; Type                                              ;
-+------------------------+--------------+---------------------------------------------------+
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                        ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                      ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                      ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                    ;
-; LPM_WIDTH              ; 32           ; Signed Integer                                    ;
-; LPM_SIZE               ; 64           ; Signed Integer                                    ;
-; LPM_WIDTHS             ; 6            ; Signed Integer                                    ;
-; LPM_PIPELINE           ; 0            ; Untyped                                           ;
-; CBXI_PARAMETER         ; mux_ouc      ; Untyped                                           ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                           ;
-+------------------------+--------------+---------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MemoryPeriphMux:inst10|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+-------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                  ;
++------------------------+--------------+-------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                        ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                        ;
+; LPM_SIZE               ; 2            ; Signed Integer                                        ;
+; LPM_WIDTHS             ; 1            ; Signed Integer                                        ;
+; LPM_PIPELINE           ; 0            ; Untyped                                               ;
+; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                               ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                               ;
++------------------------+--------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: peripheral_mux:inst|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+----------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                               ;
++------------------------+--------------+----------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                       ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                     ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                     ;
+; LPM_SIZE               ; 8            ; Signed Integer                                     ;
+; LPM_WIDTHS             ; 3            ; Signed Integer                                     ;
+; LPM_PIPELINE           ; 0            ; Untyped                                            ;
+; CBXI_PARAMETER         ; mux_3tc      ; Untyped                                            ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                            ;
++------------------------+--------------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -435,8 +502,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped                           ;
 ; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                           ;
 ; WIDTH_A                            ; 32                   ; Signed Integer                    ;
-; WIDTHAD_A                          ; 16                   ; Signed Integer                    ;
-; NUMWORDS_A                         ; 65536                ; Signed Integer                    ;
+; WIDTHAD_A                          ; 13                   ; Signed Integer                    ;
+; NUMWORDS_A                         ; 8192                 ; Signed Integer                    ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                           ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                           ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                           ;
@@ -478,29 +545,101 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                           ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                           ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                           ;
-; CBXI_PARAMETER                     ; altsyncram_vlg1      ; Untyped                           ;
+; CBXI_PARAMETER                     ; altsyncram_7kg1      ; Untyped                           ;
 +------------------------------------+----------------------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                             ;
-+-------------------------------------------+--------------------------------------------------+
-; Name                                      ; Value                                            ;
-+-------------------------------------------+--------------------------------------------------+
-; Number of entity instances                ; 1                                                ;
-; Entity Instance                           ; DataMemory:inst1|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                      ;
-;     -- WIDTH_A                            ; 32                                               ;
-;     -- NUMWORDS_A                         ; 65536                                            ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                     ;
-;     -- WIDTH_B                            ; 1                                                ;
-;     -- NUMWORDS_B                         ; 1                                                ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                           ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                     ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                             ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                        ;
-+-------------------------------------------+--------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                           ;
++------------------------------------+----------------------+------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                        ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                        ;
+; WIDTH_A                            ; 32                   ; Signed Integer                                 ;
+; WIDTHAD_A                          ; 11                   ; Signed Integer                                 ;
+; NUMWORDS_A                         ; 2048                 ; Signed Integer                                 ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                        ;
+; WIDTH_B                            ; 1                    ; Untyped                                        ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                        ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                        ;
+; INIT_FILE                          ; program.hex          ; Untyped                                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                        ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                        ;
+; CBXI_PARAMETER                     ; altsyncram_40b1      ; Untyped                                        ;
++------------------------------------+----------------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                          ;
++-------------------------------------------+---------------------------------------------------------------+
+; Name                                      ; Value                                                         ;
++-------------------------------------------+---------------------------------------------------------------+
+; Number of entity instances                ; 2                                                             ;
+; Entity Instance                           ; DataMemory:inst1|altsyncram:altsyncram_component              ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                   ;
+;     -- WIDTH_A                            ; 32                                                            ;
+;     -- NUMWORDS_A                         ; 8192                                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                  ;
+;     -- WIDTH_B                            ; 1                                                             ;
+;     -- NUMWORDS_B                         ; 1                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                     ;
+; Entity Instance                           ; IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                           ;
+;     -- WIDTH_A                            ; 32                                                            ;
+;     -- NUMWORDS_A                         ; 2048                                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                  ;
+;     -- WIDTH_B                            ; 1                                                             ;
+;     -- NUMWORDS_B                         ; 1                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                     ;
++-------------------------------------------+---------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -508,20 +647,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 132                         ;
+; boundary_port         ; 133                         ;
 ; cycloneiii_ff         ; 96                          ;
 ;     ENA CLR           ; 64                          ;
 ;     ENA SLD           ; 32                          ;
 ; cycloneiii_io_ibuf    ; 32                          ;
 ; cycloneiii_io_obuf    ; 32                          ;
-; cycloneiii_lcell_comb ; 138                         ;
-;     normal            ; 138                         ;
+; cycloneiii_lcell_comb ; 147                         ;
+;     normal            ; 147                         ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 33                          ;
-;         4 data inputs ; 103                         ;
+;         3 data inputs ; 38                          ;
+;         4 data inputs ; 107                         ;
+; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.24                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 1.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -540,23 +680,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Fri May  3 12:16:44 2024
+    Info: Processing started: Fri May 31 22:27:28 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ERV24 -c ERV24
+Warning (125092): Tcl Script File ProgramMemory.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE ProgramMemory.qip
+Warning (125092): Tcl Script File DataMemory.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE DataMemory.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file programmemory.v
-    Info (12023): Found entity 1: ProgramMemory File: C:/Users/sbruz/E5-ERV24/project/ProgramMemory.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file utils/programmemory.v
+    Info (12023): Found entity 1: ProgramMemory File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file utils/datamemory.v
+    Info (12023): Found entity 1: DataMemory File: C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file utils/reg32.v
+    Info (12023): Found entity 1: reg32 File: C:/Users/sbruz/E5-ERV24/project/utils/reg32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_parsing/imm_builder.v
+    Info (12023): Found entity 1: imm_builder File: C:/Users/sbruz/E5-ERV24/project/instruction_parsing/imm_builder.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_parsing/decoder.v
+    Info (12023): Found entity 1: decoder File: C:/Users/sbruz/E5-ERV24/project/instruction_parsing/decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ifu/ifu.bdf
+    Info (12023): Found entity 1: IFU
+Info (12021): Found 1 design units, including 1 entities, in source file ifu/fetch.v
+    Info (12023): Found entity 1: fetch File: C:/Users/sbruz/E5-ERV24/project/ifu/fetch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/memoryperiphmux.v
+    Info (12023): Found entity 1: MemoryPeriphMux File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/MemoryPeriphMux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file erv24.bdf
     Info (12023): Found entity 1: ERV24
-Info (12021): Found 2 design units, including 2 entities, in source file x0.v
-    Info (12023): Found entity 1: x0_lpm_constant_r09 File: C:/Users/sbruz/E5-ERV24/project/x0.v Line: 47
-    Info (12023): Found entity 2: x0 File: C:/Users/sbruz/E5-ERV24/project/x0.v Line: 62
-Info (12021): Found 1 design units, including 1 entities, in source file datamemory.v
-    Info (12023): Found entity 1: DataMemory File: C:/Users/sbruz/E5-ERV24/project/DataMemory.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file peripheralmux.v
-    Info (12023): Found entity 1: PeripheralMux File: C:/Users/sbruz/E5-ERV24/project/PeripheralMux.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file singlebitmux.v
-    Info (12023): Found entity 1: SingleBitMux File: C:/Users/sbruz/E5-ERV24/project/SingleBitMux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file custom_peripherals/gpio/gpio.v
     Info (12023): Found entity 1: GPIO File: C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file core/csrcounters.v
@@ -567,342 +716,151 @@ Info (12021): Found 1 design units, including 1 entities, in source file memory_
     Info (12023): Found entity 1: peripheral_addr_dec File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/peripheraladressmatcher.v
     Info (12023): Found entity 1: PeripheralAddressMatcher File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/PeripheralAdressMatcher.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/peripheral_mux.v
+    Info (12023): Found entity 1: peripheral_mux File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/memory_mutator.v
+    Info (12023): Found entity 1: memory_mutator File: C:/Users/sbruz/E5-ERV24/project/memory_mutator/memory_mutator.v Line: 1
 Info (12127): Elaborating entity "ERV24" for the top level hierarchy
 Info (12128): Elaborating entity "GPIO" for hierarchy "GPIO:inst4"
 Info (12128): Elaborating entity "peripheral_addr_dec" for hierarchy "peripheral_addr_dec:inst14"
-Info (12128): Elaborating entity "lpm_decode" for hierarchy "peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 315
-Info (12130): Elaborated megafunction instantiation "peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 315
-Info (12133): Instantiated megafunction "peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 315
-    Info (12134): Parameter "lpm_decodes" = "64"
+Info (12128): Elaborating entity "lpm_decode" for hierarchy "peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 91
+Info (12130): Elaborated megafunction instantiation "peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 91
+Info (12133): Instantiated megafunction "peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 91
+    Info (12134): Parameter "lpm_decodes" = "8"
     Info (12134): Parameter "lpm_type" = "LPM_DECODE"
-    Info (12134): Parameter "lpm_width" = "6"
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_a1g.tdf
-    Info (12023): Found entity 1: decode_a1g File: C:/Users/sbruz/E5-ERV24/project/db/decode_a1g.tdf Line: 23
-Info (12128): Elaborating entity "decode_a1g" for hierarchy "peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component|decode_a1g:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf Line: 77
+    Info (12134): Parameter "lpm_width" = "3"
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_lvf.tdf
+    Info (12023): Found entity 1: decode_lvf File: C:/Users/sbruz/E5-ERV24/project/db/decode_lvf.tdf Line: 23
+Info (12128): Elaborating entity "decode_lvf" for hierarchy "peripheral_addr_dec:inst14|lpm_decode:LPM_DECODE_component|decode_lvf:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf Line: 77
 Info (12128): Elaborating entity "PeripheralAddressMatcher" for hierarchy "PeripheralAddressMatcher:inst11"
-Info (12128): Elaborating entity "PeripheralMux" for hierarchy "PeripheralMux:inst"
-Info (12128): Elaborating entity "lpm_mux" for hierarchy "PeripheralMux:inst|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/PeripheralMux.v Line: 253
-Info (12130): Elaborated megafunction instantiation "PeripheralMux:inst|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/PeripheralMux.v Line: 253
-Info (12133): Instantiated megafunction "PeripheralMux:inst|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/PeripheralMux.v Line: 253
-    Info (12134): Parameter "lpm_size" = "64"
+Info (12128): Elaborating entity "MemoryPeriphMux" for hierarchy "MemoryPeriphMux:inst10"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "MemoryPeriphMux:inst10|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/MemoryPeriphMux.v Line: 69
+Info (12130): Elaborated megafunction instantiation "MemoryPeriphMux:inst10|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/MemoryPeriphMux.v Line: 69
+Info (12133): Instantiated megafunction "MemoryPeriphMux:inst10|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/MemoryPeriphMux.v Line: 69
+    Info (12134): Parameter "lpm_size" = "2"
     Info (12134): Parameter "lpm_type" = "LPM_MUX"
     Info (12134): Parameter "lpm_width" = "32"
-    Info (12134): Parameter "lpm_widths" = "6"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ouc.tdf
-    Info (12023): Found entity 1: mux_ouc File: C:/Users/sbruz/E5-ERV24/project/db/mux_ouc.tdf Line: 23
-Info (12128): Elaborating entity "mux_ouc" for hierarchy "PeripheralMux:inst|lpm_mux:LPM_MUX_component|mux_ouc:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+    Info (12134): Parameter "lpm_widths" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_rsc.tdf
+    Info (12023): Found entity 1: mux_rsc File: C:/Users/sbruz/E5-ERV24/project/db/mux_rsc.tdf Line: 23
+Info (12128): Elaborating entity "mux_rsc" for hierarchy "MemoryPeriphMux:inst10|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "peripheral_mux" for hierarchy "peripheral_mux:inst"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "peripheral_mux:inst|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v Line: 85
+Info (12130): Elaborated megafunction instantiation "peripheral_mux:inst|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v Line: 85
+Info (12133): Instantiated megafunction "peripheral_mux:inst|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v Line: 85
+    Info (12134): Parameter "lpm_size" = "8"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "32"
+    Info (12134): Parameter "lpm_widths" = "3"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3tc.tdf
+    Info (12023): Found entity 1: mux_3tc File: C:/Users/sbruz/E5-ERV24/project/db/mux_3tc.tdf Line: 23
+Info (12128): Elaborating entity "mux_3tc" for hierarchy "peripheral_mux:inst|lpm_mux:LPM_MUX_component|mux_3tc:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
 Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:inst1"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "DataMemory:inst1|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/DataMemory.v Line: 92
-Info (12130): Elaborated megafunction instantiation "DataMemory:inst1|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/DataMemory.v Line: 92
-Info (12133): Instantiated megafunction "DataMemory:inst1|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/DataMemory.v Line: 92
+Info (12128): Elaborating entity "altsyncram" for hierarchy "DataMemory:inst1|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v Line: 92
+Info (12130): Elaborated megafunction instantiation "DataMemory:inst1|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v Line: 92
+Info (12133): Instantiated megafunction "DataMemory:inst1|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v Line: 92
     Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "65536"
+    Info (12134): Parameter "numwords_a" = "8192"
     Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
     Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
     Info (12134): Parameter "power_up_uninitialized" = "FALSE"
     Info (12134): Parameter "read_during_write_mode_port_a" = "DONT_CARE"
-    Info (12134): Parameter "widthad_a" = "16"
+    Info (12134): Parameter "widthad_a" = "13"
     Info (12134): Parameter "width_a" = "32"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_vlg1.tdf
-    Info (12023): Found entity 1: altsyncram_vlg1 File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 32
-Info (12128): Elaborating entity "altsyncram_vlg1" for hierarchy "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_rsa.tdf
-    Info (12023): Found entity 1: decode_rsa File: C:/Users/sbruz/E5-ERV24/project/db/decode_rsa.tdf Line: 23
-Info (12128): Elaborating entity "decode_rsa" for hierarchy "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|decode_rsa:decode3" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 44
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_oob.tdf
-    Info (12023): Found entity 1: mux_oob File: C:/Users/sbruz/E5-ERV24/project/db/mux_oob.tdf Line: 23
-Info (12128): Elaborating entity "mux_oob" for hierarchy "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|mux_oob:mux2" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7kg1.tdf
+    Info (12023): Found entity 1: altsyncram_7kg1 File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_7kg1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_7kg1" for hierarchy "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_7kg1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "IFU" for hierarchy "IFU:inst2"
+Info (12128): Elaborating entity "ProgramMemory" for hierarchy "IFU:inst2|ProgramMemory:inst4"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 85
+Info (12130): Elaborated megafunction instantiation "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 85
+Info (12133): Instantiated megafunction "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 85
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "program.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "2048"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "11"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_40b1.tdf
+    Info (12023): Found entity 1: altsyncram_40b1 File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_40b1" for hierarchy "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Critical Warning (127005): Memory depth (2048) in the design file differs from memory depth (256) in the Memory Initialization File "C:/Users/sbruz/E5-ERV24/project/program.hex" -- setting initial value for remaining addresses to 0 File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 85
+Info (12128): Elaborating entity "reg32" for hierarchy "IFU:inst2|reg32:PCreg"
+Info (12128): Elaborating entity "fetch" for hierarchy "IFU:inst2|fetch:inst"
+Info (12128): Elaborating entity "imm_builder" for hierarchy "imm_builder:inst6"
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:inst7"
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a0" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 46
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a1" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 67
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a2" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 88
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a3" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 109
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a4" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 130
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a5" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 151
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a6" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 172
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a7" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 193
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a8" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 214
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a9" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 235
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a10" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 256
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a11" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 277
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a12" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 298
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a13" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 319
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a14" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 340
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a15" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 361
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a16" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 382
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a17" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 403
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a18" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 424
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a19" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 445
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a20" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 466
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a21" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 487
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a22" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 508
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a23" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 529
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a24" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 550
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a25" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 571
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a26" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 592
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a27" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 613
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a28" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 634
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a29" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 655
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a30" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 676
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a31" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 697
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a32" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 718
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a33" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 739
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a34" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 760
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a35" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 781
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a36" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 802
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a37" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 823
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a38" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 844
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a39" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 865
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a40" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 886
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a41" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 907
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a42" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 928
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a43" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 949
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a44" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 970
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a45" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 991
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a46" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1012
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a47" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1033
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a48" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1054
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a49" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1075
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a50" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1096
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a51" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1117
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a52" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1138
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a53" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1159
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a54" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1180
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a55" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1201
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a56" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1222
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a57" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1243
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a58" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1264
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a59" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1285
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a60" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1306
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a61" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1327
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a62" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1348
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a63" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1369
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a64" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1390
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a65" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1411
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a66" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1432
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a67" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1453
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a68" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1474
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a69" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1495
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a70" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1516
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a71" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1537
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a72" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1558
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a73" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1579
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a74" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1600
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a75" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1621
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a76" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1642
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a77" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1663
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a78" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1684
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a79" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1705
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a80" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1726
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a81" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1747
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a82" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1768
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a83" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1789
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a84" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1810
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a85" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1831
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a86" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1852
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a87" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1873
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a88" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1894
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a89" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1915
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a90" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1936
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a91" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1957
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a92" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1978
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a93" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 1999
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a94" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2020
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a95" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2041
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a96" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2062
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a97" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2083
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a98" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2104
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a99" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2125
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a100" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2146
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a101" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2167
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a102" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2188
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a103" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2209
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a104" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2230
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a105" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2251
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a106" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2272
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a107" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2293
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a108" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2314
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a109" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2335
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a110" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2356
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a111" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2377
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a112" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2398
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a113" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2419
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a114" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2440
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a115" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2461
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a116" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2482
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a117" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2503
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a118" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2524
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a119" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2545
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a120" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2566
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a121" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2587
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a122" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2608
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a123" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2629
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a124" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2650
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a125" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2671
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a126" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2692
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a127" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2713
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a128" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2734
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a129" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2755
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a130" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2776
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a131" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2797
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a132" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2818
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a133" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2839
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a134" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2860
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a135" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2881
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a136" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2902
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a137" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2923
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a138" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2944
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a139" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2965
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a140" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 2986
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a141" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3007
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a142" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3028
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a143" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3049
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a144" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3070
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a145" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3091
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a146" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3112
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a147" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3133
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a148" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3154
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a149" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3175
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a150" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3196
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a151" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3217
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a152" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3238
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a153" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3259
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a154" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3280
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a155" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3301
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a156" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3322
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a157" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3343
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a158" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3364
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a159" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3385
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a160" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3406
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a161" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3427
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a162" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3448
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a163" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3469
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a164" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3490
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a165" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3511
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a166" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3532
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a167" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3553
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a168" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3574
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a169" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3595
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a170" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3616
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a171" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3637
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a172" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3658
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a173" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3679
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a174" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3700
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a175" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3721
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a176" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3742
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a177" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3763
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a178" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3784
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a179" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3805
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a180" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3826
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a181" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3847
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a182" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3868
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a183" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3889
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a184" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3910
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a185" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3931
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a186" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3952
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a187" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3973
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a188" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 3994
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a189" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4015
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a190" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4036
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a191" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4057
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a192" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4078
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a193" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4099
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a194" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4120
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a195" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4141
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a196" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4162
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a197" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4183
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a198" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4204
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a199" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4225
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a200" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4246
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a201" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4267
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a202" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4288
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a203" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4309
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a204" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4330
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a205" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4351
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a206" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4372
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a207" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4393
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a208" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4414
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a209" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4435
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a210" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4456
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a211" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4477
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a212" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4498
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a213" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4519
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a214" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4540
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a215" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4561
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a216" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4582
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a217" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4603
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a218" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4624
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a219" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4645
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a220" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4666
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a221" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4687
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a222" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4708
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a223" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4729
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a224" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4750
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a225" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4771
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a226" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4792
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a227" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4813
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a228" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4834
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a229" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4855
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a230" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4876
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a231" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4897
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a232" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4918
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a233" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4939
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a234" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4960
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a235" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 4981
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a236" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5002
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a237" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5023
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a238" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5044
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a239" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5065
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a240" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5086
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a241" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5107
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a242" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5128
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a243" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5149
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a244" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5170
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a245" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5191
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a246" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5212
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a247" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5233
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a248" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5254
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a249" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5275
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a250" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5296
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a251" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5317
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a252" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5338
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a253" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5359
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a254" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5380
-        Warning (14320): Synthesized away node "DataMemory:inst1|altsyncram:altsyncram_component|altsyncram_vlg1:auto_generated|ram_block1a255" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_vlg1.tdf Line: 5401
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[0]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 36
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[1]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 57
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[2]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 78
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[3]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 99
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[4]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 120
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[5]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 141
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[6]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 162
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[7]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 183
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[8]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 204
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[9]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 225
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[10]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 246
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[11]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 267
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[12]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 288
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[13]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 309
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[14]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 330
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[15]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 351
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[16]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 372
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[17]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 393
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[18]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 414
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[19]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 435
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[20]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 456
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[21]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 477
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[22]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 498
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[23]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 519
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[24]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 540
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[25]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 561
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[26]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 582
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[27]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 603
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[28]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 624
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[29]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 645
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[30]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 666
+        Warning (14320): Synthesized away node "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|q_a[31]" File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 687
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 64 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 14 input pin(s) that do not drive logic
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "address[20]"
+    Warning (15610): No output dependent on input pin "address[19]"
+    Warning (15610): No output dependent on input pin "address[18]"
     Warning (15610): No output dependent on input pin "address[17]"
     Warning (15610): No output dependent on input pin "address[16]"
     Warning (15610): No output dependent on input pin "address[15]"
     Warning (15610): No output dependent on input pin "address[14]"
     Warning (15610): No output dependent on input pin "address[13]"
-    Warning (15610): No output dependent on input pin "address[12]"
-    Warning (15610): No output dependent on input pin "address[11]"
-    Warning (15610): No output dependent on input pin "address[10]"
-    Warning (15610): No output dependent on input pin "address[9]"
-    Warning (15610): No output dependent on input pin "address[8]"
-    Warning (15610): No output dependent on input pin "address[7]"
-    Warning (15610): No output dependent on input pin "address[6]"
-    Warning (15610): No output dependent on input pin "address[5]"
-    Warning (15610): No output dependent on input pin "address[4]"
-Info (21057): Implemented 334 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 68 input pins
+    Warning (15610): No output dependent on input pin "reset"
+Info (21057): Implemented 376 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 69 input pins
     Info (21059): Implemented 32 output pins
     Info (21060): Implemented 32 bidirectional pins
-    Info (21061): Implemented 202 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 274 warnings
-    Info: Peak virtual memory: 4886 megabytes
-    Info: Processing ended: Fri May  3 12:16:52 2024
-    Info: Elapsed time: 00:00:08
+    Info (21061): Implemented 211 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Fri May 31 22:27:35 2024
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:17
 
 
