@@ -13,7 +13,7 @@ module reg32
 	//assign reset = ~nreset;
  
 	always @(posedge clk, negedge nreset) begin
-		if (~nreset) begin
+		if (!nreset) begin
 			q <= 0;
 		end
 		else if (clk && ena) begin

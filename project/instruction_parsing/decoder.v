@@ -22,7 +22,7 @@ module decoder(
 );
 
 
-wire[4:0] opcode = inst[6:2];
+wire[4:0] opcode = reset ? 5'b11111 : inst[6:2];
 assign rd = inst[11:7];
 assign funct3 = inst[14:12];
 assign rs1 = inst[19:15];

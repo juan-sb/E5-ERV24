@@ -8,7 +8,7 @@ module fetch
 
 	reg[31:0] q;
 	 
-	always @(posedge clk, negedge nreset) begin
+	always @(posedge clk or negedge nreset) begin
 		if (!nreset) q <= 0;
 		else q <= currPC + 1;
 	end
