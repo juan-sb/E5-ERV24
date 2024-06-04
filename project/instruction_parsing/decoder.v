@@ -22,16 +22,29 @@ module decoder(
 );
 
 
-wire[4:0] opcode = reset ? 5'b11111 : inst[6:2];
-assign rd = inst[11:7];
-assign funct3 = inst[14:12];
-assign rs1 = inst[19:15];
-assign rs2 = inst[24:20];
-assign ALU_flag = inst[30];
-assign rw = inst[5];				// rw = 1 si es STORE, = 0 si es LOAD
+wire[4:0] opcode = inst[6:2];
+assign rd = reset ? 5'b0 : inst[11:7];
+assign funct3 = reset ? 3'b0 : inst[14:12];
+assign rs1 = reset ? 5'b0 : inst[19:15];
+assign rs2 = reset ? 5'b0 : inst[24:20];
+assign ALU_flag = reset ? 1'b0 : inst[30];
+assign rw = reset ? 1'b0 :inst[5];				// rw = 1 si es STORE, = 0 si es LOAD
 
-always @(opcode)
+always @(reset, opcode)
 begin
+	if(reset) begin
+		  is_invalid = 1'b0;
+		  rd_enc = 1'b0;
+		  rs1_ena = 1'b0;
+		  rs2_enb = 1'b0;
+		  imm_en = 1'b0;
+		  imm_enb = 1'b0;
+		  ALU_en = 1'b0;
+		  mem_en = 1'b0;
+		  is_jmp = 1'b0;
+		  is_fence = 1'b0;
+		  is_system = 1'b0;
+	end else
     case(opcode)
 		  // LUI (U) o AIUPC(U)
         5'b01101, 5'b00101: begin

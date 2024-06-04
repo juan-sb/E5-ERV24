@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ERV24
-Sun Jun  2 20:56:07 2024
+Tue Jun  4 10:58:27 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -19,10 +19,10 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
  12. Source assignments for IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated
  13. Parameter Settings for User Entity Instance: IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component
- 14. Parameter Settings for User Entity Instance: bus_mux:inst15|lpm_mux:LPM_MUX_component
- 15. Parameter Settings for User Entity Instance: regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component
- 16. Parameter Settings for User Entity Instance: regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component
- 17. Parameter Settings for User Entity Instance: regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component
+ 14. Parameter Settings for User Entity Instance: regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component
+ 15. Parameter Settings for User Entity Instance: regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component
+ 16. Parameter Settings for User Entity Instance: regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component
+ 17. Parameter Settings for User Entity Instance: bus_mux:inst15|lpm_mux:LPM_MUX_component
  18. Parameter Settings for User Entity Instance: bus_mux:inst16|lpm_mux:LPM_MUX_component
  19. altsyncram Parameter Settings by Entity Instance
  20. Post-Synthesis Netlist Statistics for Top Partition
@@ -54,16 +54,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun  2 20:56:07 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun  4 10:58:27 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ERV24                                          ;
 ; Top-level Entity Name              ; ERV24                                          ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 3,424                                          ;
-;     Total combinational functions  ; 2,400                                          ;
-;     Dedicated logic registers      ; 1,088                                          ;
-; Total registers                    ; 1088                                           ;
-; Total pins                         ; 130                                            ;
+; Total logic elements               ; 3,680                                          ;
+;     Total combinational functions  ; 2,586                                          ;
+;     Dedicated logic registers      ; 1,396                                          ;
+; Total registers                    ; 1396                                           ;
+; Total pins                         ; 136                                            ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 65,536                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -172,10 +172,10 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
 ;     Processor 8            ;   0.0%      ;
 ;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
@@ -199,6 +199,10 @@ https://fpgasoftware.intel.com/eula.
 ; ifu/fetch.v                       ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/ifu/fetch.v                                     ;         ;
 ; ERV24.bdf                         ; yes             ; User Block Diagram/Schematic File     ; C:/Users/sbruz/E5-ERV24/project/ERV24.bdf                                       ;         ;
 ; utils/bus_mux.v                   ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v                                 ;         ;
+; pipeline/decode_imm_stage_latch.v ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/pipeline/decode_imm_stage_latch.v               ;         ;
+; pipeline/op_read_stage_latch.v    ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/pipeline/op_read_stage_latch.v                  ;         ;
+; pipeline/alu_stage_latch.v        ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/pipeline/alu_stage_latch.v                      ;         ;
+; pipeline/pipeline_halt_control.v  ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/pipeline/pipeline_halt_control.v                ;         ;
 ; altsyncram.tdf                    ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc             ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
 ; lpm_mux.inc                       ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
@@ -213,113 +217,118 @@ https://fpgasoftware.intel.com/eula.
 ; muxlut.inc                        ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/muxlut.inc            ;         ;
 ; bypassff.inc                      ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc          ;         ;
 ; altshift.inc                      ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc          ;         ;
-; db/mux_rsc.tdf                    ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/mux_rsc.tdf                                  ;         ;
 ; db/mux_iuc.tdf                    ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/mux_iuc.tdf                                  ;         ;
 ; lpm_decode.tdf                    ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf        ;         ;
 ; declut.inc                        ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/declut.inc            ;         ;
 ; lpm_compare.inc                   ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_compare.inc       ;         ;
 ; lpm_constant.inc                  ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_constant.inc      ;         ;
 ; db/decode_41g.tdf                 ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/decode_41g.tdf                               ;         ;
+; db/mux_rsc.tdf                    ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/mux_rsc.tdf                                  ;         ;
 +-----------------------------------+-----------------+---------------------------------------+---------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 3,424       ;
-;                                             ;             ;
-; Total combinational functions               ; 2400        ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 1993        ;
-;     -- 3 input functions                    ; 330         ;
-;     -- <=2 input functions                  ; 77          ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 2276        ;
-;     -- arithmetic mode                      ; 124         ;
-;                                             ;             ;
-; Total registers                             ; 1088        ;
-;     -- Dedicated logic registers            ; 1088        ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 130         ;
-; Total memory bits                           ; 65536       ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 1168        ;
-; Total fan-out                               ; 14076       ;
-; Average fan-out                             ; 3.72        ;
-+---------------------------------------------+-------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 3,680     ;
+;                                             ;           ;
+; Total combinational functions               ; 2586      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1783      ;
+;     -- 3 input functions                    ; 627       ;
+;     -- <=2 input functions                  ; 176       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 2462      ;
+;     -- arithmetic mode                      ; 124       ;
+;                                             ;           ;
+; Total registers                             ; 1396      ;
+;     -- Dedicated logic registers            ; 1396      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 136       ;
+; Total memory bits                           ; 65536     ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 1428      ;
+; Total fan-out                               ; 15171     ;
+; Average fan-out                             ; 3.54      ;
++---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Entity Name     ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |ERV24                                       ; 2400 (0)            ; 1088 (0)                  ; 65536       ; 0            ; 0       ; 0         ; 130  ; 0            ; |ERV24                                                                                              ; ERV24           ; work         ;
-;    |IFU:inst2|                               ; 32 (0)              ; 64 (0)                    ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2                                                                                    ; IFU             ; work         ;
-;       |ProgramMemory:inst4|                  ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|ProgramMemory:inst4                                                                ; ProgramMemory   ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;             |altsyncram_40b1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated ; altsyncram_40b1 ; work         ;
-;       |fetch:inst|                           ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|fetch:inst                                                                         ; fetch           ; work         ;
-;       |reg32:PCreg|                          ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|reg32:PCreg                                                                        ; reg32           ; work         ;
-;    |alu:inst9|                               ; 640 (640)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|alu:inst9                                                                                    ; alu             ; work         ;
-;    |bus_mux:inst15|                          ; 35 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst15                                                                               ; bus_mux         ; work         ;
-;       |lpm_mux:LPM_MUX_component|            ; 35 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst15|lpm_mux:LPM_MUX_component                                                     ; lpm_mux         ; work         ;
-;          |mux_rsc:auto_generated|            ; 35 (35)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst15|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                              ; mux_rsc         ; work         ;
-;    |bus_mux:inst16|                          ; 393 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst16                                                                               ; bus_mux         ; work         ;
-;       |lpm_mux:LPM_MUX_component|            ; 393 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst16|lpm_mux:LPM_MUX_component                                                     ; lpm_mux         ; work         ;
-;          |mux_rsc:auto_generated|            ; 393 (393)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst16|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                              ; mux_rsc         ; work         ;
-;    |decoder:inst7|                           ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|decoder:inst7                                                                                ; decoder         ; work         ;
-;    |imm_builder:inst6|                       ; 74 (74)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|imm_builder:inst6                                                                            ; imm_builder     ; work         ;
-;    |regbank:inst3|                           ; 1210 (0)            ; 1024 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3                                                                                ; regbank         ; work         ;
-;       |dec_5_32:inst|                        ; 38 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|dec_5_32:inst                                                                  ; dec_5_32        ; work         ;
-;          |lpm_decode:LPM_DECODE_component|   ; 38 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component                                  ; lpm_decode      ; work         ;
-;             |decode_41g:auto_generated|      ; 38 (38)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component|decode_41g:auto_generated        ; decode_41g      ; work         ;
-;       |reg32:instREG0|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG0                                                                 ; reg32           ; work         ;
-;       |reg32:instREG10|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG10                                                                ; reg32           ; work         ;
-;       |reg32:instREG11|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG11                                                                ; reg32           ; work         ;
-;       |reg32:instREG12|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG12                                                                ; reg32           ; work         ;
-;       |reg32:instREG13|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG13                                                                ; reg32           ; work         ;
-;       |reg32:instREG14|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG14                                                                ; reg32           ; work         ;
-;       |reg32:instREG15|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG15                                                                ; reg32           ; work         ;
-;       |reg32:instREG16|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG16                                                                ; reg32           ; work         ;
-;       |reg32:instREG17|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG17                                                                ; reg32           ; work         ;
-;       |reg32:instREG18|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG18                                                                ; reg32           ; work         ;
-;       |reg32:instREG19|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG19                                                                ; reg32           ; work         ;
-;       |reg32:instREG1|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG1                                                                 ; reg32           ; work         ;
-;       |reg32:instREG20|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG20                                                                ; reg32           ; work         ;
-;       |reg32:instREG21|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG21                                                                ; reg32           ; work         ;
-;       |reg32:instREG22|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG22                                                                ; reg32           ; work         ;
-;       |reg32:instREG23|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG23                                                                ; reg32           ; work         ;
-;       |reg32:instREG24|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG24                                                                ; reg32           ; work         ;
-;       |reg32:instREG25|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG25                                                                ; reg32           ; work         ;
-;       |reg32:instREG26|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG26                                                                ; reg32           ; work         ;
-;       |reg32:instREG27|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG27                                                                ; reg32           ; work         ;
-;       |reg32:instREG28|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG28                                                                ; reg32           ; work         ;
-;       |reg32:instREG29|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG29                                                                ; reg32           ; work         ;
-;       |reg32:instREG2|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG2                                                                 ; reg32           ; work         ;
-;       |reg32:instREG30|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG30                                                                ; reg32           ; work         ;
-;       |reg32:instREG31|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG31                                                                ; reg32           ; work         ;
-;       |reg32:instREG3|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG3                                                                 ; reg32           ; work         ;
-;       |reg32:instREG4|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG4                                                                 ; reg32           ; work         ;
-;       |reg32:instREG5|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG5                                                                 ; reg32           ; work         ;
-;       |reg32:instREG6|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG6                                                                 ; reg32           ; work         ;
-;       |reg32:instREG7|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG7                                                                 ; reg32           ; work         ;
-;       |reg32:instREG8|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG8                                                                 ; reg32           ; work         ;
-;       |reg32:instREG9|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG9                                                                 ; reg32           ; work         ;
-;       |regMux:inst11|                        ; 755 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst11                                                                  ; regMux          ; work         ;
-;          |lpm_mux:LPM_MUX_component|         ; 755 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component                                        ; lpm_mux         ; work         ;
-;             |mux_iuc:auto_generated|         ; 755 (755)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component|mux_iuc:auto_generated                 ; mux_iuc         ; work         ;
-;       |regMux:inst12|                        ; 417 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst12                                                                  ; regMux          ; work         ;
-;          |lpm_mux:LPM_MUX_component|         ; 417 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component                                        ; lpm_mux         ; work         ;
-;             |mux_iuc:auto_generated|         ; 417 (417)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component|mux_iuc:auto_generated                 ; mux_iuc         ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+-----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                   ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Entity Name            ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+------------------------+--------------+
+; |ERV24                                       ; 2586 (1)            ; 1396 (0)                  ; 65536       ; 0            ; 0       ; 0         ; 136  ; 0            ; |ERV24                                                                                              ; ERV24                  ; work         ;
+;    |IFU:inst2|                               ; 33 (1)              ; 96 (0)                    ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2                                                                                    ; IFU                    ; work         ;
+;       |ProgramMemory:inst4|                  ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|ProgramMemory:inst4                                                                ; ProgramMemory          ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component                                ; altsyncram             ; work         ;
+;             |altsyncram_40b1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated ; altsyncram_40b1        ; work         ;
+;       |fetch:inst|                           ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|fetch:inst                                                                         ; fetch                  ; work         ;
+;       |reg32:PCreg2|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|reg32:PCreg2                                                                       ; reg32                  ; work         ;
+;       |reg32:PCreg|                          ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|reg32:PCreg                                                                        ; reg32                  ; work         ;
+;    |alu:inst9|                               ; 620 (620)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|alu:inst9                                                                                    ; alu                    ; work         ;
+;    |alu_stage_latch:inst12|                  ; 36 (36)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|alu_stage_latch:inst12                                                                       ; alu_stage_latch        ; work         ;
+;    |bus_mux:inst15|                          ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst15                                                                               ; bus_mux                ; work         ;
+;       |lpm_mux:LPM_MUX_component|            ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst15|lpm_mux:LPM_MUX_component                                                     ; lpm_mux                ; work         ;
+;          |mux_rsc:auto_generated|            ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst15|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                              ; mux_rsc                ; work         ;
+;    |bus_mux:inst16|                          ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst16                                                                               ; bus_mux                ; work         ;
+;       |lpm_mux:LPM_MUX_component|            ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst16|lpm_mux:LPM_MUX_component                                                     ; lpm_mux                ; work         ;
+;          |mux_rsc:auto_generated|            ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst16|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                              ; mux_rsc                ; work         ;
+;    |decode_imm_stage_latch:inst4|            ; 99 (99)             ; 92 (92)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|decode_imm_stage_latch:inst4                                                                 ; decode_imm_stage_latch ; work         ;
+;    |decoder:inst7|                           ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|decoder:inst7                                                                                ; decoder                ; work         ;
+;    |imm_builder:inst6|                       ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|imm_builder:inst6                                                                            ; imm_builder            ; work         ;
+;    |op_read_stage_latch:inst5|               ; 1088 (1088)         ; 146 (146)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|op_read_stage_latch:inst5                                                                    ; op_read_stage_latch    ; work         ;
+;    |pipeline_halt_control:inst1|             ; 58 (58)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|pipeline_halt_control:inst1                                                                  ; pipeline_halt_control  ; work         ;
+;    |regbank:inst3|                           ; 548 (0)             ; 1024 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3                                                                                ; regbank                ; work         ;
+;       |dec_5_32:inst|                        ; 36 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|dec_5_32:inst                                                                  ; dec_5_32               ; work         ;
+;          |lpm_decode:LPM_DECODE_component|   ; 36 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component                                  ; lpm_decode             ; work         ;
+;             |decode_41g:auto_generated|      ; 36 (36)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component|decode_41g:auto_generated        ; decode_41g             ; work         ;
+;       |reg32:instREG0|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG0                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG10|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG10                                                                ; reg32                  ; work         ;
+;       |reg32:instREG11|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG11                                                                ; reg32                  ; work         ;
+;       |reg32:instREG12|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG12                                                                ; reg32                  ; work         ;
+;       |reg32:instREG13|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG13                                                                ; reg32                  ; work         ;
+;       |reg32:instREG14|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG14                                                                ; reg32                  ; work         ;
+;       |reg32:instREG15|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG15                                                                ; reg32                  ; work         ;
+;       |reg32:instREG16|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG16                                                                ; reg32                  ; work         ;
+;       |reg32:instREG17|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG17                                                                ; reg32                  ; work         ;
+;       |reg32:instREG18|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG18                                                                ; reg32                  ; work         ;
+;       |reg32:instREG19|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG19                                                                ; reg32                  ; work         ;
+;       |reg32:instREG1|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG1                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG20|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG20                                                                ; reg32                  ; work         ;
+;       |reg32:instREG21|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG21                                                                ; reg32                  ; work         ;
+;       |reg32:instREG22|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG22                                                                ; reg32                  ; work         ;
+;       |reg32:instREG23|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG23                                                                ; reg32                  ; work         ;
+;       |reg32:instREG24|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG24                                                                ; reg32                  ; work         ;
+;       |reg32:instREG25|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG25                                                                ; reg32                  ; work         ;
+;       |reg32:instREG26|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG26                                                                ; reg32                  ; work         ;
+;       |reg32:instREG27|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG27                                                                ; reg32                  ; work         ;
+;       |reg32:instREG28|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG28                                                                ; reg32                  ; work         ;
+;       |reg32:instREG29|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG29                                                                ; reg32                  ; work         ;
+;       |reg32:instREG2|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG2                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG30|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG30                                                                ; reg32                  ; work         ;
+;       |reg32:instREG31|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG31                                                                ; reg32                  ; work         ;
+;       |reg32:instREG3|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG3                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG4|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG4                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG5|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG5                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG6|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG6                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG7|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG7                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG8|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG8                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG9|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG9                                                                 ; reg32                  ; work         ;
+;       |regMux:inst11|                        ; 256 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst11                                                                  ; regMux                 ; work         ;
+;          |lpm_mux:LPM_MUX_component|         ; 256 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component                                        ; lpm_mux                ; work         ;
+;             |mux_iuc:auto_generated|         ; 256 (256)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component|mux_iuc:auto_generated                 ; mux_iuc                ; work         ;
+;       |regMux:inst12|                        ; 256 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst12                                                                  ; regMux                 ; work         ;
+;          |lpm_mux:LPM_MUX_component|         ; 256 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component                                        ; lpm_mux                ; work         ;
+;             |mux_iuc:auto_generated|         ; 256 (256)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component|mux_iuc:auto_generated                 ; mux_iuc                ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -347,37 +356,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1088  ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1088  ;
+; Total registers                              ; 1396  ;
+; Number of registers using Synchronous Clear  ; 83    ;
+; Number of registers using Synchronous Load   ; 21    ;
+; Number of registers using Asynchronous Clear ; 1120  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1024  ;
+; Number of registers using Clock Enable       ; 1088  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |ERV24|imm_builder:inst6|Selector24                                                    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ERV24|bus_mux:inst16|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated|result_node[16] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |ERV24|alu:inst9|ShiftLeft0                                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |ERV24|alu:inst9|ShiftRight1                                                           ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |ERV24|imm_builder:inst6|imm[5]                                                        ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |ERV24|imm_builder:inst6|imm[24]                                                       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ERV24|alu:inst9|ShiftLeft0                                                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |ERV24|alu:inst9|ShiftRight1                                                           ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |ERV24|imm_builder:inst6|imm[28]                                                       ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |ERV24|alu:inst9|Add0                                                                  ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |ERV24|imm_builder:inst6|imm[14]                                                       ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |ERV24|imm_builder:inst6|imm[4]                                                        ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 40 LEs               ; 24 LEs                 ; No         ; |ERV24|alu:inst9|o_c[6]                                                                ;
-; 14:1               ; 14 bits   ; 126 LEs       ; 84 LEs               ; 42 LEs                 ; No         ; |ERV24|alu:inst9|o_c[28]                                                               ;
-; 13:1               ; 7 bits    ; 56 LEs        ; 42 LEs               ; 14 LEs                 ; No         ; |ERV24|alu:inst9|o_c[8]                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |ERV24|op_read_stage_latch:inst5|rs1_data_out[24] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |ERV24|op_read_stage_latch:inst5|rs2_data_out[15] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ERV24|decode_imm_stage_latch:inst4|imm_out[9]    ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |ERV24|decode_imm_stage_latch:inst4|flags_out[2]  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |ERV24|decode_imm_stage_latch:inst4|imm_out[21]   ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ERV24|decode_imm_stage_latch:inst4|imm_out[30]   ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |ERV24|decode_imm_stage_latch:inst4|imm_out[17]   ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; Yes        ; |ERV24|alu_stage_latch:inst12|result_out[15]      ;
+; 14:1               ; 7 bits    ; 63 LEs        ; 49 LEs               ; 14 LEs                 ; Yes        ; |ERV24|alu_stage_latch:inst12|result_out[20]      ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; Yes        ; |ERV24|alu_stage_latch:inst12|result_out[27]      ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |ERV24|alu_stage_latch:inst12|result_out[28]      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |ERV24|imm_builder:inst6|Selector21               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |ERV24|alu:inst9|Add0                             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |ERV24|imm_builder:inst6|Selector21               ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |ERV24|alu:inst9|o_c[4]                           ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |ERV24|alu:inst9|o_c[3]                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -450,25 +460,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bus_mux:inst15|lpm_mux:LPM_MUX_component ;
-+------------------------+--------------+-----------------------------------------------+
-; Parameter Name         ; Value        ; Type                                          ;
-+------------------------+--------------+-----------------------------------------------+
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                    ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                  ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                  ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                ;
-; LPM_WIDTH              ; 32           ; Signed Integer                                ;
-; LPM_SIZE               ; 2            ; Signed Integer                                ;
-; LPM_WIDTHS             ; 1            ; Signed Integer                                ;
-; LPM_PIPELINE           ; 0            ; Untyped                                       ;
-; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                       ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                       ;
-+------------------------+--------------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +----------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component ;
 +------------------------+--------------+------------------------------------------------------------+
@@ -527,6 +518,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bus_mux:inst15|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+-----------------------------------------------+
+; Parameter Name         ; Value        ; Type                                          ;
++------------------------+--------------+-----------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                ;
+; LPM_SIZE               ; 2            ; Signed Integer                                ;
+; LPM_WIDTHS             ; 1            ; Signed Integer                                ;
+; LPM_PIPELINE           ; 0            ; Untyped                                       ;
+; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                       ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                       ;
++------------------------+--------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: bus_mux:inst16|lpm_mux:LPM_MUX_component ;
 +------------------------+--------------+-----------------------------------------------+
 ; Parameter Name         ; Value        ; Type                                          ;
@@ -570,23 +580,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 130                         ;
-; cycloneiii_ff         ; 1088                        ;
-;     CLR               ; 64                          ;
-;     ENA CLR           ; 1024                        ;
-; cycloneiii_lcell_comb ; 2400                        ;
+; boundary_port         ; 136                         ;
+; cycloneiii_ff         ; 1396                        ;
+;     CLR               ; 32                          ;
+;     ENA CLR           ; 1088                        ;
+;     SCLR              ; 67                          ;
+;     SCLR SLD          ; 16                          ;
+;     SLD               ; 5                           ;
+;     plain             ; 188                         ;
+; cycloneiii_lcell_comb ; 2588                        ;
 ;     arith             ; 124                         ;
 ;         2 data inputs ; 29                          ;
 ;         3 data inputs ; 95                          ;
-;     normal            ; 2276                        ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 46                          ;
-;         3 data inputs ; 235                         ;
-;         4 data inputs ; 1993                        ;
+;     normal            ; 2464                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 144                         ;
+;         3 data inputs ; 532                         ;
+;         4 data inputs ; 1783                        ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 15.00                       ;
-; Average LUT depth     ; 12.31                       ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 5.13                        ;
 +-----------------------+-----------------------------+
 
 
@@ -595,7 +610,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:10     ;
 +----------------+--------------+
 
 
@@ -605,14 +620,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Jun  2 20:55:51 2024
+    Info: Processing started: Tue Jun  4 10:58:09 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ERV24 -c ERV24
-Warning (125092): Tcl Script File ProgramMemory.qip not found
-    Info (125063): set_global_assignment -name QIP_FILE ProgramMemory.qip
-Warning (125092): Tcl Script File DataMemory.qip not found
-    Info (125063): set_global_assignment -name QIP_FILE DataMemory.qip
-Warning (125092): Tcl Script File testjfs/bus_a.qip not found
-    Info (125063): set_global_assignment -name QIP_FILE testjfs/bus_a.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file alu/alu.vhd
@@ -660,12 +669,21 @@ Info (12021): Found 1 design units, including 1 entities, in source file utils/b
     Info (12023): Found entity 1: bus_mux File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file peripheral_and_memory_block_no borrar por favore.bdf
     Info (12023): Found entity 1: peripheral_and_memory_block_no borrar por favore
+Info (12021): Found 1 design units, including 1 entities, in source file pipeline/decode_imm_stage_latch.v
+    Info (12023): Found entity 1: decode_imm_stage_latch File: C:/Users/sbruz/E5-ERV24/project/pipeline/decode_imm_stage_latch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipeline/op_read_stage_latch.v
+    Info (12023): Found entity 1: op_read_stage_latch File: C:/Users/sbruz/E5-ERV24/project/pipeline/op_read_stage_latch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipeline/alu_stage_latch.v
+    Info (12023): Found entity 1: alu_stage_latch File: C:/Users/sbruz/E5-ERV24/project/pipeline/alu_stage_latch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipeline_halt_control.v
+    Info (12023): Found entity 1: pipeline_halt_control File: C:/Users/sbruz/E5-ERV24/project/pipeline/pipeline_halt_control.v Line: 1
 Info (12127): Elaborating entity "ERV24" for the top level hierarchy
-Warning (275011): Block or symbol "decoder" of instance "inst7" overlaps another block or symbol
-Info (12128): Elaborating entity "alu" for hierarchy "alu:inst9"
+Warning (275012): Pin "decoded_rd[4..0]" overlaps another pin, block, or symbol
+Info (12128): Elaborating entity "pipeline_halt_control" for hierarchy "pipeline_halt_control:inst1"
+Info (12128): Elaborating entity "op_read_stage_latch" for hierarchy "op_read_stage_latch:inst5"
+Info (12128): Elaborating entity "decode_imm_stage_latch" for hierarchy "decode_imm_stage_latch:inst4"
 Info (12128): Elaborating entity "decoder" for hierarchy "decoder:inst7"
 Info (12128): Elaborating entity "IFU" for hierarchy "IFU:inst2"
-Warning (275008): Primitive "VCC" of instance "inst9" not used
 Info (12128): Elaborating entity "ProgramMemory" for hierarchy "IFU:inst2|ProgramMemory:inst4"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 85
 Info (12130): Elaborated megafunction instantiation "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 85
@@ -689,17 +707,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
 Info (12128): Elaborating entity "altsyncram_40b1" for hierarchy "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "reg32" for hierarchy "IFU:inst2|reg32:PCreg"
 Info (12128): Elaborating entity "fetch" for hierarchy "IFU:inst2|fetch:inst"
-Info (12128): Elaborating entity "bus_mux" for hierarchy "bus_mux:inst15"
-Info (12128): Elaborating entity "lpm_mux" for hierarchy "bus_mux:inst15|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 69
-Info (12130): Elaborated megafunction instantiation "bus_mux:inst15|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 69
-Info (12133): Instantiated megafunction "bus_mux:inst15|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 69
-    Info (12134): Parameter "lpm_size" = "2"
-    Info (12134): Parameter "lpm_type" = "LPM_MUX"
-    Info (12134): Parameter "lpm_width" = "32"
-    Info (12134): Parameter "lpm_widths" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_rsc.tdf
-    Info (12023): Found entity 1: mux_rsc File: C:/Users/sbruz/E5-ERV24/project/db/mux_rsc.tdf Line: 23
-Info (12128): Elaborating entity "mux_rsc" for hierarchy "bus_mux:inst15|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "imm_builder" for hierarchy "imm_builder:inst6"
 Info (12128): Elaborating entity "regbank" for hierarchy "regbank:inst3"
 Info (12128): Elaborating entity "regMux" for hierarchy "regbank:inst3|regMux:inst11"
 Info (12128): Elaborating entity "lpm_mux" for hierarchy "regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/regbank/regMux.v Line: 157
@@ -722,19 +730,33 @@ Info (12133): Instantiated megafunction "regbank:inst3|dec_5_32:inst|lpm_decode:
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_41g.tdf
     Info (12023): Found entity 1: decode_41g File: C:/Users/sbruz/E5-ERV24/project/db/decode_41g.tdf Line: 23
 Info (12128): Elaborating entity "decode_41g" for hierarchy "regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component|decode_41g:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf Line: 77
-Info (12128): Elaborating entity "imm_builder" for hierarchy "imm_builder:inst6"
+Info (12128): Elaborating entity "alu_stage_latch" for hierarchy "alu_stage_latch:inst12"
+Info (12128): Elaborating entity "alu" for hierarchy "alu:inst9"
+Info (12128): Elaborating entity "bus_mux" for hierarchy "bus_mux:inst15"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "bus_mux:inst15|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 69
+Info (12130): Elaborated megafunction instantiation "bus_mux:inst15|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 69
+Info (12133): Instantiated megafunction "bus_mux:inst15|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 69
+    Info (12134): Parameter "lpm_size" = "2"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "32"
+    Info (12134): Parameter "lpm_widths" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_rsc.tdf
+    Info (12023): Found entity 1: mux_rsc File: C:/Users/sbruz/E5-ERV24/project/db/mux_rsc.tdf Line: 23
+Info (12128): Elaborating entity "mux_rsc" for hierarchy "bus_mux:inst15|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "alu_latch" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3618 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3856 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 128 output pins
-    Info (21061): Implemented 3456 logic cells
+    Info (21059): Implemented 134 output pins
+    Info (21061): Implemented 3688 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4929 megabytes
-    Info: Processing ended: Sun Jun  2 20:56:07 2024
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:26
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4925 megabytes
+    Info: Processing ended: Tue Jun  4 10:58:27 2024
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:28
 
 

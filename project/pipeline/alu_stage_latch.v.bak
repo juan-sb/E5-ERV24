@@ -1,0 +1,24 @@
+module alu_stage_latch
+(
+ input [31:0] result,
+ input [4:0] rd,
+ input flags,
+ input clk,
+ input ena,
+ input x,
+ output reg [31:0] result_out,
+ output reg [4:0] rd_out,
+ output reg flags_out
+ );
+	
+always @(posedge clk) begin
+	if (ena) begin
+	
+		results_out <= results;
+		rd_out <= rd;
+		flags_out <= flags;
+		
+	end
+end
+
+endmodule

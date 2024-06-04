@@ -1,0 +1,33 @@
+module decode_imm_stage
+(
+ input [31:0] imm,
+ input [4:0] rs1,
+ input [4:0] rs2,
+ input [4:0] rd,
+ input [31:0] pc,
+ input [2:0] funct3,
+ input clk,
+ input nreset,
+ input ena,
+ input x,
+ output [31:0] qo
+ );
+
+	reg[31:0] q;
+	wire reset;
+	
+	//assign reset = ~nreset;
+ 
+	always @(posedge clk, negedge nreset) begin
+		if (!nreset) begin
+			q <= 0;
+		end
+		else if (clk && ena) begin
+			q <= d;
+		end
+	end
+
+	assign qo = q;
+
+
+endmodule
