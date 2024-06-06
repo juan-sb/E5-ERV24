@@ -27,8 +27,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 32)
 		(input)
-		(text "decoded_flags[15..0]" (rect 0 0 81 12)(font "Arial" ))
-		(text "decoded_flags[15..0]" (rect 21 27 102 39)(font "Arial" ))
+		(text "decoded_flags[16..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "decoded_flags[16..0]" (rect 21 27 102 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
@@ -55,8 +55,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 96)
 		(input)
-		(text "reg_access_flags[15..0]" (rect 0 0 95 12)(font "Arial" ))
-		(text "reg_access_flags[15..0]" (rect 21 91 116 103)(font "Arial" ))
+		(text "reg_access_flags[16..0]" (rect 0 0 95 12)(font "Arial" ))
+		(text "reg_access_flags[16..0]" (rect 21 91 116 103)(font "Arial" ))
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
@@ -83,8 +83,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 160)
 		(input)
-		(text "alu_flags[15..0]" (rect 0 0 59 12)(font "Arial" ))
-		(text "alu_flags[15..0]" (rect 21 155 80 167)(font "Arial" ))
+		(text "alu_flags[16..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "alu_flags[16..0]" (rect 21 155 80 167)(font "Arial" ))
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
@@ -97,8 +97,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 192)
 		(input)
-		(text "post_alu_flags[15..0]" (rect 0 0 81 12)(font "Arial" ))
-		(text "post_alu_flags[15..0]" (rect 21 187 102 199)(font "Arial" ))
+		(text "post_alu_flags[16..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "post_alu_flags[16..0]" (rect 21 187 102 199)(font "Arial" ))
 		(line (pt 0 192)(pt 16 192)(line_width 3))
 	)
 	(port

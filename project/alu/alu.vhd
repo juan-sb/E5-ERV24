@@ -18,50 +18,59 @@ port(
 end alu;
 
 architecture behavioral of alu is
+signal local_a, local_b, localsum : std_logic_vector(32 downto 0);
+
 begin
 	process(i_op,i_sel,i_en,i_a,i_b, i_branch, i_jal)
-	variable ans	:	std_logic_vector(31 downto 0);
+	variable ans	:	std_logic_vector(32 downto 0);
 	begin
 		if i_branch = '0' then
 			case i_op is
 			when	"000" =>	--	ADD / SUB
 				if i_sel = '0' then
-					ans := std_logic_vector(signed(i_a) + signed(i_b) );
+					ans := std_logic_vector(resize(signed(i_a), 33) + resize(signed(i_b), 33) );
 				else
-					ans := std_logic_vector(signed(i_a) - signed(i_b) );
+					ans := std_logic_vector(resize(signed(i_a), 33) - resize(signed(i_b), 33) );
 				end if;
 			when	"001" =>	--	SLL
-				ans := std_logic_vector(shift_left( unsigned(i_a), to_integer(unsigned(i_b(4 downto 0))) ) );
+				ans := std_logic_vector(shift_left( resize(unsigned(i_a), 33), to_integer(unsigned(i_b(4 downto 0))) ) );
 			when	"010" => --	SLT
 				if signed(i_a) < signed(i_b) then
-					ans := "00000000000000000000000000000001";
+					ans := "000000000000000000000000000000001";
 				else
-					ans := "00000000000000000000000000000000";
+					ans := "000000000000000000000000000000000";
 				end if;
 			when	"011" => --	SLTU
 				if unsigned(i_a) < unsigned(i_b) then
-					ans := "00000000000000000000000000000001";
+					ans := "000000000000000000000000000000001";
 				else
-					ans := "00000000000000000000000000000000";
+					ans := "000000000000000000000000000000000";
 				end if;
 			when	"100" => --	XOR
-				ans := i_a xor i_b;
+				ans := std_logic_vector(resize(unsigned(i_a), 33) xor resize(unsigned(i_b), 33));
 			when	"101" => --	SRL / SRA
 				if i_sel = '0' then
-					ans := std_logic_vector(shift_right( unsigned(i_a), to_integer(unsigned(i_b(4 downto 0))) ) );
+					ans := std_logic_vector(shift_right(resize(unsigned(i_a), 33), to_integer(unsigned(i_b(4 downto 0))) ) );
 				else
-					ans := std_logic_vector(shift_right( signed(i_a), to_integer(unsigned(i_b(4 downto 0))) ) );
+					ans := std_logic_vector(shift_right(resize(signed(i_a), 33), to_integer(unsigned(i_b(4 downto 0))) ) );
 				end if;
 			when	"110" => --	OR
-				ans := i_a or i_b;
+				ans := std_logic_vector(resize(unsigned(i_a), 33) or resize(unsigned(i_b), 33));
 			when	"111" =>	--	AND
-				ans := i_a and i_b;
+				ans := std_logic_vector(resize(unsigned(i_a), 33) and resize(unsigned(i_b), 33));
 			end case;
 		else
-			ans := std_logic_vector(signed(i_a) - signed(i_b) );
+			case i_op is
+				when "000" | "001" | "100" | "101" => -- 000=BEQ, 001=BNE
+					ans := std_logic_vector(resize(signed(i_a), 33) - resize(signed(i_b), 33));
+				when "110" | "111" => -- BLTU < unsigned or BGEU >= unsigned
+					ans := std_logic_vector(resize(unsigned(i_a), 33) - resize(unsigned(i_b), 33));
+				when others =>
+					ans := "000000000000000000000000000000000";
+			end case;
 		end if;
 	if i_jal = '1' then
-		ans := std_logic_vector(unsigned(i_a) + 4);
+		ans := std_logic_vector(resize(unsigned(i_a), 33) + 4);
 	end if;
 	
 	if unsigned(ans) = 0 then
@@ -76,8 +85,8 @@ begin
 	end if;
 	
 	if i_en = '0' then
-		ans := "00000000000000000000000000000000";
+		ans := "000000000000000000000000000000000";
 	end if;
-	o_c <= ans;
+	o_c <= ans(31 downto 0);
 	end process;
 end behavioral;

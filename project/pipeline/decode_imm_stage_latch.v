@@ -6,7 +6,7 @@ module decode_imm_stage_latch
  input [4:0] rd,
  input [31:0] pc,
  input [2:0] funct3,
- input [15:0] flags,
+ input [16:0] flags, 
  input clk,
  input ena,
  input x,
@@ -16,7 +16,7 @@ module decode_imm_stage_latch
  output reg [4:0] rd_out,
  output reg [31:0] pc_out,
  output reg [2:0] funct3_out,
- output reg [15:0] flags_out
+ output reg [16:0] flags_out
  );
 	
 always @(posedge clk) begin

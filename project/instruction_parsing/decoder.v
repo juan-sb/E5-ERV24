@@ -36,7 +36,7 @@ assign ALU_flag = is_reset ? 1'b0 : inst[30];
 assign rw = is_reset ? 1'b0 :inst[5];				// rw = 1 si es STORE, = 0 si es LOAD
 assign is_jmp = is_jalr || is_jal || is_branch;
 
-always @(nreset, opcode)
+always @(is_reset, opcode)
 begin
 	if(is_reset) begin
 		  is_invalid = 1'b0;

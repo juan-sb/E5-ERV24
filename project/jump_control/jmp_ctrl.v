@@ -3,7 +3,8 @@ module jmp_ctrl(
 	input [31:0] imm,
 	input [31:0] rs1,
 	input [31:0] rs2,
-	input [15:0] flags,
+	input [16:0] flags,
+	input [2:0] funct3,
 	input alu_z,
 	input alu_n,
 	
@@ -12,20 +13,32 @@ module jmp_ctrl(
 	input x,
 	input nreset,
 	
-	output reg pc_wr,
-	output reg [31:0] pc_out
+	output wire pc_wr,
+	output wire [31:0] pc_out
 );
 
+wire branch_beq_bne = (!funct3[0]) == alu_z; // 0: beq, 1: bne
+wire branch_other = funct3[0] ^ alu_n; // 0: blt, branch si n=1, 1: bge, branch si n=0, unsigned o signed
+wire branch_taken = flags[12] && (branch_other || branch_beq_bne);
+wire was_predicted_taken = flags[16];
+wire [31:0] rs1plusimm = (rs1 + imm) & 32'hFFFFFFFE;
+wire [31:0] rs1plusimmmask = rs1plusimm & 32'hFFFFFFFE;
+wire [31:0] pcplus4 = pc + 4;
+assign pc_wr = ((~nreset) || (~ena)) ? 1'b0 : (flags[10] | (branch_taken ^ was_predicted_taken));
+assign pc_out = flags[10] ? rs1plusimmmask : (branch_taken && !was_predicted_taken ? rs1plusimm : pcplus4);
+/*
 always @(*) begin
-	if(!nreset || !ena) begin
-		pc_wr = 0;
-		pc_out = 0;
+	if(flags[10]) begin
+		pc_out = rs1plusimmmask;
 	end
-
-	else if(flags[10]) begin
-		pc_out = rs1 + imm;
-		pc_wr = 1;
+	else if(branch_taken && !was_predicted_taken) begin
+		pc_out = rs1plusimm;
+	end
+	
+	else if(!branch_taken && was_predicted_taken) begin
+		pc_out = pcplus4;
 	end
 end
+*/
 
 endmodule
