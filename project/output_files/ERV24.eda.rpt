@@ -1,5 +1,5 @@
 EDA Netlist Writer report for ERV24
-Wed Jun  5 21:23:10 2024
+Thu Jun  6 14:15:03 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Jun  5 21:23:10 2024 ;
+; EDA Netlist Writer Status ; Successful - Thu Jun  6 14:15:03 2024 ;
 ; Revision Name             ; ERV24                                 ;
 ; Top-level Entity Name     ; ERV24                                 ;
 ; Family                    ; Cyclone IV E                          ;
@@ -51,7 +51,8 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                                            ; Setting                     ;
 +---------------------------------------------------------------------------------------------------+-----------------------------+
 ; Tool Name                                                                                         ; Questa Intel FPGA (Verilog) ;
-; Generate functional simulation netlist                                                            ; On                          ;
+; Generate functional simulation netlist                                                            ; Off                         ;
+; Time scale                                                                                        ; 1 ps                        ;
 ; Truncate long hierarchy paths                                                                     ; Off                         ;
 ; Map illegal HDL characters                                                                        ; Off                         ;
 ; Flatten buses into individual nodes                                                               ; Off                         ;
@@ -66,13 +67,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+-----------------------------+
 
 
-+-----------------------------------------------------------+
-; Simulation Generated Files                                ;
-+-----------------------------------------------------------+
-; Generated Files                                           ;
-+-----------------------------------------------------------+
-; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24.vo ;
-+-----------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Simulation Generated Files                                                      ;
++---------------------------------------------------------------------------------+
+; Generated Files                                                                 ;
++---------------------------------------------------------------------------------+
+; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_6_1200mv_85c_slow.vo     ;
+; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_6_1200mv_0c_slow.vo      ;
+; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_min_1200mv_0c_fast.vo    ;
+; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24.vo                       ;
+; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_6_1200mv_85c_v_slow.sdo  ;
+; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_6_1200mv_0c_v_slow.sdo   ;
+; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_min_1200mv_0c_v_fast.sdo ;
+; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_v.sdo                    ;
++---------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -95,14 +103,21 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Jun  5 21:23:09 2024
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
+    Info: Processing started: Thu Jun  6 14:15:00 2024
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file ERV24_6_1200mv_85c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file ERV24_6_1200mv_0c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file ERV24_min_1200mv_0c_fast.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info (204019): Generated file ERV24.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file ERV24_6_1200mv_85c_v_slow.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file ERV24_6_1200mv_0c_v_slow.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file ERV24_min_1200mv_0c_v_fast.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file ERV24_v.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4660 megabytes
-    Info: Processing ended: Wed Jun  5 21:23:10 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4692 megabytes
+    Info: Processing ended: Thu Jun  6 14:15:03 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

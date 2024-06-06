@@ -69,8 +69,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 128)
 		(input)
-		(text "flags[12..0]" (rect 0 0 42 12)(font "Arial" ))
-		(text "flags[12..0]" (rect 21 123 63 135)(font "Arial" ))
+		(text "flags[15..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "flags[15..0]" (rect 21 123 63 135)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
@@ -139,8 +139,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 208 128)
 		(output)
-		(text "flags_out[12..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "flags_out[12..0]" (rect 127 123 187 135)(font "Arial" ))
+		(text "flags_out[15..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "flags_out[15..0]" (rect 127 123 187 135)(font "Arial" ))
 		(line (pt 208 128)(pt 192 128)(line_width 3))
 	)
 	(drawing

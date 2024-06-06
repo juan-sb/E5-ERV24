@@ -8,7 +8,7 @@ module op_read_stage_latch
  input [2:0] funct3,
  input [31:0] rs1_data,
  input [31:0] rs2_data,
- input [12:0] flags,
+ input [15:0] flags,
  input clk,
  input ena,
  input x,
@@ -19,7 +19,7 @@ module op_read_stage_latch
  output reg [31:0] rs2_data_out,
  output reg [31:0] pc_out,
  output reg [2:0] funct3_out,
- output reg [12:0] flags_out
+ output reg [15:0] flags_out
  );
 	
 always @(posedge clk) begin

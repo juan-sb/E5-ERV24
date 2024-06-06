@@ -1,5 +1,5 @@
 Flow report for ERV24
-Wed Jun  5 21:23:10 2024
+Thu Jun  6 14:15:03 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Wed Jun  5 21:23:10 2024          ;
+; Flow Status                        ; Successful - Thu Jun  6 14:15:03 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ERV24                                          ;
 ; Top-level Entity Name              ; ERV24                                          ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE22F17C6                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 2,682 / 22,320 ( 12 % )                        ;
-;     Total combinational functions  ; 2,646 / 22,320 ( 12 % )                        ;
-;     Dedicated logic registers      ; 1,396 / 22,320 ( 6 % )                         ;
-; Total registers                    ; 1396                                           ;
-; Total pins                         ; 136 / 154 ( 88 % )                             ;
+; Total logic elements               ; 2,911 / 22,320 ( 13 % )                        ;
+;     Total combinational functions  ; 2,890 / 22,320 ( 13 % )                        ;
+;     Dedicated logic registers      ; 1,402 / 22,320 ( 6 % )                         ;
+; Total registers                    ; 1402                                           ;
+; Total pins                         ; 134 / 154 ( 87 % )                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 65,536 / 608,256 ( 11 % )                      ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                                ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/05/2024 21:22:18 ;
+; Start date & time ; 06/06/2024 14:14:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ERV24               ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                    ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 198112243188460.171763333812584          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 198112243188460.171769404830044          ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -116,14 +116,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 4930 MB             ; 00:00:28                           ;
-; Fitter               ; 00:00:16     ; 1.2                     ; 6556 MB             ; 00:00:41                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.5                     ; 4962 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4654 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4643 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4660 MB             ; 00:00:01                           ;
-; Total                ; 00:00:39     ; --                      ; --                  ; 00:01:15                           ;
+; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 4921 MB             ; 00:00:28                           ;
+; Fitter               ; 00:00:19     ; 1.2                     ; 6580 MB             ; 00:00:41                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.7                     ; 4969 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4648 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4643 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4692 MB             ; 00:00:03                           ;
+; Total                ; 00:00:44     ; --                      ; --                  ; 00:01:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -151,7 +151,7 @@ quartus_asm --read_settings_files=off --write_settings_files=off ERV24 -c ERV24
 quartus_sta ERV24 -c ERV24
 quartus_eda --read_settings_files=off --write_settings_files=off ERV24 -c ERV24
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=C:/Users/sbruz/E5-ERV24/project/test.vwf --testbench_file=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/test.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
+quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
 
 
 

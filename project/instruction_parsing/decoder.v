@@ -15,24 +15,30 @@ module decoder(
 	output wire ALU_flag,			// Flag para ciertas operaciones de la ALU
 	output reg mem_en,				// Habilita el acceso a memoria
 	output wire rw,					// Indica si el acceso a memoria es de lectura o escritura
-	output reg is_jmp,
+	output wire is_jmp,
+	output reg is_jalr,
+	output reg is_jal,
+	output reg is_branch,
 	output reg is_fence,
 	output reg is_system,
 	output reg is_invalid
 );
 
+wire is_reset = !nreset || (inst == 32'h13); // NOP = addi x0, x0, 0
+
 
 wire[4:0] opcode = inst[6:2];
-assign rd = nreset ? 5'b0 : inst[11:7];
-assign funct3 = nreset ? 3'b0 : inst[14:12];
-assign rs1 = nreset ? 5'b0 : inst[19:15];
-assign rs2 = nreset ? 5'b0 : inst[24:20];
-assign ALU_flag = nreset ? 1'b0 : inst[30];
-assign rw = nreset ? 1'b0 :inst[5];				// rw = 1 si es STORE, = 0 si es LOAD
+assign rd = is_reset ? 5'b0 : inst[11:7];
+assign funct3 = is_reset ? 3'b0 : inst[14:12];
+assign rs1 = is_reset ? 5'b0 : inst[19:15];
+assign rs2 = is_reset ? 5'b0 : inst[24:20];
+assign ALU_flag = is_reset ? 1'b0 : inst[30];
+assign rw = is_reset ? 1'b0 :inst[5];				// rw = 1 si es STORE, = 0 si es LOAD
+assign is_jmp = is_jalr || is_jal || is_branch;
 
 always @(nreset, opcode)
 begin
-	if(nreset) begin
+	if(is_reset) begin
 		  is_invalid = 1'b0;
 		  rd_enc = 1'b0;
 		  rs1_ena = 1'b0;
@@ -40,14 +46,19 @@ begin
 		  imm_en = 1'b0;
 		  imm_enb = 1'b0;
 		  ALU_en = 1'b0;
+		  is_jal = 1'b0;
+		  is_jalr = 1'b0;
+		  is_branch = 1'b0;
 		  mem_en = 1'b0;
-		  is_jmp = 1'b0;
 		  is_fence = 1'b0;
 		  is_system = 1'b0;
 	end else
     case(opcode)
 		  // LUI (U) o AIUPC(U)
         5'b01101, 5'b00101: begin
+			  is_jal = 1'b0;
+			  is_jalr = 1'b0;
+			  is_branch = 1'b0;
 			  ALU_en = 1'b1;
 			  rd_enc = 1'b1;				  
 			  //rs1 = (opcode[3] == 1'b1) ? 5'b00000 : rs1;	// ???? Puedo redefinir rs1 así? rd = 0 + imm si es LUI
@@ -57,22 +68,24 @@ begin
 			  imm_enb = 1'b1;
 			  rs2_enb = 1'b0;
 			  mem_en = 1'b0;
-			  is_jmp = 1'b0;
 			  is_fence = 1'b0;
 			  is_system = 1'b0;
 			  is_invalid = 1'b0;
 			end
 		  // JAL (J), JALR (I) o BRANCH (B)
 		  5'b11011, 5'b11001, 5'b11000: begin		
-			  is_jmp = 1'b1;
+			  is_jal = opcode[1] && opcode[0];
+			  is_jalr = !opcode[1] && opcode[0];
+			  is_branch = !(opcode[1] || opcode[0]);
 			  imm_en = 1'b1;				// !!!! El imm no debería ir a la ALU sino al Jmp Ctrl
 			  rs1_ena = !opcode[1];		// !!!! El rs1 debería ir al Jmp Ctrl ya que add = rs1 + imm en JALR y BRANCH
-			  ALU_en = !opcode[0];		// ALU_en = 1 si es BRANCH
+			  // ALU_en = !opcode[0];		// ALU_en = 1 si es BRANCH
+			  ALU_en = 1'b1;		// ALU_en = 1 siempre pq tiene que guardar cosas en JAL, JALR
 			  //rs1_ena = !opcode[0];	// !!!! Pero si es BRANCH rs1 también tiene que ir a la ALU
 			  rs2_enb = !opcode[0];		// rs2_enb = 1 si es BRANCH
 			  // TODO: Chequear funct3
-			  rd_enc = 1'b0;
-			  imm_enb = 1'b0;
+			  rd_enc = opcode[0]; // rd_enc = 1 si es JAL o JALR
+			  imm_enb = 1'b1;
 			  mem_en = 1'b0;
 			  is_fence = 1'b0;
 			  is_system = 1'b0;
@@ -87,7 +100,9 @@ begin
 			  rd_enc = !opcode[3];		// rd_enc = 1 si es LOAD
 			  imm_enb = 1'b0;
 			  ALU_en = 1'b0;
-			  is_jmp = 1'b0;
+			  is_jal = 1'b0;
+			  is_jalr = 1'b0;
+			  is_branch = 1'b0;
 			  is_fence = 1'b0;
 			  is_system = 1'b0;
 			  is_invalid = 1'b0;
@@ -101,7 +116,9 @@ begin
 			  imm_en = !opcode[3];
 			  imm_enb = !opcode[3];		// imm_enb = 1 si es ALUI, = 0 si es ALU
 			  mem_en = 1'b0;
-			  is_jmp = 1'b0;
+			  is_jal = 1'b0;
+			  is_jalr = 1'b0;
+			  is_branch = 1'b0;
 			  is_fence = 1'b0;
 			  is_system = 1'b0;
 			  is_invalid = 1'b0;
@@ -115,9 +132,11 @@ begin
 			  rs2_enb = 1'b0;
 			  imm_en = 1'b0;
 			  imm_enb = 1'b0;
+			  is_jal = 1'b0;
+			  is_jalr = 1'b0;
+			  is_branch = 1'b0;
 			  ALU_en = 1'b0;
 			  mem_en = 1'b0;
-			  is_jmp = 1'b0;
 			  is_invalid = 1'b0;
 		  end
         default: begin 	// Invalid opcode
@@ -126,10 +145,12 @@ begin
 			  rs1_ena = 1'b0;
 			  rs2_enb = 1'b0;
 			  imm_en = 1'b0;
+			  is_jal = 1'b0;
+			  is_jalr = 1'b0;
+			  is_branch = 1'b0;
 			  imm_enb = 1'b0;
 			  ALU_en = 1'b0;
 			  mem_en = 1'b0;
-			  is_jmp = 1'b0;
 			  is_fence = 1'b0;
 			  is_system = 1'b0;
 		  end

@@ -6,7 +6,9 @@ entity alu is
 port(
 	i_op	:	in		std_logic_vector(2 downto 0);
 	i_sel	:	in		std_logic;
-	i_jmp	:	in		std_logic;
+	i_branch	:	in		std_logic;
+	i_jal :  in    std_logic;
+	i_en	:	in		std_logic;
 	i_a	:	in 	std_logic_vector(31 downto 0);
 	i_b	:	in		std_logic_vector(31 downto 0);
 	o_c	:	out	std_logic_vector(31 downto 0);
@@ -17,10 +19,10 @@ end alu;
 
 architecture behavioral of alu is
 begin
-	process(i_op,i_sel,i_a,i_b, i_jmp)
+	process(i_op,i_sel,i_en,i_a,i_b, i_branch, i_jal)
 	variable ans	:	std_logic_vector(31 downto 0);
 	begin
-		if i_jmp = '0' then
+		if i_branch = '0' then
 			case i_op is
 			when	"000" =>	--	ADD / SUB
 				if i_sel = '0' then
@@ -58,6 +60,9 @@ begin
 		else
 			ans := std_logic_vector(signed(i_a) - signed(i_b) );
 		end if;
+	if i_jal = '1' then
+		ans := std_logic_vector(unsigned(i_a) + 4);
+	end if;
 	
 	if unsigned(ans) = 0 then
 		o_z <= '1';
@@ -68,6 +73,10 @@ begin
 		o_n <= '1';
 	else
 		o_n <= '0';
+	end if;
+	
+	if i_en = '0' then
+		ans := "00000000000000000000000000000000";
 	end if;
 	o_c <= ans;
 	end process;

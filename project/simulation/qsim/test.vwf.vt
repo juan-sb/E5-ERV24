@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/05/2024 21:23:08"
+// Generated on "06/06/2024 14:15:00"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          ERV24
 // 
@@ -36,20 +36,17 @@ reg nreset;
 wire [7:0] ALU_a;
 wire [7:0] ALU_b;
 wire [7:0] ALU_c;
-wire alu_i_jmp;
-wire alu_i_sel;
 wire alu_latch;
-wire [2:0] alu_op;
 wire [3:0] alu_pc;
-wire [4:0] alu_rd;
 wire [15:0] bus_c;
-wire [9:0] decflags;
+wire [11:0] decflags;
 wire decoded_latch;
-wire [3:0] decoded_pc;
+wire [11:0] decoded_pc;
 wire [4:0] decoded_rd;
 wire fetch_en;
-wire [3:0] imm;
 wire [28:0] instr;
+wire jmpctrl_ena;
+wire pc_wr;
 wire [4:0] postalu_rd;
 wire regacc_latch;
 wire [3:0] regacc_pc;
@@ -63,12 +60,8 @@ ERV24 i1 (
 	.ALU_a(ALU_a),
 	.ALU_b(ALU_b),
 	.ALU_c(ALU_c),
-	.alu_i_jmp(alu_i_jmp),
-	.alu_i_sel(alu_i_sel),
 	.alu_latch(alu_latch),
-	.alu_op(alu_op),
 	.alu_pc(alu_pc),
-	.alu_rd(alu_rd),
 	.bus_c(bus_c),
 	.clk(clk),
 	.decflags(decflags),
@@ -76,9 +69,10 @@ ERV24 i1 (
 	.decoded_pc(decoded_pc),
 	.decoded_rd(decoded_rd),
 	.fetch_en(fetch_en),
-	.imm(imm),
 	.instr(instr),
+	.jmpctrl_ena(jmpctrl_ena),
 	.nreset(nreset),
+	.pc_wr(pc_wr),
 	.postalu_rd(postalu_rd),
 	.regacc_latch(regacc_latch),
 	.regacc_pc(regacc_pc),
@@ -88,7 +82,7 @@ ERV24 i1 (
 );
 initial 
 begin 
-#1000000 $finish;
+#2000000 $finish;
 end 
 
 // clk
@@ -101,16 +95,14 @@ begin
 		# 50000;
 	end
 	clk = 1'b0;
-	clk = #77500 1'b1;
-	# 7500;
-	repeat(47)
+	clk = #70000 1'b1;
+	# 10000;
+	repeat(86)
 	begin
 		clk = 1'b0;
-		clk = #7500 1'b1;
-		# 7500;
+		clk = #10000 1'b1;
+		# 10000;
 	end
-	clk = 1'b0;
-	clk = #7500 1'b1;
 end 
 
 // nreset
