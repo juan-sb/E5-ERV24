@@ -10,7 +10,7 @@ module fetch
 	 
 	always @(posedge clk or negedge nreset) begin
 		if (!nreset) q <= 0;
-		else q <= currPC + 1;
+		else q <= currPC + 4;
 	end
 
 	assign nextPC = q;

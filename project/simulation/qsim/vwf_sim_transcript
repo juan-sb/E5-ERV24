@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Tue Jun  4 11:23:06 2024
+    Info: Processing started: Wed Jun  5 21:23:08 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=C:/Users/sbruz/E5-ERV24/project/test.vwf --testbench_file=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/test.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -36,18 +36,18 @@ file when writing test bench files
 
 Info (201000): Generated Verilog Test Bench File C:/Users/sbruz/E5-ERV24/project/simulation/qsim/test.vwf.vt for simulation
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 145 warnings
-    Info: Peak virtual memory: 4650 megabytes
-    Info: Processing ended: Tue Jun  4 11:23:06 2024
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 4644 megabytes
+    Info: Processing ended: Wed Jun  5 21:23:09 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 Completed successfully. 
 
 Completed successfully. 
 
-**** Generating the timing simulation netlist ****
+**** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/sbruz/E5-ERV24/project/simulation/qsim/" ERV24 -c ERV24
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/sbruz/E5-ERV24/project/simulation/qsim/" ERV24 -c ERV24
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -66,22 +66,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Tue Jun  4 11:23:06 2024
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
+    Info: Processing started: Wed Jun  5 21:23:09 2024
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file ERV24_6_1200mv_85c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_6_1200mv_0c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_min_1200mv_0c_fast.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info (204019): Generated file ERV24.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_6_1200mv_85c_v_slow.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_6_1200mv_0c_v_slow.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_min_1200mv_0c_v_fast.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_v.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4690 megabytes
-    Info: Processing ended: Tue Jun  4 11:23:09 2024
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4660 megabytes
+    Info: Processing ended: Wed Jun  5 21:23:10 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
 
@@ -107,7 +100,7 @@ Reading pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 11:23:10 on Jun 04,2024
+# Start time: 21:23:10 on Jun 05,2024
 # vlog -work work ERV24.vo 
 
 # -- Compiling module ERV24
@@ -119,13 +112,12 @@ Reading pref.tcl
 # Top level modules:
 # 	ERV24
 
-# End time: 11:23:10 on Jun 04,2024, Elapsed time: 0:00:00
-
+# End time: 21:23:11 on Jun 05,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 11:23:10 on Jun 04,2024
+# Start time: 21:23:11 on Jun 05,2024
 # vlog -work work test.vwf.vt 
 
 # -- Compiling module ERV24_vlg_vec_tst
@@ -135,12 +127,12 @@ Reading pref.tcl
 # Top level modules:
 # 	ERV24_vlg_vec_tst
 
-# End time: 11:23:10 on Jun 04,2024, Elapsed time: 0:00:00
+# End time: 21:23:11 on Jun 05,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ERV24_vlg_vec_tst 
-# Start time: 11:23:10 on Jun 04,2024
+# Start time: 21:23:11 on Jun 05,2024
 # Loading work.ERV24_vlg_vec_tst
 # Loading work.ERV24
 # Loading work.hard_block
@@ -154,43 +146,17 @@ Reading pref.tcl
 # Loading cycloneive_ver.cycloneive_ram_block
 # Loading cycloneive_ver.cycloneive_ram_register
 # Loading cycloneive_ver.cycloneive_ram_pulse_generator
-# SDF 2020.1 Compiler 2020.02 Feb 28 2020
-# 
-# Loading instances from ERV24_v.sdo
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 10187 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 10275 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
-# Loading timing data from ERV24_v.sdo
-# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Instance: /ERV24_vlg_vec_tst File: test.vwf.vt
 
 # after#26
 
-# ** Error: $hold( posedge clk &&& reset:320363 ps, ena:320477 ps, 157 ps );
-#    Time: 320477 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[19] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:320363 ps, ena:320477 ps, 157 ps );
-#    Time: 320477 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[20] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:320363 ps, ena:320477 ps, 157 ps );
-#    Time: 320477 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[22] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:368361 ps, ena:368362 ps, 157 ps );
-#    Time: 368362 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[4] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:368361 ps, ena:368494 ps, 157 ps );
-#    Time: 368494 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[2] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:368361 ps, ena:368494 ps, 157 ps );
-#    Time: 368494 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[3] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:368361 ps, ena:368494 ps, 157 ps );
-#    Time: 368494 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[6] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:368361 ps, ena:368494 ps, 157 ps );
-#    Time: 368494 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[11] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:368361 ps, ena:368494 ps, 157 ps );
-#    Time: 368494 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[12] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:368361 ps, ena:368494 ps, 157 ps );
-#    Time: 368494 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[14] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
 # ** Note: $finish    : test.vwf.vt(91)
 #    Time: 1 us  Iteration: 0  Instance: /ERV24_vlg_vec_tst
 
-# End time: 11:23:12 on Jun 04,2024, Elapsed time: 0:00:02
-# Errors: 10, Warnings: 1
+# End time: 21:23:12 on Jun 05,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
 
 Completed successfully. 
 
@@ -216,7 +182,7 @@ Warning: imm[5] - signal not found in VCD.
 
 Warning: imm[4] - signal not found in VCD.
 
-Writing the resulting VWF to C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24_20240604112312.sim.vwf
+Writing the resulting VWF to C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24_20240605212312.sim.vwf
 
 Finished VCD to VWF conversion.
 

@@ -1,6 +1,6 @@
 module decoder(
 	input wire[31:0] inst,
-	input wire reset,					// Pone todas las salidas en 0
+	input wire nreset,					// Pone todas las salidas en 0
 	output wire[4:0] rd,
 	output wire[4:0] rs1,
 	output wire[4:0] rs2,
@@ -23,16 +23,16 @@ module decoder(
 
 
 wire[4:0] opcode = inst[6:2];
-assign rd = reset ? 5'b0 : inst[11:7];
-assign funct3 = reset ? 3'b0 : inst[14:12];
-assign rs1 = reset ? 5'b0 : inst[19:15];
-assign rs2 = reset ? 5'b0 : inst[24:20];
-assign ALU_flag = reset ? 1'b0 : inst[30];
-assign rw = reset ? 1'b0 :inst[5];				// rw = 1 si es STORE, = 0 si es LOAD
+assign rd = nreset ? 5'b0 : inst[11:7];
+assign funct3 = nreset ? 3'b0 : inst[14:12];
+assign rs1 = nreset ? 5'b0 : inst[19:15];
+assign rs2 = nreset ? 5'b0 : inst[24:20];
+assign ALU_flag = nreset ? 1'b0 : inst[30];
+assign rw = nreset ? 1'b0 :inst[5];				// rw = 1 si es STORE, = 0 si es LOAD
 
-always @(reset, opcode)
+always @(nreset, opcode)
 begin
-	if(reset) begin
+	if(nreset) begin
 		  is_invalid = 1'b0;
 		  rd_enc = 1'b0;
 		  rs1_ena = 1'b0;

@@ -324,22 +324,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "decoded_pc[3]",
-					"strict" : false
-				},
-				{
-					"name" : "decoded_pc[2]",
-					"strict" : false
-				},
-				{
-					"name" : "decoded_pc[1]",
-					"strict" : false
-				},
-				{
-					"name" : "decoded_pc[0]",
-					"strict" : false
-				},
-				{
 					"name" : "instr[28]",
 					"strict" : false
 				},
