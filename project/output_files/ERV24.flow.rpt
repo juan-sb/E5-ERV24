@@ -1,5 +1,5 @@
 Flow report for ERV24
-Fri Jun  7 02:25:08 2024
+Fri Jun  7 12:15:12 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun  7 02:25:08 2024          ;
+; Flow Status                        ; Successful - Fri Jun  7 12:15:12 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ERV24                                          ;
 ; Top-level Entity Name              ; ERV24                                          ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE22F17C6                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 3,139 / 22,320 ( 14 % )                        ;
-;     Total combinational functions  ; 3,117 / 22,320 ( 14 % )                        ;
+; Total logic elements               ; 3,213 / 22,320 ( 14 % )                        ;
+;     Total combinational functions  ; 3,180 / 22,320 ( 14 % )                        ;
 ;     Dedicated logic registers      ; 1,362 / 22,320 ( 6 % )                         ;
 ; Total registers                    ; 1362                                           ;
 ; Total pins                         ; 123 / 154 ( 80 % )                             ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/07/2024 02:23:55 ;
+; Start date & time ; 06/07/2024 12:13:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ERV24               ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                    ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 198112243188460.171773783533304          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 198112243188460.171777323920972          ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -116,14 +116,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 4913 MB             ; 00:00:31                           ;
-; Fitter               ; 00:00:24     ; 1.2                     ; 6570 MB             ; 00:00:52                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.7                     ; 4970 MB             ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4657 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4640 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4689 MB             ; 00:00:03                           ;
-; Total                ; 00:00:54     ; --                      ; --                  ; 00:01:32                           ;
+; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 4925 MB             ; 00:00:33                           ;
+; Fitter               ; 00:00:23     ; 1.2                     ; 6563 MB             ; 00:00:52                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4706 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.7                     ; 4975 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4663 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4646 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4683 MB             ; 00:00:03                           ;
+; Total                ; 00:00:52     ; --                      ; --                  ; 00:01:34                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

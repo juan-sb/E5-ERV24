@@ -24,10 +24,10 @@ wire branch_other = ((funct3[2:1] == 2'b10) || (funct3[2:1] == 2'b11)) && (funct
 assign branch_taken = flags[12] && (branch_other || branch_beq_bne);
 assign was_predicted_taken = flags[16];
 wire [31:0] rs1plusimm = (rs1 + imm) & 32'hFFFFFFFE;
-wire [31:0] rs1plusimmmask = rs1plusimm & 32'hFFFFFFFE;
+wire [31:0] pcplusimm = pc + imm;
 wire [31:0] pcplus4 = pc + 4;
 assign pc_wr = ((~nreset) || (~ena)) ? 1'b0 : (flags[10] | (branch_taken ^ was_predicted_taken));
-assign pc_out = flags[10] ? rs1plusimmmask : (branch_taken && !was_predicted_taken ? rs1plusimm : pcplus4);
+assign pc_out = flags[10] ? rs1plusimm : (branch_taken && !was_predicted_taken ? pcplusimm : pcplus4);
 /*
 always @(*) begin
 	if(flags[10]) begin
