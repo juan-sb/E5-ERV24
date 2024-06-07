@@ -4,71 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "fetch_en",
-					"strict" : false
-				},
-				{
-					"name" : "alu_pc[3]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_pc[2]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_pc[1]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_pc[0]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[11]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[10]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[9]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[8]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[7]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[6]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[5]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[4]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[2]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1data[0]",
+					"name" : "pc_wr_flag",
 					"strict" : false
 				},
 				{
@@ -120,27 +56,67 @@
 					"strict" : false
 				},
 				{
-					"name" : "decoded_latch",
+					"name" : "alu_z",
 					"strict" : false
 				},
 				{
-					"name" : "regacc_latch",
+					"name" : "alu_n",
 					"strict" : false
 				},
 				{
-					"name" : "jmpctrl_ena",
+					"name" : "branch_taken",
 					"strict" : false
 				},
 				{
-					"name" : "pc_wr_flag",
+					"name" : "predicted_taken",
 					"strict" : false
 				},
 				{
-					"name" : "is_jalr",
+					"name" : "decoded_pc[23]",
 					"strict" : false
 				},
 				{
-					"name" : "is_jalr_ra",
+					"name" : "decoded_pc[22]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[21]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[20]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[19]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[18]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[17]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[16]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[15]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[14]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[13]",
+					"strict" : false
+				},
+				{
+					"name" : "decoded_pc[12]",
 					"strict" : false
 				},
 				{
@@ -192,119 +168,203 @@
 					"strict" : false
 				},
 				{
-					"name" : "instr[28]",
+					"name" : "immifu[31]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[27]",
+					"name" : "immifu[30]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[26]",
+					"name" : "immifu[29]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[25]",
+					"name" : "immifu[28]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[24]",
+					"name" : "immifu[27]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[23]",
+					"name" : "immifu[26]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[22]",
+					"name" : "immifu[25]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[21]",
+					"name" : "immifu[24]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[20]",
+					"name" : "immifu[23]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[19]",
+					"name" : "immifu[22]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[18]",
+					"name" : "immifu[21]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[17]",
+					"name" : "immifu[20]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[16]",
+					"name" : "immifu[19]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[15]",
+					"name" : "immifu[18]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[14]",
+					"name" : "immifu[17]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[13]",
+					"name" : "immifu[16]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[12]",
+					"name" : "immifu[15]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[11]",
+					"name" : "immifu[14]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[10]",
+					"name" : "immifu[13]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[9]",
+					"name" : "immifu[12]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[8]",
+					"name" : "immifu[11]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[7]",
+					"name" : "immifu[10]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[6]",
+					"name" : "immifu[9]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[5]",
+					"name" : "immifu[8]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[4]",
+					"name" : "immifu[7]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[3]",
+					"name" : "immifu[6]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[2]",
+					"name" : "immifu[5]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[1]",
+					"name" : "immifu[4]",
 					"strict" : false
 				},
 				{
-					"name" : "instr[0]",
+					"name" : "immifu[3]",
+					"strict" : false
+				},
+				{
+					"name" : "immifu[2]",
+					"strict" : false
+				},
+				{
+					"name" : "immifu[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_funct3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_funct3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_funct3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ra_rs1[0]",
 					"strict" : false
 				},
 				{

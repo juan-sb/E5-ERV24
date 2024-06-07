@@ -14,13 +14,15 @@ module jmp_ctrl(
 	input nreset,
 	
 	output wire pc_wr,
-	output wire [31:0] pc_out
+	output wire [31:0] pc_out,
+	output wire branch_taken,
+	output wire was_predicted_taken
 );
 
 wire branch_beq_bne = (!funct3[0]) == alu_z; // 0: beq, 1: bne
 wire branch_other = funct3[0] ^ alu_n; // 0: blt, branch si n=1, 1: bge, branch si n=0, unsigned o signed
-wire branch_taken = flags[12] && (branch_other || branch_beq_bne);
-wire was_predicted_taken = flags[16];
+assign branch_taken = flags[12] && (branch_other || branch_beq_bne);
+assign was_predicted_taken = flags[16];
 wire [31:0] rs1plusimm = (rs1 + imm) & 32'hFFFFFFFE;
 wire [31:0] rs1plusimmmask = rs1plusimm & 32'hFFFFFFFE;
 wire [31:0] pcplus4 = pc + 4;

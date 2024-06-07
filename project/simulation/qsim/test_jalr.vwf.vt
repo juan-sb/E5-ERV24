@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/06/2024 20:20:55"
+// Generated on "06/06/2024 21:45:32"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          ERV24
 // 
@@ -33,42 +33,36 @@ module ERV24_vlg_vec_tst();
 reg clk;
 reg nreset;
 // wires                                               
-wire alu_latch;
-wire [3:0] alu_pc;
-wire decoded_latch;
-wire [11:0] decoded_pc;
-wire fetch_en;
-wire [28:0] instr;
-wire is_jalr;
-wire is_jalr_ra;
-wire jmpctrl_ena;
+wire alu_n;
+wire alu_z;
+wire branch_taken;
+wire [23:0] decoded_pc;
+wire [31:0] immifu;
 wire [11:0] PC_wr;
 wire pc_wr_flag;
+wire predicted_taken;
+wire [2:0] ra_funct3;
+wire [15:0] ra_rs1;
 wire [23:0] regacc_imm;
-wire regacc_latch;
 wire [11:0] regacc_pc;
-wire [11:0] rs1data;
 
 // assign statements (if any)                          
 ERV24 i1 (
 // port map - connection between master ports and signals/registers   
-	.alu_latch(alu_latch),
-	.alu_pc(alu_pc),
+	.alu_n(alu_n),
+	.alu_z(alu_z),
+	.branch_taken(branch_taken),
 	.clk(clk),
-	.decoded_latch(decoded_latch),
 	.decoded_pc(decoded_pc),
-	.fetch_en(fetch_en),
-	.instr(instr),
-	.is_jalr(is_jalr),
-	.is_jalr_ra(is_jalr_ra),
-	.jmpctrl_ena(jmpctrl_ena),
+	.immifu(immifu),
 	.nreset(nreset),
 	.PC_wr(PC_wr),
 	.pc_wr_flag(pc_wr_flag),
+	.predicted_taken(predicted_taken),
+	.ra_funct3(ra_funct3),
+	.ra_rs1(ra_rs1),
 	.regacc_imm(regacc_imm),
-	.regacc_latch(regacc_latch),
-	.regacc_pc(regacc_pc),
-	.rs1data(rs1data)
+	.regacc_pc(regacc_pc)
 );
 initial 
 begin 
