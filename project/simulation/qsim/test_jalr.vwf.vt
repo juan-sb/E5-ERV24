@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/06/2024 21:45:32"
+// Generated on "06/07/2024 02:25:05"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          ERV24
 // 
@@ -37,7 +37,8 @@ wire alu_n;
 wire alu_z;
 wire branch_taken;
 wire [23:0] decoded_pc;
-wire [31:0] immifu;
+wire [23:0] instr;
+wire jmp_en;
 wire [11:0] PC_wr;
 wire pc_wr_flag;
 wire predicted_taken;
@@ -54,7 +55,8 @@ ERV24 i1 (
 	.branch_taken(branch_taken),
 	.clk(clk),
 	.decoded_pc(decoded_pc),
-	.immifu(immifu),
+	.instr(instr),
+	.jmp_en(jmp_en),
 	.nreset(nreset),
 	.PC_wr(PC_wr),
 	.pc_wr_flag(pc_wr_flag),

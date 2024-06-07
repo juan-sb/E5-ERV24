@@ -40,8 +40,8 @@ wire regaccess_blocked;
 assign regaccess_blocked = regaccess_needs_alu_write || regaccess_needs_postalu_write;
 // ---------
 
-// -------- JALR jmp ctrl
-assign jmpctrl_en = reg_access_flags[10];
+// -------- JALR jmp ctrl && branch
+assign jmpctrl_en = reg_access_flags[10] || reg_access_flags[12];
 //
 
 

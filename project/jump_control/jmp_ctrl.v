@@ -19,8 +19,8 @@ module jmp_ctrl(
 	output wire was_predicted_taken
 );
 
-wire branch_beq_bne = (!funct3[0]) == alu_z; // 0: beq, 1: bne
-wire branch_other = funct3[0] ^ alu_n; // 0: blt, branch si n=1, 1: bge, branch si n=0, unsigned o signed
+wire branch_beq_bne = (funct3[2:1] == 2'b00) && ((!funct3[0]) == alu_z); // 0: beq, 1: bne
+wire branch_other = ((funct3[2:1] == 2'b10) || (funct3[2:1] == 2'b11)) && (funct3[0] ^ alu_n); // 0: blt, branch si n=1, 1: bge, branch si n=0, unsigned o signed
 assign branch_taken = flags[12] && (branch_other || branch_beq_bne);
 assign was_predicted_taken = flags[16];
 wire [31:0] rs1plusimm = (rs1 + imm) & 32'hFFFFFFFE;

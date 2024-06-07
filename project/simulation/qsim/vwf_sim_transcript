@@ -1,6 +1,6 @@
 Determining the location of the ModelSim executable...
 
-Using: C:\intelFPGA\20.1\modelsim_ase\win32aloem
+Using: C:/intelFPGA/20.1/modelsim_ase/win32aloem
 
 To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
 Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
@@ -26,15 +26,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Jun  6 21:45:31 2024
+    Info: Processing started: Fri Jun  7 02:25:04 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=C:/Users/sbruz/E5-ERV24/project/test_jalr.vwf --testbench_file=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/test_jalr.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 source file when writing test bench files
 
-ch files
+ files
 
-in vector source file when writing test bench files
+iting test bench files
 
 Completed successfully. 
 
@@ -61,7 +61,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Jun  6 21:45:32 2024
+    Info: Processing started: Fri Jun  7 02:25:05 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file ERV24_6_1200mv_85c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
@@ -73,10 +73,10 @@ Info (204019): Generated file ERV24_6_1200mv_0c_v_slow.sdo in folder "C:/Users/s
 Info (204019): Generated file ERV24_min_1200mv_0c_v_fast.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info (204019): Generated file ERV24_v.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4698 megabytes
-    Info: Processing ended: Thu Jun  6 21:45:37 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 4689 megabytes
+    Info: Processing ended: Fri Jun  7 02:25:08 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 Completed successfully. 
 
@@ -102,7 +102,7 @@ Reading pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 21:45:39 on Jun 06,2024
+# Start time: 02:25:09 on Jun 07,2024
 # vlog -work work ERV24.vo 
 
 # -- Compiling module ERV24
@@ -114,27 +114,28 @@ Reading pref.tcl
 # Top level modules:
 # 	ERV24
 
-# End time: 21:45:39 on Jun 06,2024, Elapsed time: 0:00:00
+# End time: 02:25:09 on Jun 07,2024, Elapsed time: 0:00:00
+
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 21:45:39 on Jun 06,2024
+# Start time: 02:25:09 on Jun 07,2024
 # vlog -work work test_jalr.vwf.vt 
 
 # -- Compiling module ERV24_vlg_vec_tst
 
 # 
-# Top level modules:
 
+# Top level modules:
 # 	ERV24_vlg_vec_tst
 
-# End time: 21:45:40 on Jun 06,2024, Elapsed time: 0:00:01
+# End time: 02:25:09 on Jun 07,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ERV24_vlg_vec_tst 
-# Start time: 21:45:40 on Jun 06,2024
+# Start time: 02:25:09 on Jun 07,2024
 # Loading work.ERV24_vlg_vec_tst
 # Loading work.ERV24
 # Loading work.hard_block
@@ -143,8 +144,8 @@ Reading pref.tcl
 # Loading cycloneive_ver.cycloneive_clkctrl
 # Loading cycloneive_ver.cycloneive_mux41
 # Loading cycloneive_ver.cycloneive_ena_reg
-# Loading altera_ver.dffeas
 # Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
 # Loading cycloneive_ver.cycloneive_ram_block
 # Loading cycloneive_ver.cycloneive_ram_register
 # Loading cycloneive_ver.cycloneive_ram_pulse_generator
@@ -152,7 +153,7 @@ Reading pref.tcl
 # 
 # Loading instances from ERV24_v.sdo
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 10901 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 11029 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # Loading timing data from ERV24_v.sdo
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
@@ -160,17 +161,11 @@ Reading pref.tcl
 
 # after#26
 
-# Simulation time: 0 ps
-
-# ** Error: $hold( posedge clk &&& reset:422368 ps, ena:422461 ps, 157 ps );
-#    Time: 422461 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[10] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Error: $hold( posedge clk &&& reset:422368 ps, ena:422461 ps, 157 ps );
-#    Time: 422461 ps  Iteration: 0  Process: /ERV24_vlg_vec_tst/i1/\inst2|PCreg|q[28] /#Setuphold# File: $MODEL_TECH/../altera/verilog/src/altera_primitives.v Line: 295
-# ** Note: $finish    : test_jalr.vwf.vt(69)
+# ** Note: $finish    : test_jalr.vwf.vt(71)
 #    Time: 1 us  Iteration: 0  Instance: /ERV24_vlg_vec_tst
 
-# End time: 21:45:45 on Jun 06,2024, Elapsed time: 0:00:05
-# Errors: 2, Warnings: 1
+# End time: 02:25:12 on Jun 07,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
 
 Completed successfully. 
 
@@ -191,58 +186,6 @@ Warning: instr[26] - signal not found in VCD.
 Warning: instr[25] - signal not found in VCD.
 
 Warning: instr[24] - signal not found in VCD.
-
-Warning: instr[23] - signal not found in VCD.
-
-Warning: instr[22] - signal not found in VCD.
-
-Warning: instr[21] - signal not found in VCD.
-
-Warning: instr[20] - signal not found in VCD.
-
-Warning: instr[19] - signal not found in VCD.
-
-Warning: instr[18] - signal not found in VCD.
-
-Warning: instr[17] - signal not found in VCD.
-
-Warning: instr[16] - signal not found in VCD.
-
-Warning: instr[15] - signal not found in VCD.
-
-Warning: instr[14] - signal not found in VCD.
-
-Warning: instr[13] - signal not found in VCD.
-
-Warning: instr[12] - signal not found in VCD.
-
-Warning: instr[11] - signal not found in VCD.
-
-Warning: instr[10] - signal not found in VCD.
-
-Warning: instr[9] - signal not found in VCD.
-
-Warning: instr[8] - signal not found in VCD.
-
-Warning: instr[7] - signal not found in VCD.
-
-Warning: instr[6] - signal not found in VCD.
-
-Warning: instr[5] - signal not found in VCD.
-
-Warning: instr[4] - signal not found in VCD.
-
-Warning: instr[3] - signal not found in VCD.
-
-Warning: instr[2] - signal not found in VCD.
-
-Warning: instr[1] - signal not found in VCD.
-
-Warning: instr[0] - signal not found in VCD.
-
-Warning: alu_latch - signal not found in VCD.
-
-Warning: jmpctrl_ena - signal not found in VCD.
 
 Warning: ra_rs2[15] - signal not found in VCD.
 
@@ -276,7 +219,7 @@ Warning: ra_rs2[1] - signal not found in VCD.
 
 Warning: ra_rs2[0] - signal not found in VCD.
 
-Writing the resulting VWF to C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24_20240606214546.sim.vwf
+Writing the resulting VWF to C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24_20240607022512.sim.vwf
 
 Finished VCD to VWF conversion.
 
