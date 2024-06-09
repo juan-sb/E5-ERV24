@@ -70,106 +70,106 @@ CHIP  "ERV24"  ASSIGNED TO AN: EP4CE22F17C6
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A1        : power  :                   : 2.5V    : 8         :                
-memadd[12]                   : A2        : output : 2.5 V             :         : 8         : N              
-rawaddress[25]               : A3        : input  : 2.5 V             :         : 8         : N              
-rawaddress[12]               : A4        : input  : 2.5 V             :         : 8         : N              
-memdata[4]                   : A5        : output : 2.5 V             :         : 8         : N              
-rawaddress[22]               : A6        : input  : 2.5 V             :         : 8         : N              
-memdata[11]                  : A7        : output : 2.5 V             :         : 8         : N              
-rawaddress[14]               : A8        : input  : 2.5 V             :         : 8         : N              
-GND+                         : A9        :        :                   :         : 7         :                
-memdata[26]                  : A10       : output : 2.5 V             :         : 7         : N              
-rawdata[6]                   : A11       : input  : 2.5 V             :         : 7         : N              
-rawdata[10]                  : A12       : input  : 2.5 V             :         : 7         : N              
-memdata[5]                   : A13       : output : 2.5 V             :         : 7         : N              
-memdata[10]                  : A14       : output : 2.5 V             :         : 7         : N              
-rawdata[9]                   : A15       : input  : 2.5 V             :         : 7         : N              
+memout[25]                   : A2        : output : 2.5 V             :         : 8         : N              
+rawdata[22]                  : A3        : input  : 2.5 V             :         : 8         : N              
+memout[10]                   : A4        : output : 2.5 V             :         : 8         : N              
+rawdata[19]                  : A5        : input  : 2.5 V             :         : 8         : N              
+outout[2]                    : A6        : output : 2.5 V             :         : 8         : N              
+rawaddress[2]                : A7        : input  : 2.5 V             :         : 8         : N              
+sign                         : A8        : input  : 2.5 V             :         : 8         : N              
+access_size[0]               : A9        : input  : 2.5 V             :         : 7         : N              
+rawdata[23]                  : A10       : input  : 2.5 V             :         : 7         : N              
+memout[26]                   : A11       : output : 2.5 V             :         : 7         : N              
+outout[13]                   : A12       : output : 2.5 V             :         : 7         : N              
+outout[14]                   : A13       : output : 2.5 V             :         : 7         : N              
+memout[7]                    : A14       : output : 2.5 V             :         : 7         : N              
+rawaddress[3]                : A15       : input  : 2.5 V             :         : 7         : N              
 VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
-rawaddress[21]               : B1        : input  : 2.5 V             :         : 1         : N              
+memout[22]                   : B1        : output : 2.5 V             :         : 1         : N              
 GND                          : B2        : gnd    :                   :         :           :                
-memadd[8]                    : B3        : output : 2.5 V             :         : 8         : N              
-memadd[25]                   : B4        : output : 2.5 V             :         : 8         : N              
-rawaddress[11]               : B5        : input  : 2.5 V             :         : 8         : N              
-rawdata[2]                   : B6        : input  : 2.5 V             :         : 8         : N              
-rawaddress[31]               : B7        : input  : 2.5 V             :         : 8         : N              
-rawaddress[13]               : B8        : input  : 2.5 V             :         : 8         : N              
-GND+                         : B9        :        :                   :         : 7         :                
-rawdata[1]                   : B10       : input  : 2.5 V             :         : 7         : N              
-memdata[16]                  : B11       : output : 2.5 V             :         : 7         : N              
-memdata[18]                  : B12       : output : 2.5 V             :         : 7         : N              
-memdata[21]                  : B13       : output : 2.5 V             :         : 7         : N              
-memdata[0]                   : B14       : output : 2.5 V             :         : 7         : N              
+rawaddress[16]               : B3        : input  : 2.5 V             :         : 8         : N              
+memout[23]                   : B4        : output : 2.5 V             :         : 8         : N              
+memout[3]                    : B5        : output : 2.5 V             :         : 8         : N              
+rawdata[28]                  : B6        : input  : 2.5 V             :         : 8         : N              
+rawdata[9]                   : B7        : input  : 2.5 V             :         : 8         : N              
+ena_mem                      : B8        : input  : 2.5 V             :         : 8         : N              
+rawaddress[1]                : B9        : input  : 2.5 V             :         : 7         : N              
+rawaddress[4]                : B10       : input  : 2.5 V             :         : 7         : N              
+rawdata[30]                  : B11       : input  : 2.5 V             :         : 7         : N              
+rawdata[25]                  : B12       : input  : 2.5 V             :         : 7         : N              
+rawaddress[27]               : B13       : input  : 2.5 V             :         : 7         : N              
+rawdata[8]                   : B14       : input  : 2.5 V             :         : 7         : N              
 GND                          : B15       : gnd    :                   :         :           :                
-rawdata[18]                  : B16       : input  : 2.5 V             :         : 6         : N              
+memout[12]                   : B16       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C1        : input  : 2.5 V             :         : 1         : N              
-memadd[21]                   : C2        : output : 2.5 V             :         : 1         : N              
-rawaddress[3]                : C3        : input  : 2.5 V             :         : 8         : N              
+rawdata[29]                  : C2        : input  : 2.5 V             :         : 1         : N              
+memout[18]                   : C3        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : C4        : power  :                   : 2.5V    : 8         :                
 GND                          : C5        : gnd    :                   :         :           :                
-memadd[14]                   : C6        : output : 2.5 V             :         : 8         : N              
+rawdata[0]                   : C6        : input  : 2.5 V             :         : 8         : N              
 VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
-byte_en[0]                   : C8        : output : 2.5 V             :         : 8         : N              
-memdata[2]                   : C9        : output : 2.5 V             :         : 7         : N              
+rawaddress[8]                : C8        : input  : 2.5 V             :         : 8         : N              
+memout[29]                   : C9        : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
-rawdata[26]                  : C11       : input  : 2.5 V             :         : 7         : N              
+rawaddress[10]               : C11       : input  : 2.5 V             :         : 7         : N              
 GND                          : C12       : gnd    :                   :         :           :                
 VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
-rawdata[25]                  : C14       : input  : 2.5 V             :         : 7         : N              
-memdata[20]                  : C15       : output : 2.5 V             :         : 6         : N              
-rawdata[8]                   : C16       : input  : 2.5 V             :         : 6         : N              
-rawaddress[5]                : D1        : input  : 2.5 V             :         : 1         : N              
+outout[4]                    : C14       : output : 2.5 V             :         : 7         : N              
+rawaddress[21]               : C15       : input  : 2.5 V             :         : 6         : N              
+rawaddress[14]               : C16       : input  : 2.5 V             :         : 6         : N              
+rawdata[16]                  : D1        : input  : 2.5 V             :         : 1         : N              
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D2        : input  : 2.5 V             :         : 1         : N              
-memadd[3]                    : D3        : output : 2.5 V             :         : 8         : N              
+rawdata[10]                  : D3        : input  : 2.5 V             :         : 8         : N              
 VCCD_PLL3                    : D4        : power  :                   : 1.2V    :           :                
-rawaddress[8]                : D5        : input  : 2.5 V             :         : 8         : N              
-memadd[11]                   : D6        : output : 2.5 V             :         : 8         : N              
+rawdata[27]                  : D5        : input  : 2.5 V             :         : 8         : N              
+rawdata[31]                  : D6        : input  : 2.5 V             :         : 8         : N              
 GND                          : D7        : gnd    :                   :         :           :                
-memadd[13]                   : D8        : output : 2.5 V             :         : 8         : N              
-memdata[7]                   : D9        : output : 2.5 V             :         : 7         : N              
+rawdata[14]                  : D8        : input  : 2.5 V             :         : 8         : N              
+outout[26]                   : D9        : output : 2.5 V             :         : 7         : N              
 GND                          : D10       : gnd    :                   :         :           :                
-memadd[18]                   : D11       : output : 2.5 V             :         : 7         : N              
-rawaddress[18]               : D12       : input  : 2.5 V             :         : 7         : N              
+outout[7]                    : D11       : output : 2.5 V             :         : 7         : N              
+rawaddress[29]               : D12       : input  : 2.5 V             :         : 7         : N              
 VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
-rawdata[5]                   : D14       : input  : 2.5 V             :         : 7         : N              
-access_size[1]               : D15       : input  : 2.5 V             :         : 6         : N              
-rawdata[17]                  : D16       : input  : 2.5 V             :         : 6         : N              
-GND+                         : E1        :        :                   :         : 1         :                
+rawaddress[24]               : D14       : input  : 2.5 V             :         : 7         : N              
+rawdata[4]                   : D15       : input  : 2.5 V             :         : 6         : N              
+memout[30]                   : D16       : output : 2.5 V             :         : 6         : N              
+clk                          : E1        : input  : 2.5 V             :         : 1         : N              
 GND                          : E2        : gnd    :                   :         :           :                
 VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
 GND                          : E4        : gnd    :                   :         :           :                
 GNDA3                        : E5        : gnd    :                   :         :           :                
-memadd[31]                   : E6        : output : 2.5 V             :         : 8         : N              
-memadd[22]                   : E7        : output : 2.5 V             :         : 8         : N              
-memdata[6]                   : E8        : output : 2.5 V             :         : 8         : N              
-memdata[28]                  : E9        : output : 2.5 V             :         : 7         : N              
-memdata[1]                   : E10       : output : 2.5 V             :         : 7         : N              
-memdata[8]                   : E11       : output : 2.5 V             :         : 7         : N              
+rawdata[24]                  : E6        : input  : 2.5 V             :         : 8         : N              
+rawaddress[0]                : E7        : input  : 2.5 V             :         : 8         : N              
+access_size[1]               : E8        : input  : 2.5 V             :         : 8         : N              
+rawaddress[11]               : E9        : input  : 2.5 V             :         : 7         : N              
+rawdata[5]                   : E10       : input  : 2.5 V             :         : 7         : N              
+rawaddress[17]               : E11       : input  : 2.5 V             :         : 7         : N              
 GNDA2                        : E12       : gnd    :                   :         :           :                
 GND                          : E13       : gnd    :                   :         :           :                
 VCCIO6                       : E14       : power  :                   : 2.5V    : 6         :                
-GND+                         : E15       :        :                   :         : 6         :                
-GND+                         : E16       :        :                   :         : 6         :                
-rawdata[20]                  : F1        : input  : 2.5 V             :         : 1         : N              
-rawaddress[27]               : F2        : input  : 2.5 V             :         : 1         : N              
-memadd[5]                    : F3        : output : 2.5 V             :         : 1         : N              
+rawdata[17]                  : E15       : input  : 2.5 V             :         : 6         : N              
+rawdata[18]                  : E16       : input  : 2.5 V             :         : 6         : N              
+memout[11]                   : F1        : output : 2.5 V             :         : 1         : N              
+rawdata[15]                  : F2        : input  : 2.5 V             :         : 1         : N              
+rawdata[3]                   : F3        : input  : 2.5 V             :         : 1         : N              
 nSTATUS                      : F4        :        :                   :         : 1         :                
 VCCA3                        : F5        : power  :                   : 2.5V    :           :                
 GND                          : F6        : gnd    :                   :         :           :                
 VCCINT                       : F7        : power  :                   : 1.2V    :           :                
-rawdata[11]                  : F8        : input  : 2.5 V             :         : 8         : N              
-rawdata[31]                  : F9        : input  : 2.5 V             :         : 7         : N              
+rawaddress[9]                : F8        : input  : 2.5 V             :         : 8         : N              
+rawaddress[6]                : F9        : input  : 2.5 V             :         : 7         : N              
 GND                          : F10       : gnd    :                   :         :           :                
 VCCINT                       : F11       : power  :                   : 1.2V    :           :                
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
-memdata[13]                  : F13       : output : 2.5 V             :         : 6         : N              
-memdata[24]                  : F14       : output : 2.5 V             :         : 6         : N              
-rawaddress[1]                : F15       : input  : 2.5 V             :         : 6         : N              
+outout[8]                    : F13       : output : 2.5 V             :         : 6         : N              
+rawdata[26]                  : F14       : input  : 2.5 V             :         : 6         : N              
+memout[27]                   : F15       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : F16       : output : 2.5 V             :         : 6         : N              
-memdata[25]                  : G1        : output : 2.5 V             :         : 1         : N              
-rawdata[24]                  : G2        : input  : 2.5 V             :         : 1         : N              
+outout[19]                   : G1        : output : 2.5 V             :         : 1         : N              
+outout[12]                   : G2        : output : 2.5 V             :         : 1         : N              
 VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
 GND                          : G4        : gnd    :                   :         :           :                
-memadd[27]                   : G5        : output : 2.5 V             :         : 1         : N              
+rawdata[7]                   : G5        : input  : 2.5 V             :         : 1         : N              
 VCCINT                       : G6        : power  :                   : 1.2V    :           :                
 VCCINT                       : G7        : power  :                   : 1.2V    :           :                
 VCCINT                       : G8        : power  :                   : 1.2V    :           :                
@@ -179,8 +179,8 @@ GND                          : G11       : gnd    :                   :         
 MSEL2                        : G12       :        :                   :         : 6         :                
 GND                          : G13       : gnd    :                   :         :           :                
 VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
-rawaddress[0]                : G15       : input  : 2.5 V             :         : 6         : N              
-rw                           : G16       : input  : 2.5 V             :         : 6         : N              
+memout[4]                    : G15       : output : 2.5 V             :         : 6         : N              
+memout[13]                   : G16       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_DCLK~                : H1        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V             :         : 1         : N              
 TCK                          : H3        : input  :                   :         : 1         :                
@@ -197,8 +197,8 @@ MSEL0                        : H13       :        :                   :         
 CONF_DONE                    : H14       :        :                   :         : 6         :                
 GND                          : H15       : gnd    :                   :         :           :                
 GND                          : H16       : gnd    :                   :         :           :                
-memdata[9]                   : J1        : output : 2.5 V             :         : 2         : N              
-memdata[12]                  : J2        : output : 2.5 V             :         : 2         : N              
+outout[21]                   : J1        : output : 2.5 V             :         : 2         : N              
+memout[24]                   : J2        : output : 2.5 V             :         : 2         : N              
 nCE                          : J3        :        :                   :         : 1         :                
 TDO                          : J4        : output :                   :         : 1         :                
 TMS                          : J5        : input  :                   :         : 1         :                
@@ -209,15 +209,15 @@ GND                          : J9        : gnd    :                   :         
 GND                          : J10       : gnd    :                   :         :           :                
 GND                          : J11       : gnd    :                   :         :           :                
 VCCINT                       : J12       : power  :                   : 1.2V    :           :                
-memdata[22]                  : J13       : output : 2.5 V             :         : 5         : N              
-access_size[0]               : J14       : input  : 2.5 V             :         : 5         : N              
-rawdata[21]                  : J15       : input  : 2.5 V             :         : 5         : N              
-rawdata[19]                  : J16       : input  : 2.5 V             :         : 5         : N              
-rawaddress[15]               : K1        : input  : 2.5 V             :         : 2         : N              
-memadd[15]                   : K2        : output : 2.5 V             :         : 2         : N              
+memout[1]                    : J13       : output : 2.5 V             :         : 5         : N              
+rawdata[13]                  : J14       : input  : 2.5 V             :         : 5         : N              
+memout[15]                   : J15       : output : 2.5 V             :         : 5         : N              
+memout[21]                   : J16       : output : 2.5 V             :         : 5         : N              
+outout[5]                    : K1        : output : 2.5 V             :         : 2         : N              
+memout[5]                    : K2        : output : 2.5 V             :         : 2         : N              
 VCCIO2                       : K3        : power  :                   : 2.5V    : 2         :                
 GND                          : K4        : gnd    :                   :         :           :                
-rawaddress[28]               : K5        : input  : 2.5 V             :         : 2         : N              
+outout[6]                    : K5        : output : 2.5 V             :         : 2         : N              
 GND                          : K6        : gnd    :                   :         :           :                
 VCCINT                       : K7        : power  :                   : 1.2V    :           :                
 GND                          : K8        : gnd    :                   :         :           :                
@@ -227,101 +227,101 @@ VCCINT                       : K11       : power  :                   : 1.2V    
 GND                          : K12       : gnd    :                   :         :           :                
 GND                          : K13       : gnd    :                   :         :           :                
 VCCIO5                       : K14       : power  :                   : 2.5V    : 5         :                
-rawdata[14]                  : K15       : input  : 2.5 V             :         : 5         : N              
-rawdata[0]                   : K16       : input  : 2.5 V             :         : 5         : N              
-memdata[15]                  : L1        : output : 2.5 V             :         : 2         : N              
-rawdata[15]                  : L2        : input  : 2.5 V             :         : 2         : N              
-memadd[0]                    : L3        : output : 2.5 V             :         : 2         : N              
-rawaddress[30]               : L4        : input  : 2.5 V             :         : 2         : N              
+memout[0]                    : K15       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K16       :        :                   :         : 5         :                
+outout[22]                   : L1        : output : 2.5 V             :         : 2         : N              
+outout[24]                   : L2        : output : 2.5 V             :         : 2         : N              
+memout[8]                    : L3        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 2         :                
 VCCA1                        : L5        : power  :                   : 2.5V    :           :                
 VCCINT                       : L6        : power  :                   : 1.2V    :           :                
-rawaddress[19]               : L7        : input  : 2.5 V             :         : 3         : N              
-rawaddress[23]               : L8        : input  : 2.5 V             :         : 3         : N              
+outout[25]                   : L7        : output : 2.5 V             :         : 3         : N              
+rw                           : L8        : input  : 2.5 V             :         : 3         : N              
 GND                          : L9        : gnd    :                   :         :           :                
 GND                          : L10       : gnd    :                   :         :           :                
 GND                          : L11       : gnd    :                   :         :           :                
 VCCA4                        : L12       : power  :                   : 2.5V    :           :                
-byte_en[1]                   : L13       : output : 2.5 V             :         : 5         : N              
-memdata[31]                  : L14       : output : 2.5 V             :         : 5         : N              
-rawdata[16]                  : L15       : input  : 2.5 V             :         : 5         : N              
-rawdata[30]                  : L16       : input  : 2.5 V             :         : 5         : N              
-rawdata[4]                   : M1        : input  : 2.5 V             :         : 2         : N              
-rawdata[12]                  : M2        : input  : 2.5 V             :         : 2         : N              
+rawdata[12]                  : L13       : input  : 2.5 V             :         : 5         : N              
+memout[28]                   : L14       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L15       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L16       :        :                   :         : 5         :                
+GND+                         : M1        :        :                   :         : 2         :                
+GND+                         : M2        :        :                   :         : 2         :                
 VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
 GND                          : M4        : gnd    :                   :         :           :                
 GNDA1                        : M5        : gnd    :                   :         :           :                
-rawaddress[10]               : M6        : input  : 2.5 V             :         : 3         : N              
-memadd[6]                    : M7        : output : 2.5 V             :         : 3         : N              
-memdata[29]                  : M8        : output : 2.5 V             :         : 3         : N              
+rawaddress[22]               : M6        : input  : 2.5 V             :         : 3         : N              
+outout[17]                   : M7        : output : 2.5 V             :         : 3         : N              
+memout[31]                   : M8        : output : 2.5 V             :         : 3         : N              
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
-memadd[9]                    : M10       : output : 2.5 V             :         : 4         : N              
+outout[31]                   : M10       : output : 2.5 V             :         : 4         : N              
 VCCINT                       : M11       : power  :                   : 1.2V    :           :                
 GNDA4                        : M12       : gnd    :                   :         :           :                
 GND                          : M13       : gnd    :                   :         :           :                
 VCCIO5                       : M14       : power  :                   : 2.5V    : 5         :                
-GND+                         : M15       :        :                   :         : 5         :                
-GND+                         : M16       :        :                   :         : 5         :                
-memadd[28]                   : N1        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 2         :                
-memadd[4]                    : N3        : output : 2.5 V             :         : 3         : N              
+rawdata[20]                  : M15       : input  : 2.5 V             :         : 5         : N              
+rawdata[21]                  : M16       : input  : 2.5 V             :         : 5         : N              
+rawdata[1]                   : N1        : input  : 2.5 V             :         : 2         : N              
+memout[9]                    : N2        : output : 2.5 V             :         : 2         : N              
+outout[30]                   : N3        : output : 2.5 V             :         : 3         : N              
 VCCD_PLL1                    : N4        : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N5        :        :                   :         : 3         :                
-rawaddress[2]                : N6        : input  : 2.5 V             :         : 3         : N              
+rawaddress[18]               : N5        : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N6        :        :                   :         : 3         :                
 GND                          : N7        : gnd    :                   :         :           :                
-memadd[16]                   : N8        : output : 2.5 V             :         : 3         : N              
-rawdata[29]                  : N9        : input  : 2.5 V             :         : 4         : N              
+rawaddress[12]               : N8        : input  : 2.5 V             :         : 3         : N              
+memout[16]                   : N9        : output : 2.5 V             :         : 4         : N              
 GND                          : N10       : gnd    :                   :         :           :                
-rawaddress[9]                : N11       : input  : 2.5 V             :         : 4         : N              
-access_flag                  : N12       : output : 2.5 V             :         : 4         : N              
+outout[9]                    : N11       : output : 2.5 V             :         : 4         : N              
+rawaddress[23]               : N12       : input  : 2.5 V             :         : 4         : N              
 VCCD_PLL4                    : N13       : power  :                   : 1.2V    :           :                
-rawaddress[20]               : N14       : input  : 2.5 V             :         : 5         : N              
-memdata[17]                  : N15       : output : 2.5 V             :         : 5         : N              
-rawdata[13]                  : N16       : input  : 2.5 V             :         : 5         : N              
-memadd[24]                   : P1        : output : 2.5 V             :         : 2         : N              
-rawaddress[24]               : P2        : input  : 2.5 V             :         : 2         : N              
-memadd[29]                   : P3        : output : 2.5 V             :         : 3         : N              
+rawaddress[28]               : N14       : input  : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N15       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N16       :        :                   :         : 5         :                
+outout[3]                    : P1        : output : 2.5 V             :         : 2         : N              
+rawaddress[13]               : P2        : input  : 2.5 V             :         : 2         : N              
+outout[16]                   : P3        : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : P4        : power  :                   : 2.5V    : 3         :                
 GND                          : P5        : gnd    :                   :         :           :                
-rawaddress[6]                : P6        : input  : 2.5 V             :         : 3         : N              
+memout[14]                   : P6        : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : P7        : power  :                   : 2.5V    : 3         :                
-memadd[17]                   : P8        : output : 2.5 V             :         : 3         : N              
-rawdata[3]                   : P9        : input  : 2.5 V             :         : 4         : N              
+memout[6]                    : P8        : output : 2.5 V             :         : 3         : N              
+outout[15]                   : P9        : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : P10       : power  :                   : 2.5V    : 4         :                
-rawdata[27]                  : P11       : input  : 2.5 V             :         : 4         : N              
+rawaddress[26]               : P11       : input  : 2.5 V             :         : 4         : N              
 GND                          : P12       : gnd    :                   :         :           :                
 VCCIO4                       : P13       : power  :                   : 2.5V    : 4         :                
-rawaddress[26]               : P14       : input  : 2.5 V             :         : 4         : N              
-memadd[20]                   : P15       : output : 2.5 V             :         : 5         : N              
-memdata[19]                  : P16       : output : 2.5 V             :         : 5         : N              
-memadd[30]                   : R1        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P14       :        :                   :         : 4         :                
+rawaddress[15]               : P15       : input  : 2.5 V             :         : 5         : N              
+outout[20]                   : P16       : output : 2.5 V             :         : 5         : N              
+memout[17]                   : R1        : output : 2.5 V             :         : 2         : N              
 GND                          : R2        : gnd    :                   :         :           :                
-rawaddress[29]               : R3        : input  : 2.5 V             :         : 3         : N              
-memadd[2]                    : R4        : output : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 3         :                
-memadd[7]                    : R6        : output : 2.5 V             :         : 3         : N              
-memadd[19]                   : R7        : output : 2.5 V             :         : 3         : N              
-rawaddress[17]               : R8        : input  : 2.5 V             :         : 3         : N              
+outout[18]                   : R3        : output : 2.5 V             :         : 3         : N              
+rawaddress[30]               : R4        : input  : 2.5 V             :         : 3         : N              
+rawdata[6]                   : R5        : input  : 2.5 V             :         : 3         : N              
+rawdata[11]                  : R6        : input  : 2.5 V             :         : 3         : N              
+outout[29]                   : R7        : output : 2.5 V             :         : 3         : N              
+GND+                         : R8        :        :                   :         : 3         :                
 GND+                         : R9        :        :                   :         : 4         :                
-rawdata[23]                  : R10       : input  : 2.5 V             :         : 4         : N              
-rawdata[7]                   : R11       : input  : 2.5 V             :         : 4         : N              
-memdata[3]                   : R12       : output : 2.5 V             :         : 4         : N              
-memdata[30]                  : R13       : output : 2.5 V             :         : 4         : N              
-memadd[26]                   : R14       : output : 2.5 V             :         : 4         : N              
+rawaddress[19]               : R10       : input  : 2.5 V             :         : 4         : N              
+outout[10]                   : R11       : output : 2.5 V             :         : 4         : N              
+outout[27]                   : R12       : output : 2.5 V             :         : 4         : N              
+outout[11]                   : R13       : output : 2.5 V             :         : 4         : N              
+rawaddress[20]               : R14       : input  : 2.5 V             :         : 4         : N              
 GND                          : R15       : gnd    :                   :         :           :                
-memdata[27]                  : R16       : output : 2.5 V             :         : 5         : N              
+rawaddress[31]               : R16       : input  : 2.5 V             :         : 5         : N              
 VCCIO3                       : T1        : power  :                   : 2.5V    : 3         :                
-memadd[1]                    : T2        : output : 2.5 V             :         : 3         : N              
-rawaddress[4]                : T3        : input  : 2.5 V             :         : 3         : N              
-memadd[10]                   : T4        : output : 2.5 V             :         : 3         : N              
-rawdata[28]                  : T5        : input  : 2.5 V             :         : 3         : N              
-rawaddress[7]                : T6        : input  : 2.5 V             :         : 3         : N              
-memadd[23]                   : T7        : output : 2.5 V             :         : 3         : N              
-rawaddress[16]               : T8        : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T2        :        :                   :         : 3         :                
+rawdata[2]                   : T3        : input  : 2.5 V             :         : 3         : N              
+rawaddress[25]               : T4        : input  : 2.5 V             :         : 3         : N              
+memout[19]                   : T5        : output : 2.5 V             :         : 3         : N              
+outout[1]                    : T6        : output : 2.5 V             :         : 3         : N              
+outout[28]                   : T7        : output : 2.5 V             :         : 3         : N              
+GND+                         : T8        :        :                   :         : 3         :                
 GND+                         : T9        :        :                   :         : 4         :                
-byte_en[2]                   : T10       : output : 2.5 V             :         : 4         : N              
-byte_en[3]                   : T11       : output : 2.5 V             :         : 4         : N              
-memdata[23]                  : T12       : output : 2.5 V             :         : 4         : N              
-memdata[14]                  : T13       : output : 2.5 V             :         : 4         : N              
-rawdata[22]                  : T14       : input  : 2.5 V             :         : 4         : N              
-aligned_flag                 : T15       : output : 2.5 V             :         : 4         : N              
+rawaddress[7]                : T10       : input  : 2.5 V             :         : 4         : N              
+rawaddress[5]                : T11       : input  : 2.5 V             :         : 4         : N              
+memout[2]                    : T12       : output : 2.5 V             :         : 4         : N              
+outout[0]                    : T13       : output : 2.5 V             :         : 4         : N              
+memout[20]                   : T14       : output : 2.5 V             :         : 4         : N              
+outout[23]                   : T15       : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : T16       : power  :                   : 2.5V    : 4         :                

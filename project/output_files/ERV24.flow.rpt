@@ -1,5 +1,5 @@
 Flow report for ERV24
-Sat Jun  8 22:18:18 2024
+Sun Jun  9 01:01:15 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Sat Jun  8 22:18:18 2024          ;
+; Flow Status                        ; Successful - Sun Jun  9 01:01:15 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ERV24                                          ;
-; Top-level Entity Name              ; IDA_test                                       ;
+; Top-level Entity Name              ; dataMem_test                                   ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE22F17C6                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 118 / 22,320 ( < 1 % )                         ;
-;     Total combinational functions  ; 118 / 22,320 ( < 1 % )                         ;
+; Total logic elements               ; 226 / 22,320 ( 1 % )                           ;
+;     Total combinational functions  ; 226 / 22,320 ( 1 % )                           ;
 ;     Dedicated logic registers      ; 0 / 22,320 ( 0 % )                             ;
 ; Total registers                    ; 0                                              ;
-; Total pins                         ; 137 / 154 ( 89 % )                             ;
+; Total pins                         ; 134 / 154 ( 87 % )                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0 / 608,256 ( 0 % )                            ;
+; Total memory bits                  ; 262,144 / 608,256 ( 43 % )                     ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                                ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
 +------------------------------------+------------------------------------------------+
@@ -65,54 +65,56 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/08/2024 21:51:23 ;
+; Start date & time ; 06/09/2024 00:53:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ERV24               ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                 ;
-+-------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
-; Assignment Name                     ; Value                                    ; Default Value ; Entity Name ; Section Id                        ;
-+-------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 259684878206007.171789428351532          ; --            ; --          ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                              ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (Verilog)              ; <None>        ; --          ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                     ; --            ; --          ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                       ; --            ; --          ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                        ; --            ; --          ; --                                ;
-; MISC_FILE                           ; memory_mapping/MemoryPeriphMux.bsf       ; --            ; --          ; --                                ;
-; MISC_FILE                           ; memory_mapping/MemoryPeriphMux_bb.v      ; --            ; --          ; --                                ;
-; MISC_FILE                           ; core/CSRCounters.bsf                     ; --            ; --          ; --                                ;
-; MISC_FILE                           ; core/CSRCounters_bb.v                    ; --            ; --          ; --                                ;
-; MISC_FILE                           ; memory_mapping/GPIO_address_decoder.bsf  ; --            ; --          ; --                                ;
-; MISC_FILE                           ; memory_mapping/GPIO_address_decoder_bb.v ; --            ; --          ; --                                ;
-; MISC_FILE                           ; memory_mapping/peripheral_addr_dec.bsf   ; --            ; --          ; --                                ;
-; MISC_FILE                           ; memory_mapping/peripheral_addr_dec_bb.v  ; --            ; --          ; --                                ;
-; MISC_FILE                           ; memory_mapping/peripheral_mux.bsf        ; --            ; --          ; --                                ;
-; MISC_FILE                           ; memory_mapping/peripheral_mux_bb.v       ; --            ; --          ; --                                ;
-; MISC_FILE                           ; utils/bus_mux.bsf                        ; --            ; --          ; --                                ;
-; MISC_FILE                           ; utils/bus_mux_bb.v                       ; --            ; --          ; --                                ;
-; MISC_FILE                           ; utils/sum_2x32b.bsf                      ; --            ; --          ; --                                ;
-; MISC_FILE                           ; utils/sum_2x32b_bb.v                     ; --            ; --          ; --                                ;
-; MISC_FILE                           ; clocking/pll_50_1.bsf                    ; --            ; --          ; --                                ;
-; MISC_FILE                           ; clocking/pll_50_1_bb.v                   ; --            ; --          ; --                                ;
-; MISC_FILE                           ; clocking/pll_50_1.ppf                    ; --            ; --          ; --                                ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                     ; --            ; --          ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)   ; --            ; IDA_test    ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)   ; --            ; IDA_test    ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)   ; --            ; IDA_test    ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                      ; --            ; --          ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW    ; --            ; --          ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                             ; --            ; --          ; --                                ;
-; SEARCH_PATH                         ; ../project                               ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                    ; IDA_test                                 ; ERV24         ; --          ; --                                ;
-+-------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                  ;
++-------------------------------------+------------------------------------------+---------------+--------------+-----------------------------------+
+; Assignment Name                     ; Value                                    ; Default Value ; Entity Name  ; Section Id                        ;
++-------------------------------------+------------------------------------------+---------------+--------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 259684878206007.171790522857025          ; --            ; --           ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --           ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --           ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --           ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                      ; --            ; --           ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                              ; --            ; --           ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (Verilog)              ; <None>        ; --           ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                     ; --            ; --           ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                       ; --            ; --           ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                        ; --            ; --           ; --                                ;
+; MISC_FILE                           ; utils/DataMemory.bsf                     ; --            ; --           ; --                                ;
+; MISC_FILE                           ; utils/DataMemory_bb.v                    ; --            ; --           ; --                                ;
+; MISC_FILE                           ; memory_mapping/MemoryPeriphMux.bsf       ; --            ; --           ; --                                ;
+; MISC_FILE                           ; memory_mapping/MemoryPeriphMux_bb.v      ; --            ; --           ; --                                ;
+; MISC_FILE                           ; core/CSRCounters.bsf                     ; --            ; --           ; --                                ;
+; MISC_FILE                           ; core/CSRCounters_bb.v                    ; --            ; --           ; --                                ;
+; MISC_FILE                           ; memory_mapping/GPIO_address_decoder.bsf  ; --            ; --           ; --                                ;
+; MISC_FILE                           ; memory_mapping/GPIO_address_decoder_bb.v ; --            ; --           ; --                                ;
+; MISC_FILE                           ; memory_mapping/peripheral_addr_dec.bsf   ; --            ; --           ; --                                ;
+; MISC_FILE                           ; memory_mapping/peripheral_addr_dec_bb.v  ; --            ; --           ; --                                ;
+; MISC_FILE                           ; memory_mapping/peripheral_mux.bsf        ; --            ; --           ; --                                ;
+; MISC_FILE                           ; memory_mapping/peripheral_mux_bb.v       ; --            ; --           ; --                                ;
+; MISC_FILE                           ; utils/bus_mux.bsf                        ; --            ; --           ; --                                ;
+; MISC_FILE                           ; utils/bus_mux_bb.v                       ; --            ; --           ; --                                ;
+; MISC_FILE                           ; utils/sum_2x32b.bsf                      ; --            ; --           ; --                                ;
+; MISC_FILE                           ; utils/sum_2x32b_bb.v                     ; --            ; --           ; --                                ;
+; MISC_FILE                           ; clocking/pll_50_1.bsf                    ; --            ; --           ; --                                ;
+; MISC_FILE                           ; clocking/pll_50_1_bb.v                   ; --            ; --           ; --                                ;
+; MISC_FILE                           ; clocking/pll_50_1.ppf                    ; --            ; --           ; --                                ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                     ; --            ; --           ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)   ; --            ; dataMem_test ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)   ; --            ; dataMem_test ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)   ; --            ; dataMem_test ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                      ; --            ; --           ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW    ; --            ; --           ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                             ; --            ; --           ; --                                ;
+; SEARCH_PATH                         ; ../project                               ; --            ; --           ; --                                ;
+; TOP_LEVEL_ENTITY                    ; dataMem_test                             ; ERV24         ; --           ; --                                ;
++-------------------------------------+------------------------------------------+---------------+--------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -120,22 +122,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 439 MB              ; 00:00:31                           ;
-; Fitter               ; 00:00:06     ; 1.0                     ; 1270 MB             ; 00:00:08                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 357 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 510 MB              ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 591 MB              ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 575 MB              ; 00:00:00                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 437 MB              ; 00:00:29                           ;
+; Fitter               ; 00:00:07     ; 1.1                     ; 1266 MB             ; 00:00:08                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 359 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 525 MB              ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 591 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 575 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 591 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 575 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 591 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 575 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 591 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 575 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 591 MB              ; 00:00:00                           ;
-; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:43                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 583 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 590 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 574 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 590 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 583 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 590 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 583 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 583 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 574 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 603 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 583 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 583 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 583 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 603 MB              ; 00:00:01                           ;
+; Total                ; 00:00:25     ; --                      ; --                  ; 00:00:43                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -159,6 +165,10 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
 ; EDA Netlist Writer   ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
 ; EDA Netlist Writer   ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
+; EDA Netlist Writer   ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
+; EDA Netlist Writer   ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
+; EDA Netlist Writer   ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
+; EDA Netlist Writer   ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -170,16 +180,20 @@ quartus_fit --read_settings_files=off --write_settings_files=off ERV24 -c ERV24
 quartus_asm --read_settings_files=off --write_settings_files=off ERV24 -c ERV24
 quartus_sta ERV24 -c ERV24
 quartus_eda --read_settings_files=off --write_settings_files=off ERV24 -c ERV24
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/IDA_test.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/IDA_test.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/dataMem_test2.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/VUELTA_test.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/VUELTA_test.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/dataMem_test2.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/dataMem_test2.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/VUELTA_test.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/VUELTA_test.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/dataMem_test2.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/VUELTA_test.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/VUELTA_test.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/dataMem_test2.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/dataMem_test2.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/IDA_test.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/IDA_test.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/dataMem_test2.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
 
 
 
