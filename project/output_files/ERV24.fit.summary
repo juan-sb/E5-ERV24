@@ -1,16 +1,16 @@
-Fitter Status : Successful - Fri Jun  7 12:14:45 2024
+Fitter Status : Successful - Sat Jun  8 21:51:42 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : ERV24
-Top-level Entity Name : ERV24
+Top-level Entity Name : IDA_test
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 3,213 / 22,320 ( 14 % )
-    Total combinational functions : 3,180 / 22,320 ( 14 % )
-    Dedicated logic registers : 1,362 / 22,320 ( 6 % )
-Total registers : 1362
-Total pins : 123 / 154 ( 80 % )
+Total logic elements : 118 / 22,320 ( < 1 % )
+    Total combinational functions : 118 / 22,320 ( < 1 % )
+    Dedicated logic registers : 0 / 22,320 ( 0 % )
+Total registers : 0
+Total pins : 137 / 154 ( 89 % )
 Total virtual pins : 0
-Total memory bits : 65,536 / 608,256 ( 11 % )
+Total memory bits : 0 / 608,256 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )
