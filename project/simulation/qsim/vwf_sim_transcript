@@ -1,182 +1,67 @@
 Determining the location of the ModelSim executable...
 
-Using: C:\intelFPGA\20.1\modelsim_ase\win32aloem
+Using: /opt/intelFPGA/20.1/modelsim_ase/linux
 
 To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
 Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source="C:/Users/sbruz/E5-ERV24/project/peripheral_test.vwf" --testbench_file="C:/Users/sbruz/E5-ERV24/project/simulation/qsim/Waveform.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source="/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf" --testbench_file="/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/dataMem_test2.vwf.vt"
 
-Info: *******************************************************************
-Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.
-    Info: Your use of Intel Corporation's design tools, logic functions 
-    Info: and other software and tools, and any partner logic 
-    Info: functions, and any output files from any of the foregoing 
-    Info: (including device programming or simulation files), and any 
-    Info: associated documentation or information are expressly subject 
-    Info: to the terms and conditions of the Intel Program License 
-    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
-    Info: the Intel FPGA IP License Agreement, or other applicable license
-    Info: agreement, including, without limitation, that your use is for
-    Info: the sole purpose of programming logic devices manufactured by
-    Info: Intel and sold by Intel or its authorized distributors.  Please
-    Info: refer to the applicable agreement for further details, at
-    Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu May  2 17:11:14 2024
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=C:/Users/sbruz/E5-ERV24/project/peripheral_test.vwf --testbench_file=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/Waveform.vwf.vt
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-
-n vector source file when writing test bench files
-
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sun Jun  9 01:01:14 2024Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=/home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf --testbench_file=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/dataMem_test2.vwf.vtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+ test bench files
+ing test bench files
 Completed successfully. 
 
 Completed successfully. 
 
 **** Generating the timing simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/sbruz/E5-ERV24/project/simulation/qsim/" ERV24 -c ERV24
+quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/" ERV24 -c ERV24
 
-Info: *******************************************************************
-Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.
-    Info: Your use of Intel Corporation's design tools, logic functions 
-    Info: and other software and tools, and any partner logic 
-    Info: functions, and any output files from any of the foregoing 
-    Info: (including device programming or simulation files), and any 
-    Info: associated documentation or information are expressly subject 
-    Info: to the terms and conditions of the Intel Program License 
-    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
-    Info: the Intel FPGA IP License Agreement, or other applicable license
-    Info: agreement, including, without limitation, that your use is for
-    Info: the sole purpose of programming logic devices manufactured by
-    Info: Intel and sold by Intel or its authorized distributors.  Please
-    Info: refer to the applicable agreement for further details, at
-    Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu May  2 17:11:15 2024
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file ERV24_6_1200mv_85c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_6_1200mv_0c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_min_1200mv_0c_fast.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_6_1200mv_85c_v_slow.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_6_1200mv_0c_v_slow.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_min_1200mv_0c_v_fast.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_v.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4648 megabytes
-    Info: Processing ended: Thu May  2 17:11:16 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
-
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sun Jun  9 01:01:15 2024Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file ERV24_6_1200mv_85c_slow.vo in folder "/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ERV24_6_1200mv_0c_slow.vo in folder "/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ERV24_min_1200mv_0c_fast.vo in folder "/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ERV24.vo in folder "/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ERV24_6_1200mv_85c_v_slow.sdo in folder "/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ERV24_6_1200mv_0c_v_slow.sdo in folder "/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ERV24_min_1200mv_0c_v_fast.sdo in folder "/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ERV24_v.sdo in folder "/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 603 megabytes    Info: Processing ended: Sun Jun  9 01:01:15 2024    Info: Elapsed time: 00:00:00    Info: Total CPU time (on all processors): 00:00:01
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
 
-C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24.do generated.
+/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ERV24.do generated.
 
 Completed successfully. 
 
 **** Running the ModelSim simulation ****
 
-C:/intelFPGA/20.1/modelsim_ase/win32aloem/vsim -c -do ERV24.do
+/opt/intelFPGA/20.1/modelsim_ase/linux/vsim -c -do ERV24.do
 
 Reading pref.tcl
-
-
 # 2020.1
-
-
 # do ERV24.do
-
 # ** Warning: (vlib-34) Library already exists at "work".
-
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-
-# Start time: 17:11:18 on May 02,2024
-# vlog -work work ERV24.vo 
-
-# -- Compiling module ERV24
-
+# Start time: 01:01:16 on Jun 09,2024# vlog -work work ERV24.vo 
+# -- Compiling module dataMem_test
 # -- Compiling module hard_block
-
-# 
-# Top level modules:
-
-# 	ERV24
-
-# End time: 17:11:18 on May 02,2024, Elapsed time: 0:00:00
-
-# Errors: 0, Warnings: 0
-
+# # Top level modules:# 	dataMem_test# End time: 01:01:16 on Jun 09,2024, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-
-# Start time: 17:11:18 on May 02,2024
-
-# vlog -work work Waveform.vwf.vt 
-
-# -- Compiling module ERV24_vlg_vec_tst
-
+# Start time: 01:01:16 on Jun 09,2024# vlog -work work dataMem_test2.vwf.vt 
+# -- Compiling module dataMem_test_vlg_vec_tst
 # 
-
-# Top level modules:
-# 	ERV24_vlg_vec_tst
-
-# End time: 17:11:18 on May 02,2024, Elapsed time: 0:00:00
-
-# Errors: 0, Warnings: 0
-
-# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ERV24_vlg_vec_tst 
-# Start time: 17:11:18 on May 02,2024
-# Loading work.ERV24_vlg_vec_tst
-# Loading work.ERV24
-# Loading work.hard_block
-# Loading cycloneive_ver.cycloneive_io_obuf
-# Loading cycloneive_ver.cycloneive_io_ibuf
-# Loading cycloneive_ver.cycloneive_clkctrl
-# Loading cycloneive_ver.cycloneive_mux41
-# Loading cycloneive_ver.cycloneive_ena_reg
-# Loading cycloneive_ver.cycloneive_lcell_comb
-# Loading altera_ver.dffeas
-# Loading cycloneive_ver.cycloneive_ram_block
-# Loading cycloneive_ver.cycloneive_ram_register
-# Loading cycloneive_ver.cycloneive_ram_pulse_generator
-# SDF 2020.1 Compiler 2020.02 Feb 28 2020
-# 
-# Loading instances from ERV24_v.sdo
-# Loading altera_ver.PRIM_GDFF_LOW
-# Loading timing data from ERV24_v.sdo
-# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Instance: /ERV24_vlg_vec_tst File: Waveform.vwf.vt
-
+# Top level modules:# 	dataMem_test_vlg_vec_tst# End time: 01:01:16 on Jun 09,2024, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.dataMem_test_vlg_vec_tst # Start time: 01:01:16 on Jun 09,2024# Loading work.dataMem_test_vlg_vec_tst# Loading work.dataMem_test# Loading work.hard_block# Loading cycloneive_ver.cycloneive_io_obuf# Loading cycloneive_ver.cycloneive_io_ibuf# Loading cycloneive_ver.cycloneive_lcell_comb# Loading cycloneive_ver.cycloneive_clkctrl# Loading cycloneive_ver.cycloneive_mux41# Loading cycloneive_ver.cycloneive_ena_reg# Loading cycloneive_ver.cycloneive_ram_block# Loading cycloneive_ver.cycloneive_ram_register# Loading cycloneive_ver.cycloneive_ram_pulse_generator# SDF 2020.1 Compiler 2020.02 Feb 28 2020# Loading instances from ERV24_v.sdo# Loading timing data from ERV24_v.sdo# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.#    Time: 0 ps  Iteration: 0  Instance: /dataMem_test_vlg_vec_tst File: dataMem_test2.vwf.vt
 # after#26
-
-# ** Note: $stop    : Waveform.vwf.vt(59)
-#    Time: 1 us  Iteration: 0  Instance: /ERV24_vlg_vec_tst
-
-# Break in Module ERV24_vlg_vec_tst at Waveform.vwf.vt line 59
-
-# Stopped at Waveform.vwf.vt line 59
-
-# End time: 17:11:19 on May 02,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-
+# ** Note: $finish    : dataMem_test2.vwf.vt(59)#    Time: 1 us  Iteration: 0  Instance: /dataMem_test_vlg_vec_tst
+# End time: 01:01:17 on Jun 09,2024, Elapsed time: 0:00:01# Errors: 0, Warnings: 0
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/sbruz/E5-ERV24/project/peripheral_test.vwf...
+Reading /home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test2.vwf...
 
-Reading C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24.msim.vcd...
+Reading /home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ERV24.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24_20240502171119.sim.vwf
+Writing the resulting VWF to /home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim/ERV24_20240609010117.sim.vwf
 
 Finished VCD to VWF conversion.
 

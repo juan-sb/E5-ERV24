@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY ERV24
+set_global_assignment -name TOP_LEVEL_ENTITY dataMem_test
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:02:22  APRIL 24, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -55,22 +55,60 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name QIP_FILE ProgramMemory.qip
-set_global_assignment -name BDF_FILE ERV24.bdf
-set_global_assignment -name QIP_FILE x0.qip
-set_global_assignment -name QIP_FILE DataMemory.qip
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name QIP_FILE PeripheralMux.qip
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SEARCH_PATH ../project
+set_global_assignment -name BSF_FILE utils/DataMemory.bsf
+set_global_assignment -name QIP_FILE utils/DataMemory.qip
+set_global_assignment -name VECTOR_WAVEFORM_FILE ifu/ifu_test.vwf
+set_global_assignment -name BDF_FILE "ERV24-nopipe.bdf"
+set_global_assignment -name HEX_FILE program.hex
+set_global_assignment -name VHDL_FILE alu/alu.vhd
+set_global_assignment -name VERILOG_FILE regbank/regMux.v
+set_global_assignment -name BDF_FILE regbank/regbank.bdf
+set_global_assignment -name VERILOG_FILE regbank/dec_5_32.v
+set_global_assignment -name QIP_FILE Cycle.qip
+set_global_assignment -name VERILOG_FILE utils/ProgramMemory.v
+set_global_assignment -name VERILOG_FILE utils/reg32.v
+set_global_assignment -name VERILOG_FILE instruction_parsing/imm_builder.v
+set_global_assignment -name VERILOG_FILE instruction_parsing/decoder.v
+set_global_assignment -name BDF_FILE ifu/IFU.bdf
+set_global_assignment -name VERILOG_FILE ifu/fetch.v
+set_global_assignment -name QIP_FILE memory_mapping/MemoryPeriphMux.qip
+set_global_assignment -name BDF_FILE ERV24.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE peripheral_test.vwf
-set_global_assignment -name QIP_FILE SingleBitMux.qip
 set_global_assignment -name VERILOG_FILE custom_peripherals/GPIO/GPIO.v
 set_global_assignment -name QIP_FILE core/CSRCounters.qip
 set_global_assignment -name QIP_FILE memory_mapping/GPIO_address_decoder.qip
 set_global_assignment -name QIP_FILE memory_mapping/peripheral_addr_dec.qip
 set_global_assignment -name VERILOG_FILE memory_mapping/PeripheralAdressMatcher.v
+set_global_assignment -name QIP_FILE memory_mapping/peripheral_mux.qip
+set_global_assignment -name VERILOG_FILE memory_mutator/memory_mutator.v
+set_global_assignment -name BSF_FILE alu/alu.bsf
+set_global_assignment -name QIP_FILE utils/bus_mux.qip
+set_global_assignment -name BDF_FILE "peripheral_and_memory_block_no borrar por favore.bdf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE test.vwf
+set_global_assignment -name VERILOG_FILE pipeline/decode_imm_stage_latch.v
+set_global_assignment -name VERILOG_FILE pipeline/op_read_stage_latch.v
+set_global_assignment -name VERILOG_FILE pipeline/alu_stage_latch.v
+set_global_assignment -name VERILOG_FILE pipeline/pipeline_halt_control.v
+set_global_assignment -name QIP_FILE utils/sum_2x32b.qip
+set_global_assignment -name VERILOG_FILE utils/bit_scatterer.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE ifu/ifu_test_jfs.vwf
+set_global_assignment -name VERILOG_FILE jump_control/jmp_ctrl.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE test_jalr.vwf
+set_global_assignment -name QIP_FILE clocking/pll_50_1.qip
+set_global_assignment -name SDC_FILE ERV24.sdc
+set_global_assignment -name VERILOG_FILE memory_mutator/memory_mutator_IDA.v
+set_global_assignment -name VERILOG_FILE memory_mutator/memory_mutator_VUELTA.v
+set_global_assignment -name BDF_FILE memory_mutator/IDA_test.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE memory_mutator/IDA_test.vwf
+set_global_assignment -name BDF_FILE memory_mutator/VUELTA_test.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE memory_mutator/VUELTA_test.vwf
+set_global_assignment -name BDF_FILE memory_mutator/dataMem_test.bdf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE memory_mutator/dataMem_test.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE memory_mutator/dataMem_test2.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name QIP_FILE memory_mapping/MemoryPerpihMux.qip
