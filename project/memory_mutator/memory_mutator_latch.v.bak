@@ -1,0 +1,17 @@
+module memory_mutator_latch(
+ input rw,
+ input sign,
+ input [3:0] byte_en,
+ input [1:0] access_size,
+ 
+ input clk,
+ input ena,
+ input x,
+ 
+ output reg rw_out,
+ output reg sign_out,
+ output reg [3:0] byte_en_out,
+ output reg [1:0] access_size_out,
+);
+
+endmodule

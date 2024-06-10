@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ERV24
-Sun Jun  9 00:53:59 2024
+Mon Jun 10 01:33:49 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -15,14 +15,34 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for DataMemory:inst3|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated
- 13. Parameter Settings for User Entity Instance: DataMemory:inst3|altsyncram:altsyncram_component
- 14. altsyncram Parameter Settings by Entity Instance
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated
+ 14. Source assignments for DataMemory:inst17|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated
+ 15. Source assignments for GPIO_8bit:inst85
+ 16. Parameter Settings for User Entity Instance: IFU:inst2|bus_mux:inst5|lpm_mux:LPM_MUX_component
+ 17. Parameter Settings for User Entity Instance: IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component
+ 18. Parameter Settings for User Entity Instance: IFU:inst2|bus_mux:inst2|lpm_mux:LPM_MUX_component
+ 19. Parameter Settings for User Entity Instance: IFU:inst2|bus_mux:inst3|lpm_mux:LPM_MUX_component
+ 20. Parameter Settings for User Entity Instance: IFU:inst2|sum_2x32b:inst10|parallel_add:parallel_add_component
+ 21. Parameter Settings for User Entity Instance: IFU:inst2|LPM_CONSTANT:inst14
+ 22. Parameter Settings for User Entity Instance: regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component
+ 23. Parameter Settings for User Entity Instance: regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component
+ 24. Parameter Settings for User Entity Instance: regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component
+ 25. Parameter Settings for User Entity Instance: bus_mux:inst26|lpm_mux:LPM_MUX_component
+ 26. Parameter Settings for User Entity Instance: sum_2x32b:inst14|parallel_add:parallel_add_component
+ 27. Parameter Settings for User Entity Instance: MemoryPeriphMux:inst20|lpm_mux:LPM_MUX_component
+ 28. Parameter Settings for User Entity Instance: DataMemory:inst17|altsyncram:altsyncram_component
+ 29. Parameter Settings for User Entity Instance: peripheral_mux:inst321|lpm_mux:LPM_MUX_component
+ 30. Parameter Settings for User Entity Instance: peripheral_addr_dec:inst21|lpm_decode:LPM_DECODE_component
+ 31. Parameter Settings for User Entity Instance: bus_mux:inst15|lpm_mux:LPM_MUX_component
+ 32. Parameter Settings for User Entity Instance: bus_mux:inst16|lpm_mux:LPM_MUX_component
+ 33. altsyncram Parameter Settings by Entity Instance
+ 34. Post-Synthesis Netlist Statistics for Top Partition
+ 35. Elapsed Time Per Partition
+ 36. Analysis & Synthesis Messages
+ 37. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,18 +69,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun  9 00:53:59 2024          ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 10 01:33:49 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ERV24                                          ;
-; Top-level Entity Name              ; dataMem_test                                   ;
+; Top-level Entity Name              ; ERV24                                          ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 226                                            ;
-;     Total combinational functions  ; 226                                            ;
-;     Dedicated logic registers      ; 0                                              ;
-; Total registers                    ; 0                                              ;
-; Total pins                         ; 134                                            ;
+; Total logic elements               ; 4,517                                          ;
+;     Total combinational functions  ; 3,512                                          ;
+;     Dedicated logic registers      ; 1,412                                          ;
+; Total registers                    ; 1412                                           ;
+; Total pins                         ; 92                                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 262,144                                        ;
+; Total memory bits                  ; 327,680                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
@@ -72,7 +92,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                            ; dataMem_test       ; ERV24              ;
+; Top-level entity name                                            ; ERV24              ; ERV24              ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -158,102 +178,258 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
-+----------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path       ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                         ; Library ;
-+----------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
-; utils/DataMemory.v                     ; yes             ; User Wizard-Generated File         ; /home/aheir/Documents/alheir/E5-ERV24/project/utils/DataMemory.v                     ;         ;
-; memory_mutator/memory_mutator_IDA.v    ; yes             ; User Verilog HDL File              ; /home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/memory_mutator_IDA.v    ;         ;
-; memory_mutator/memory_mutator_VUELTA.v ; yes             ; User Verilog HDL File              ; /home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/memory_mutator_VUELTA.v ;         ;
-; memory_mutator/dataMem_test.bdf        ; yes             ; User Block Diagram/Schematic File  ; /home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/dataMem_test.bdf        ;         ;
-; altsyncram.tdf                         ; yes             ; Megafunction                       ; /opt/intelFPGA/23.1/quartus/libraries/megafunctions/altsyncram.tdf                   ;         ;
-; stratix_ram_block.inc                  ; yes             ; Megafunction                       ; /opt/intelFPGA/23.1/quartus/libraries/megafunctions/stratix_ram_block.inc            ;         ;
-; lpm_mux.inc                            ; yes             ; Megafunction                       ; /opt/intelFPGA/23.1/quartus/libraries/megafunctions/lpm_mux.inc                      ;         ;
-; lpm_decode.inc                         ; yes             ; Megafunction                       ; /opt/intelFPGA/23.1/quartus/libraries/megafunctions/lpm_decode.inc                   ;         ;
-; aglobal231.inc                         ; yes             ; Megafunction                       ; /opt/intelFPGA/23.1/quartus/libraries/megafunctions/aglobal231.inc                   ;         ;
-; a_rdenreg.inc                          ; yes             ; Megafunction                       ; /opt/intelFPGA/23.1/quartus/libraries/megafunctions/a_rdenreg.inc                    ;         ;
-; altrom.inc                             ; yes             ; Megafunction                       ; /opt/intelFPGA/23.1/quartus/libraries/megafunctions/altrom.inc                       ;         ;
-; altram.inc                             ; yes             ; Megafunction                       ; /opt/intelFPGA/23.1/quartus/libraries/megafunctions/altram.inc                       ;         ;
-; altdpram.inc                           ; yes             ; Megafunction                       ; /opt/intelFPGA/23.1/quartus/libraries/megafunctions/altdpram.inc                     ;         ;
-; db/altsyncram_evi1.tdf                 ; yes             ; Auto-Generated Megafunction        ; /home/aheir/Documents/alheir/E5-ERV24/project/db/altsyncram_evi1.tdf                 ;         ;
-+----------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
++----------------------------------------+-----------------+---------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------------+-----------------+---------------------------------------+---------------------------------------------------------------------------------+---------+
+; utils/DataMemory.v                     ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v                              ;         ;
+; program.hex                            ; yes             ; User Hexadecimal (Intel-Format) File  ; C:/Users/sbruz/E5-ERV24/project/program.hex                                     ;         ;
+; alu/alu.vhd                            ; yes             ; User VHDL File                        ; C:/Users/sbruz/E5-ERV24/project/alu/alu.vhd                                     ;         ;
+; regbank/regMux.v                       ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/regbank/regMux.v                                ;         ;
+; regbank/regbank.bdf                    ; yes             ; User Block Diagram/Schematic File     ; C:/Users/sbruz/E5-ERV24/project/regbank/regbank.bdf                             ;         ;
+; regbank/dec_5_32.v                     ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/regbank/dec_5_32.v                              ;         ;
+; utils/ProgramMemory.v                  ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v                           ;         ;
+; utils/reg32.v                          ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/utils/reg32.v                                   ;         ;
+; instruction_parsing/imm_builder.v      ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/instruction_parsing/imm_builder.v               ;         ;
+; instruction_parsing/decoder.v          ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/instruction_parsing/decoder.v                   ;         ;
+; ifu/IFU.bdf                            ; yes             ; User Block Diagram/Schematic File     ; C:/Users/sbruz/E5-ERV24/project/ifu/IFU.bdf                                     ;         ;
+; ifu/fetch.v                            ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/ifu/fetch.v                                     ;         ;
+; memory_mapping/MemoryPeriphMux.v       ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/memory_mapping/MemoryPeriphMux.v                ;         ;
+; ERV24.bdf                              ; yes             ; User Block Diagram/Schematic File     ; C:/Users/sbruz/E5-ERV24/project/ERV24.bdf                                       ;         ;
+; memory_mapping/peripheral_addr_dec.v   ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v            ;         ;
+; memory_mapping/peripheral_mux.v        ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v                 ;         ;
+; utils/bus_mux.v                        ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v                                 ;         ;
+; pipeline/decode_imm_stage_latch.v      ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/pipeline/decode_imm_stage_latch.v               ;         ;
+; pipeline/op_read_stage_latch.v         ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/pipeline/op_read_stage_latch.v                  ;         ;
+; pipeline/alu_stage_latch.v             ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/pipeline/alu_stage_latch.v                      ;         ;
+; pipeline/pipeline_halt_control.v       ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/pipeline/pipeline_halt_control.v                ;         ;
+; utils/sum_2x32b.v                      ; yes             ; User Wizard-Generated File            ; C:/Users/sbruz/E5-ERV24/project/utils/sum_2x32b.v                               ;         ;
+; jump_control/jmp_ctrl.v                ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/jump_control/jmp_ctrl.v                         ;         ;
+; memory_mutator/memory_mutator_IDA.v    ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/memory_mutator/memory_mutator_IDA.v             ;         ;
+; memory_mutator/memory_mutator_VUELTA.v ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/memory_mutator/memory_mutator_VUELTA.v          ;         ;
+; memory_mutator/memory_mutator_latch.v  ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/memory_mutator/memory_mutator_latch.v           ;         ;
+; custom_peripherals/GPIO/GPIO8b.v       ; yes             ; User Verilog HDL File                 ; C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO8b.v                ;         ;
+; lpm_mux.tdf                            ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf           ;         ;
+; aglobal231.inc                         ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc        ;         ;
+; muxlut.inc                             ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/muxlut.inc            ;         ;
+; bypassff.inc                           ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc          ;         ;
+; altshift.inc                           ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc          ;         ;
+; db/mux_rsc.tdf                         ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/mux_rsc.tdf                                  ;         ;
+; altsyncram.tdf                         ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                  ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                            ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                         ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; a_rdenreg.inc                          ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                             ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                             ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                           ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_40b1.tdf                 ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf                          ;         ;
+; parallel_add.tdf                       ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/parallel_add.tdf      ;         ;
+; pcpa_add.inc                           ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/pcpa_add.inc          ;         ;
+; csa_add.inc                            ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/csa_add.inc           ;         ;
+; db/par_add_bve.tdf                     ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/par_add_bve.tdf                              ;         ;
+; lpm_constant.tdf                       ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_constant.tdf      ;         ;
+; db/lpm_constant_4j4.tdf                ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/lpm_constant_4j4.tdf                         ;         ;
+; db/mux_iuc.tdf                         ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/mux_iuc.tdf                                  ;         ;
+; lpm_decode.tdf                         ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf        ;         ;
+; declut.inc                             ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/declut.inc            ;         ;
+; lpm_compare.inc                        ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_compare.inc       ;         ;
+; lpm_constant.inc                       ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_constant.inc      ;         ;
+; db/decode_41g.tdf                      ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/decode_41g.tdf                               ;         ;
+; db/altsyncram_evi1.tdf                 ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/altsyncram_evi1.tdf                          ;         ;
+; db/mux_3tc.tdf                         ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/mux_3tc.tdf                                  ;         ;
+; db/decode_lvf.tdf                      ; yes             ; Auto-Generated Megafunction           ; C:/Users/sbruz/E5-ERV24/project/db/decode_lvf.tdf                               ;         ;
++----------------------------------------+-----------------+---------------------------------------+---------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 226      ;
-;                                             ;          ;
-; Total combinational functions               ; 226      ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 185      ;
-;     -- 3 input functions                    ; 20       ;
-;     -- <=2 input functions                  ; 21       ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 226      ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 134      ;
-; Total memory bits                           ; 262144   ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; rw~input ;
-; Maximum fan-out                             ; 75       ;
-; Total fan-out                               ; 1550     ;
-; Average fan-out                             ; 2.95     ;
-+---------------------------------------------+----------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 4,517     ;
+;                                             ;           ;
+; Total combinational functions               ; 3512      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 2347      ;
+;     -- 3 input functions                    ; 829       ;
+;     -- <=2 input functions                  ; 336       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 3143      ;
+;     -- arithmetic mode                      ; 369       ;
+;                                             ;           ;
+; Total registers                             ; 1412      ;
+;     -- Dedicated logic registers            ; 1412      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 92        ;
+; Total memory bits                           ; 327680    ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 1476      ;
+; Total fan-out                               ; 18746     ;
+; Average fan-out                             ; 3.62      ;
++---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+-----------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                           ; Entity Name           ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+-----------------------+--------------+
-; |dataMem_test                             ; 226 (2)             ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 134  ; 0            ; |dataMem_test                                                                                 ; dataMem_test          ; work         ;
-;    |DataMemory:inst3|                     ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataMem_test|DataMemory:inst3                                                                ; DataMemory            ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataMem_test|DataMemory:inst3|altsyncram:altsyncram_component                                ; altsyncram            ; work         ;
-;          |altsyncram_evi1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataMem_test|DataMemory:inst3|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated ; altsyncram_evi1       ; work         ;
-;    |memory_mutator_IDA:inst|              ; 115 (115)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataMem_test|memory_mutator_IDA:inst                                                         ; memory_mutator_IDA    ; work         ;
-;    |memory_mutator_VUELTA:inst2|          ; 109 (109)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataMem_test|memory_mutator_VUELTA:inst2                                                     ; memory_mutator_VUELTA ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+-----------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                     ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Entity Name            ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+------------------------+--------------+
+; |ERV24                                         ; 3512 (1)            ; 1412 (0)                  ; 327680      ; 0            ; 0       ; 0         ; 92   ; 0            ; |ERV24                                                                                              ; ERV24                  ; work         ;
+;    |DataMemory:inst17|                         ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|DataMemory:inst17                                                                            ; DataMemory             ; work         ;
+;       |altsyncram:altsyncram_component|        ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|DataMemory:inst17|altsyncram:altsyncram_component                                            ; altsyncram             ; work         ;
+;          |altsyncram_evi1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|DataMemory:inst17|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated             ; altsyncram_evi1        ; work         ;
+;    |GPIO_8bit:inst85|                          ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|GPIO_8bit:inst85                                                                             ; GPIO_8bit              ; work         ;
+;    |IFU:inst2|                                 ; 192 (2)             ; 97 (1)                    ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2                                                                                    ; IFU                    ; work         ;
+;       |ProgramMemory:inst4|                    ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|ProgramMemory:inst4                                                                ; ProgramMemory          ; work         ;
+;          |altsyncram:altsyncram_component|     ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component                                ; altsyncram             ; work         ;
+;             |altsyncram_40b1:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated ; altsyncram_40b1        ; work         ;
+;       |bus_mux:inst2|                          ; 98 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|bus_mux:inst2                                                                      ; bus_mux                ; work         ;
+;          |lpm_mux:LPM_MUX_component|           ; 98 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|bus_mux:inst2|lpm_mux:LPM_MUX_component                                            ; lpm_mux                ; work         ;
+;             |mux_rsc:auto_generated|           ; 98 (98)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|bus_mux:inst2|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                     ; mux_rsc                ; work         ;
+;       |bus_mux:inst5|                          ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|bus_mux:inst5                                                                      ; bus_mux                ; work         ;
+;          |lpm_mux:LPM_MUX_component|           ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|bus_mux:inst5|lpm_mux:LPM_MUX_component                                            ; lpm_mux                ; work         ;
+;             |mux_rsc:auto_generated|           ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|bus_mux:inst5|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                     ; mux_rsc                ; work         ;
+;       |fetch:inst|                             ; 30 (30)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|fetch:inst                                                                         ; fetch                  ; work         ;
+;       |reg32:PCreg2|                           ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|reg32:PCreg2                                                                       ; reg32                  ; work         ;
+;       |reg32:PCreg|                            ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|reg32:PCreg                                                                        ; reg32                  ; work         ;
+;       |sum_2x32b:inst10|                       ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|sum_2x32b:inst10                                                                   ; sum_2x32b              ; work         ;
+;          |parallel_add:parallel_add_component| ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|sum_2x32b:inst10|parallel_add:parallel_add_component                               ; parallel_add           ; work         ;
+;             |par_add_bve:auto_generated|       ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|IFU:inst2|sum_2x32b:inst10|parallel_add:parallel_add_component|par_add_bve:auto_generated    ; par_add_bve            ; work         ;
+;    |MemoryPeriphMux:inst20|                    ; 25 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|MemoryPeriphMux:inst20                                                                       ; MemoryPeriphMux        ; work         ;
+;       |lpm_mux:LPM_MUX_component|              ; 25 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|MemoryPeriphMux:inst20|lpm_mux:LPM_MUX_component                                             ; lpm_mux                ; work         ;
+;          |mux_rsc:auto_generated|              ; 25 (25)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|MemoryPeriphMux:inst20|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                      ; mux_rsc                ; work         ;
+;    |alu:inst9|                                 ; 834 (834)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|alu:inst9                                                                                    ; alu                    ; work         ;
+;    |alu_stage_latch:inst12|                    ; 0 (0)               ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|alu_stage_latch:inst12                                                                       ; alu_stage_latch        ; work         ;
+;    |bus_mux:inst15|                            ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst15                                                                               ; bus_mux                ; work         ;
+;       |lpm_mux:LPM_MUX_component|              ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst15|lpm_mux:LPM_MUX_component                                                     ; lpm_mux                ; work         ;
+;          |mux_rsc:auto_generated|              ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst15|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                              ; mux_rsc                ; work         ;
+;    |bus_mux:inst16|                            ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst16                                                                               ; bus_mux                ; work         ;
+;       |lpm_mux:LPM_MUX_component|              ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst16|lpm_mux:LPM_MUX_component                                                     ; lpm_mux                ; work         ;
+;          |mux_rsc:auto_generated|              ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst16|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                              ; mux_rsc                ; work         ;
+;    |bus_mux:inst26|                            ; 144 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst26                                                                               ; bus_mux                ; work         ;
+;       |lpm_mux:LPM_MUX_component|              ; 144 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst26|lpm_mux:LPM_MUX_component                                                     ; lpm_mux                ; work         ;
+;          |mux_rsc:auto_generated|              ; 144 (144)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|bus_mux:inst26|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated                              ; mux_rsc                ; work         ;
+;    |decode_imm_stage_latch:inst4|              ; 102 (102)           ; 96 (96)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|decode_imm_stage_latch:inst4                                                                 ; decode_imm_stage_latch ; work         ;
+;    |decoder:inst7|                             ; 34 (34)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|decoder:inst7                                                                                ; decoder                ; work         ;
+;    |imm_builder:inst6|                         ; 83 (83)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|imm_builder:inst6                                                                            ; imm_builder            ; work         ;
+;    |jmp_ctrl:inst11|                           ; 99 (99)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|jmp_ctrl:inst11                                                                              ; jmp_ctrl               ; work         ;
+;    |memory_mutator_IDA:inst8|                  ; 116 (116)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|memory_mutator_IDA:inst8                                                                     ; memory_mutator_IDA     ; work         ;
+;    |memory_mutator_VUELTA:inst13|              ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|memory_mutator_VUELTA:inst13                                                                 ; memory_mutator_VUELTA  ; work         ;
+;    |memory_mutator_latch:inst29|               ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|memory_mutator_latch:inst29                                                                  ; memory_mutator_latch   ; work         ;
+;    |op_read_stage_latch:inst5|                 ; 685 (685)           ; 148 (148)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|op_read_stage_latch:inst5                                                                    ; op_read_stage_latch    ; work         ;
+;    |peripheral_addr_dec:inst21|                ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|peripheral_addr_dec:inst21                                                                   ; peripheral_addr_dec    ; work         ;
+;       |lpm_decode:LPM_DECODE_component|        ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|peripheral_addr_dec:inst21|lpm_decode:LPM_DECODE_component                                   ; lpm_decode             ; work         ;
+;          |decode_lvf:auto_generated|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|peripheral_addr_dec:inst21|lpm_decode:LPM_DECODE_component|decode_lvf:auto_generated         ; decode_lvf             ; work         ;
+;    |pipeline_halt_control:inst1|               ; 49 (49)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|pipeline_halt_control:inst1                                                                  ; pipeline_halt_control  ; work         ;
+;    |regbank:inst3|                             ; 998 (0)             ; 992 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3                                                                                ; regbank                ; work         ;
+;       |dec_5_32:inst|                          ; 35 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|dec_5_32:inst                                                                  ; dec_5_32               ; work         ;
+;          |lpm_decode:LPM_DECODE_component|     ; 35 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component                                  ; lpm_decode             ; work         ;
+;             |decode_41g:auto_generated|        ; 35 (35)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component|decode_41g:auto_generated        ; decode_41g             ; work         ;
+;       |reg32:instREG10|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG10                                                                ; reg32                  ; work         ;
+;       |reg32:instREG11|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG11                                                                ; reg32                  ; work         ;
+;       |reg32:instREG12|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG12                                                                ; reg32                  ; work         ;
+;       |reg32:instREG13|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG13                                                                ; reg32                  ; work         ;
+;       |reg32:instREG14|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG14                                                                ; reg32                  ; work         ;
+;       |reg32:instREG15|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG15                                                                ; reg32                  ; work         ;
+;       |reg32:instREG16|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG16                                                                ; reg32                  ; work         ;
+;       |reg32:instREG17|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG17                                                                ; reg32                  ; work         ;
+;       |reg32:instREG18|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG18                                                                ; reg32                  ; work         ;
+;       |reg32:instREG19|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG19                                                                ; reg32                  ; work         ;
+;       |reg32:instREG1|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG1                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG20|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG20                                                                ; reg32                  ; work         ;
+;       |reg32:instREG21|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG21                                                                ; reg32                  ; work         ;
+;       |reg32:instREG22|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG22                                                                ; reg32                  ; work         ;
+;       |reg32:instREG23|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG23                                                                ; reg32                  ; work         ;
+;       |reg32:instREG24|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG24                                                                ; reg32                  ; work         ;
+;       |reg32:instREG25|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG25                                                                ; reg32                  ; work         ;
+;       |reg32:instREG26|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG26                                                                ; reg32                  ; work         ;
+;       |reg32:instREG27|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG27                                                                ; reg32                  ; work         ;
+;       |reg32:instREG28|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG28                                                                ; reg32                  ; work         ;
+;       |reg32:instREG29|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG29                                                                ; reg32                  ; work         ;
+;       |reg32:instREG2|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG2                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG30|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG30                                                                ; reg32                  ; work         ;
+;       |reg32:instREG31|                        ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG31                                                                ; reg32                  ; work         ;
+;       |reg32:instREG3|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG3                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG4|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG4                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG5|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG5                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG6|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG6                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG7|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG7                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG8|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG8                                                                 ; reg32                  ; work         ;
+;       |reg32:instREG9|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|reg32:instREG9                                                                 ; reg32                  ; work         ;
+;       |regMux:inst11|                          ; 771 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst11                                                                  ; regMux                 ; work         ;
+;          |lpm_mux:LPM_MUX_component|           ; 771 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component                                        ; lpm_mux                ; work         ;
+;             |mux_iuc:auto_generated|           ; 771 (771)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component|mux_iuc:auto_generated                 ; mux_iuc                ; work         ;
+;       |regMux:inst12|                          ; 192 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst12                                                                  ; regMux                 ; work         ;
+;          |lpm_mux:LPM_MUX_component|           ; 192 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component                                        ; lpm_mux                ; work         ;
+;             |mux_iuc:auto_generated|           ; 192 (192)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component|mux_iuc:auto_generated                 ; mux_iuc                ; work         ;
+;    |sum_2x32b:inst14|                          ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|sum_2x32b:inst14                                                                             ; sum_2x32b              ; work         ;
+;       |parallel_add:parallel_add_component|    ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|sum_2x32b:inst14|parallel_add:parallel_add_component                                         ; parallel_add           ; work         ;
+;          |par_add_bve:auto_generated|          ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ERV24|sum_2x32b:inst14|parallel_add:parallel_add_component|par_add_bve:auto_generated              ; par_add_bve            ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                            ;
-+--------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------+
-; Name                                                                                       ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
-+--------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------+
-; DataMemory:inst3|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 8192         ; 32           ; --           ; --           ; 262144 ; None ;
-+--------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                ;
++---------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+-------------+
+; Name                                                                                                    ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF         ;
++---------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+-------------+
+; DataMemory:inst17|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated|ALTSYNCRAM             ; AUTO ; Single Port ; 8192         ; 32           ; --           ; --           ; 262144 ; None        ;
+; IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 2048         ; 32           ; --           ; --           ; 65536  ; program.hex ;
++---------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                               ;
-+--------+--------------+---------+--------------+--------------+--------------------------------+--------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                ; IP Include File    ;
-+--------+--------------+---------+--------------+--------------+--------------------------------+--------------------+
-; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |dataMem_test|DataMemory:inst3 ; utils/DataMemory.v ;
-+--------+--------------+---------+--------------+--------------+--------------------------------+--------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                    ;
++--------+--------------+---------+--------------+--------------+-----------------------------------+--------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                   ; IP Include File                      ;
++--------+--------------+---------+--------------+--------------+-----------------------------------+--------------------------------------+
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|IFU:inst2|bus_mux:inst2    ; utils/bus_mux.v                      ;
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|IFU:inst2|bus_mux:inst3    ; utils/bus_mux.v                      ;
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|IFU:inst2|bus_mux:inst5    ; utils/bus_mux.v                      ;
+; Altera ; PARALLEL_ADD ; 23.1    ; N/A          ; N/A          ; |ERV24|IFU:inst2|sum_2x32b:inst10 ; utils/sum_2x32b.v                    ;
+; Altera ; PARALLEL_ADD ; 23.1    ; N/A          ; N/A          ; |ERV24|sum_2x32b:inst14           ; utils/sum_2x32b.v                    ;
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|bus_mux:inst15             ; utils/bus_mux.v                      ;
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|bus_mux:inst16             ; utils/bus_mux.v                      ;
+; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |ERV24|DataMemory:inst17          ; utils/DataMemory.v                   ;
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|MemoryPeriphMux:inst20     ; memory_mapping/MemoryPeriphMux.v     ;
+; Altera ; LPM_DECODE   ; 23.1    ; N/A          ; N/A          ; |ERV24|peripheral_addr_dec:inst21 ; memory_mapping/peripheral_addr_dec.v ;
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|bus_mux:inst26             ; utils/bus_mux.v                      ;
+; Altera ; LPM_MUX      ; 23.1    ; N/A          ; N/A          ; |ERV24|peripheral_mux:inst321     ; memory_mapping/peripheral_mux.v      ;
++--------+--------------+---------+--------------+--------------+-----------------------------------+--------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                  ;
++--------------------------------------------+--------------------------------------------------------+
+; Register name                              ; Reason for Removal                                     ;
++--------------------------------------------+--------------------------------------------------------+
+; GPIO_8bit:inst85|q[16..31]                 ; Stuck at GND due to stuck port data_in                 ;
+; alu_stage_latch:inst12|flags_out[7]        ; Merged with memory_mutator_latch:inst29|rw_out         ;
+; decode_imm_stage_latch:inst4|funct3_out[2] ; Merged with decode_imm_stage_latch:inst4|flags_out[15] ;
+; op_read_stage_latch:inst5|funct3_out[2]    ; Merged with op_read_stage_latch:inst5|flags_out[15]    ;
+; Total Number of Removed Registers = 19     ;                                                        ;
++--------------------------------------------+--------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -261,122 +437,530 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 1412  ;
+; Number of registers using Synchronous Clear  ; 34    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 1104  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 1088  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |dataMem_test|memory_mutator_IDA:inst|Mux16                 ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |dataMem_test|memory_mutator_VUELTA:inst2|Mux13             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |dataMem_test|memory_mutator_IDA:inst|Mux21                 ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |dataMem_test|memory_mutator_VUELTA:inst2|adjusted_data[30] ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |dataMem_test|memory_mutator_IDA:inst|Mux28                 ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |dataMem_test|memory_mutator_IDA:inst|Mux49                 ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |dataMem_test|memory_mutator_IDA:inst|Mux29                 ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |dataMem_test|memory_mutator_IDA:inst|Mux44                 ;
-; 11:1               ; 8 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |dataMem_test|memory_mutator_VUELTA:inst2|adjusted_data[15] ;
-; 15:1               ; 8 bits    ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; No         ; |dataMem_test|memory_mutator_VUELTA:inst2|adjusted_data[7]  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------+
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |ERV24|decode_imm_stage_latch:inst4|flags_out[4]                                                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |ERV24|op_read_stage_latch:inst5|rs2_data_out[8]                                                ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |ERV24|decode_imm_stage_latch:inst4|flags_out[11]                                               ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |ERV24|GPIO_8bit:inst85|PDDR[1]                                                                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |ERV24|memory_mutator_IDA:inst8|Mux18                                                           ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |ERV24|imm_builder:inst6|Selector10                                                             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |ERV24|imm_builder:inst6|Selector31                                                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |ERV24|memory_mutator_VUELTA:inst13|Mux10                                                       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |ERV24|memory_mutator_IDA:inst8|Mux25                                                           ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 93 LEs               ; 0 LEs                  ; No         ; |ERV24|IFU:inst2|bus_mux:inst2|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated|result_node[18] ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |ERV24|bus_mux:inst26|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated|result_node[20]          ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |ERV24|memory_mutator_IDA:inst8|Mux26                                                           ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |ERV24|memory_mutator_IDA:inst8|Mux49                                                           ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |ERV24|memory_mutator_IDA:inst8|Mux30                                                           ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |ERV24|memory_mutator_IDA:inst8|Mux42                                                           ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |ERV24|imm_builder:inst6|Selector12                                                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |ERV24|imm_builder:inst6|Selector27                                                             ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 18 LEs               ; 24 LEs                 ; No         ; |ERV24|imm_builder:inst6|Selector23                                                             ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 40 LEs               ; 24 LEs                 ; No         ; |ERV24|bus_mux:inst26|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated|result_node[8]           ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |ERV24|alu:inst9|ans                                                                            ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |ERV24|alu:inst9|ans                                                                            ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |ERV24|alu:inst9|ans                                                                            ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; No         ; |ERV24|alu:inst9|ans                                                                            ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 20 LEs               ; 6 LEs                  ; No         ; |ERV24|alu:inst9|ans                                                                            ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; No         ; |ERV24|alu:inst9|ans                                                                            ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 42 LEs               ; 28 LEs                 ; No         ; |ERV24|bus_mux:inst26|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated|result_node[0]           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Source assignments for DataMemory:inst3|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                       ;
-+---------------------------------+--------------------+------+------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
-+---------------------------------+--------------------+------+------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Source assignments for IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                    ;
++---------------------------------+--------------------+------+-------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                     ;
++---------------------------------+--------------------+------+-------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DataMemory:inst3|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-----------------------------------+
-; Parameter Name                     ; Value                ; Type                              ;
-+------------------------------------+----------------------+-----------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                           ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                        ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                      ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                      ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                    ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                           ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                           ;
-; WIDTH_A                            ; 32                   ; Signed Integer                    ;
-; WIDTHAD_A                          ; 13                   ; Signed Integer                    ;
-; NUMWORDS_A                         ; 8192                 ; Signed Integer                    ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                           ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                           ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                           ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                           ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                           ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                           ;
-; WIDTH_B                            ; 1                    ; Untyped                           ;
-; WIDTHAD_B                          ; 1                    ; Untyped                           ;
-; NUMWORDS_B                         ; 1                    ; Untyped                           ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                           ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                           ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                           ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                           ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                           ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                           ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                           ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                           ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                           ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                           ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                           ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                           ;
-; WIDTH_BYTEENA_A                    ; 4                    ; Signed Integer                    ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                           ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                           ;
-; BYTE_SIZE                          ; 8                    ; Signed Integer                    ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                           ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                           ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                           ;
-; INIT_FILE                          ; UNUSED               ; Untyped                           ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                           ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                           ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                           ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                           ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                           ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                           ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                           ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                           ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                           ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                           ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                           ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                           ;
-; CBXI_PARAMETER                     ; altsyncram_evi1      ; Untyped                           ;
-+------------------------------------+----------------------+-----------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Source assignments for DataMemory:inst17|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                        ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                         ;
++---------------------------------+--------------------+------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Source assignments for GPIO_8bit:inst85                                 ;
++----------------------+-----------------+------+-------------------------+
+; Assignment           ; Value           ; From ; To                      ;
++----------------------+-----------------+------+-------------------------+
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[0].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[0].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[1].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[1].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[2].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[2].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[3].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[3].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[4].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[4].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[5].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[5].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[6].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[6].io0 ;
+; IO_STANDARD          ; 3.3-V PCI       ; -    ; generation_block[7].io0 ;
+; CURRENT_STRENGTH_NEW ; minimum current ; -    ; generation_block[7].io0 ;
++----------------------+-----------------+------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IFU:inst2|bus_mux:inst5|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+--------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                   ;
++------------------------+--------------+--------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                         ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                         ;
+; LPM_SIZE               ; 2            ; Signed Integer                                         ;
+; LPM_WIDTHS             ; 1            ; Signed Integer                                         ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                ;
+; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                                ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                ;
++------------------------+--------------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                             ;
-+-------------------------------------------+--------------------------------------------------+
-; Name                                      ; Value                                            ;
-+-------------------------------------------+--------------------------------------------------+
-; Number of entity instances                ; 1                                                ;
-; Entity Instance                           ; DataMemory:inst3|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                      ;
-;     -- WIDTH_A                            ; 32                                               ;
-;     -- NUMWORDS_A                         ; 8192                                             ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                     ;
-;     -- WIDTH_B                            ; 1                                                ;
-;     -- NUMWORDS_B                         ; 1                                                ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                           ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                     ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                             ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                        ;
-+-------------------------------------------+--------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                           ;
++------------------------------------+----------------------+------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                        ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                        ;
+; WIDTH_A                            ; 32                   ; Signed Integer                                 ;
+; WIDTHAD_A                          ; 11                   ; Signed Integer                                 ;
+; NUMWORDS_A                         ; 2048                 ; Signed Integer                                 ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                        ;
+; WIDTH_B                            ; 1                    ; Untyped                                        ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                        ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                        ;
+; INIT_FILE                          ; program.hex          ; Untyped                                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                        ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                        ;
+; CBXI_PARAMETER                     ; altsyncram_40b1      ; Untyped                                        ;
++------------------------------------+----------------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IFU:inst2|bus_mux:inst2|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+--------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                   ;
++------------------------+--------------+--------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                         ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                         ;
+; LPM_SIZE               ; 2            ; Signed Integer                                         ;
+; LPM_WIDTHS             ; 1            ; Signed Integer                                         ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                ;
+; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                                ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                ;
++------------------------+--------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IFU:inst2|bus_mux:inst3|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+--------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                   ;
++------------------------+--------------+--------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                         ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                         ;
+; LPM_SIZE               ; 2            ; Signed Integer                                         ;
+; LPM_WIDTHS             ; 1            ; Signed Integer                                         ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                ;
+; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                                ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                ;
++------------------------+--------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IFU:inst2|sum_2x32b:inst10|parallel_add:parallel_add_component ;
++------------------------+--------------+---------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                ;
++------------------------+--------------+---------------------------------------------------------------------+
+; width                  ; 32           ; Signed Integer                                                      ;
+; size                   ; 2            ; Signed Integer                                                      ;
+; WIDTHR                 ; 32           ; Signed Integer                                                      ;
+; SHIFT                  ; 0            ; Signed Integer                                                      ;
+; REPRESENTATION         ; UNSIGNED     ; Untyped                                                             ;
+; PIPELINE               ; 0            ; Signed Integer                                                      ;
+; MSW_SUBTRACT           ; NO           ; Untyped                                                             ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                             ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                             ;
+; CBXI_PARAMETER         ; par_add_bve  ; Untyped                                                             ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                        ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                      ;
++------------------------+--------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IFU:inst2|LPM_CONSTANT:inst14 ;
++--------------------+------------------+------------------------------------+
+; Parameter Name     ; Value            ; Type                               ;
++--------------------+------------------+------------------------------------+
+; LPM_WIDTH          ; 32               ; Untyped                            ;
+; LPM_CVALUE         ; 13               ; Unsigned Hexadecimal               ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                            ;
+; CBXI_PARAMETER     ; lpm_constant_4j4 ; Untyped                            ;
++--------------------+------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                       ;
++------------------------+--------------+------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                               ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                             ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                             ;
+; LPM_SIZE               ; 32           ; Signed Integer                                             ;
+; LPM_WIDTHS             ; 5            ; Signed Integer                                             ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                    ;
+; CBXI_PARAMETER         ; mux_iuc      ; Untyped                                                    ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                    ;
++------------------------+--------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component ;
++------------------------+--------------+------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                             ;
++------------------------+--------------+------------------------------------------------------------------+
+; LPM_WIDTH              ; 5            ; Signed Integer                                                   ;
+; LPM_DECODES            ; 32           ; Signed Integer                                                   ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                          ;
+; CASCADE_CHAIN          ; MANUAL       ; Untyped                                                          ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                          ;
+; CBXI_PARAMETER         ; decode_41g   ; Untyped                                                          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                   ;
++------------------------+--------------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regbank:inst3|regMux:inst12|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                       ;
++------------------------+--------------+------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                               ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                             ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                             ;
+; LPM_SIZE               ; 32           ; Signed Integer                                             ;
+; LPM_WIDTHS             ; 5            ; Signed Integer                                             ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                    ;
+; CBXI_PARAMETER         ; mux_iuc      ; Untyped                                                    ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                    ;
++------------------------+--------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bus_mux:inst26|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+-----------------------------------------------+
+; Parameter Name         ; Value        ; Type                                          ;
++------------------------+--------------+-----------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                ;
+; LPM_SIZE               ; 2            ; Signed Integer                                ;
+; LPM_WIDTHS             ; 1            ; Signed Integer                                ;
+; LPM_PIPELINE           ; 0            ; Untyped                                       ;
+; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                       ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                       ;
++------------------------+--------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sum_2x32b:inst14|parallel_add:parallel_add_component ;
++------------------------+--------------+-----------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                      ;
++------------------------+--------------+-----------------------------------------------------------+
+; width                  ; 32           ; Signed Integer                                            ;
+; size                   ; 2            ; Signed Integer                                            ;
+; WIDTHR                 ; 32           ; Signed Integer                                            ;
+; SHIFT                  ; 0            ; Signed Integer                                            ;
+; REPRESENTATION         ; UNSIGNED     ; Untyped                                                   ;
+; PIPELINE               ; 0            ; Signed Integer                                            ;
+; MSW_SUBTRACT           ; NO           ; Untyped                                                   ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                   ;
+; CBXI_PARAMETER         ; par_add_bve  ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                            ;
++------------------------+--------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MemoryPeriphMux:inst20|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+-------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                  ;
++------------------------+--------------+-------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                        ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                        ;
+; LPM_SIZE               ; 2            ; Signed Integer                                        ;
+; LPM_WIDTHS             ; 1            ; Signed Integer                                        ;
+; LPM_PIPELINE           ; 0            ; Untyped                                               ;
+; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                               ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                               ;
++------------------------+--------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DataMemory:inst17|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------+
+; Parameter Name                     ; Value                ; Type                               ;
++------------------------------------+----------------------+------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                            ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                            ;
+; WIDTH_A                            ; 32                   ; Signed Integer                     ;
+; WIDTHAD_A                          ; 13                   ; Signed Integer                     ;
+; NUMWORDS_A                         ; 8192                 ; Signed Integer                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WIDTH_B                            ; 1                    ; Untyped                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; WIDTH_BYTEENA_A                    ; 4                    ; Signed Integer                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                            ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; INIT_FILE                          ; UNUSED               ; Untyped                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                            ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                            ;
+; CBXI_PARAMETER                     ; altsyncram_evi1      ; Untyped                            ;
++------------------------------------+----------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: peripheral_mux:inst321|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+-------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                  ;
++------------------------+--------------+-------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                        ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                        ;
+; LPM_SIZE               ; 8            ; Signed Integer                                        ;
+; LPM_WIDTHS             ; 3            ; Signed Integer                                        ;
+; LPM_PIPELINE           ; 0            ; Untyped                                               ;
+; CBXI_PARAMETER         ; mux_3tc      ; Untyped                                               ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                               ;
++------------------------+--------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: peripheral_addr_dec:inst21|lpm_decode:LPM_DECODE_component ;
++------------------------+--------------+-----------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                            ;
++------------------------+--------------+-----------------------------------------------------------------+
+; LPM_WIDTH              ; 3            ; Signed Integer                                                  ;
+; LPM_DECODES            ; 8            ; Signed Integer                                                  ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                         ;
+; CASCADE_CHAIN          ; MANUAL       ; Untyped                                                         ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                         ;
+; CBXI_PARAMETER         ; decode_lvf   ; Untyped                                                         ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                  ;
++------------------------+--------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bus_mux:inst15|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+-----------------------------------------------+
+; Parameter Name         ; Value        ; Type                                          ;
++------------------------+--------------+-----------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                ;
+; LPM_SIZE               ; 2            ; Signed Integer                                ;
+; LPM_WIDTHS             ; 1            ; Signed Integer                                ;
+; LPM_PIPELINE           ; 0            ; Untyped                                       ;
+; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                       ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                       ;
++------------------------+--------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bus_mux:inst16|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+-----------------------------------------------+
+; Parameter Name         ; Value        ; Type                                          ;
++------------------------+--------------+-----------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                ;
+; LPM_SIZE               ; 2            ; Signed Integer                                ;
+; LPM_WIDTHS             ; 1            ; Signed Integer                                ;
+; LPM_PIPELINE           ; 0            ; Untyped                                       ;
+; CBXI_PARAMETER         ; mux_rsc      ; Untyped                                       ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                       ;
++------------------------+--------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                          ;
++-------------------------------------------+---------------------------------------------------------------+
+; Name                                      ; Value                                                         ;
++-------------------------------------------+---------------------------------------------------------------+
+; Number of entity instances                ; 2                                                             ;
+; Entity Instance                           ; IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                           ;
+;     -- WIDTH_A                            ; 32                                                            ;
+;     -- NUMWORDS_A                         ; 2048                                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                  ;
+;     -- WIDTH_B                            ; 1                                                             ;
+;     -- NUMWORDS_B                         ; 1                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                     ;
+; Entity Instance                           ; DataMemory:inst17|altsyncram:altsyncram_component             ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                   ;
+;     -- WIDTH_A                            ; 32                                                            ;
+;     -- NUMWORDS_A                         ; 8192                                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                  ;
+;     -- WIDTH_B                            ; 1                                                             ;
+;     -- NUMWORDS_B                         ; 1                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                     ;
++-------------------------------------------+---------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -384,17 +968,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 134                         ;
-; cycloneiii_lcell_comb ; 226                         ;
-;     normal            ; 226                         ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 20                          ;
-;         4 data inputs ; 185                         ;
-; cycloneiii_ram_block  ; 32                          ;
+; boundary_port         ; 92                          ;
+; cycloneiii_ff         ; 1412                        ;
+;     CLR               ; 32                          ;
+;     ENA               ; 16                          ;
+;     ENA CLR           ; 1072                        ;
+;     SCLR              ; 34                          ;
+;     plain             ; 258                         ;
+; cycloneiii_io_ibuf    ; 8                           ;
+; cycloneiii_io_obuf    ; 8                           ;
+; cycloneiii_lcell_comb ; 3516                        ;
+;     arith             ; 369                         ;
+;         2 data inputs ; 86                          ;
+;         3 data inputs ; 283                         ;
+;     normal            ; 3147                        ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 245                         ;
+;         3 data inputs ; 546                         ;
+;         4 data inputs ; 2347                        ;
+; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.73                        ;
+; Max LUT depth         ; 30.00                       ;
+; Average LUT depth     ; 13.69                       ;
 +-----------------------+-----------------------------+
 
 
@@ -403,7 +999,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:19     ;
 +----------------+--------------+
 
 
@@ -413,88 +1009,193 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Jun  9 00:53:48 2024
+    Info: Processing started: Mon Jun 10 01:33:16 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ERV24 -c ERV24
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file utils/DataMemory.v
-    Info (12023): Found entity 1: DataMemory File: /home/aheir/Documents/alheir/E5-ERV24/project/utils/DataMemory.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file ERV24-nopipe.bdf
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file utils/datamemory.v
+    Info (12023): Found entity 1: DataMemory File: C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file erv24-nopipe.bdf
     Info (12023): Found entity 1: ERV24-nopipe
 Info (12021): Found 2 design units, including 1 entities, in source file alu/alu.vhd
-    Info (12022): Found design unit 1: alu-behavioral File: /home/aheir/Documents/alheir/E5-ERV24/project/alu/alu.vhd Line: 20
-    Info (12023): Found entity 1: alu File: /home/aheir/Documents/alheir/E5-ERV24/project/alu/alu.vhd Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file regbank/regMux.v
-    Info (12023): Found entity 1: regMux File: /home/aheir/Documents/alheir/E5-ERV24/project/regbank/regMux.v Line: 40
+    Info (12022): Found design unit 1: alu-behavioral File: C:/Users/sbruz/E5-ERV24/project/alu/alu.vhd Line: 20
+    Info (12023): Found entity 1: alu File: C:/Users/sbruz/E5-ERV24/project/alu/alu.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file regbank/regmux.v
+    Info (12023): Found entity 1: regMux File: C:/Users/sbruz/E5-ERV24/project/regbank/regMux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file regbank/regbank.bdf
     Info (12023): Found entity 1: regbank
 Info (12021): Found 1 design units, including 1 entities, in source file regbank/dec_5_32.v
-    Info (12023): Found entity 1: dec_5_32 File: /home/aheir/Documents/alheir/E5-ERV24/project/regbank/dec_5_32.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file utils/ProgramMemory.v
-    Info (12023): Found entity 1: ProgramMemory File: /home/aheir/Documents/alheir/E5-ERV24/project/utils/ProgramMemory.v Line: 40
+    Info (12023): Found entity 1: dec_5_32 File: C:/Users/sbruz/E5-ERV24/project/regbank/dec_5_32.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file utils/programmemory.v
+    Info (12023): Found entity 1: ProgramMemory File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file utils/reg32.v
-    Info (12023): Found entity 1: reg32 File: /home/aheir/Documents/alheir/E5-ERV24/project/utils/reg32.v Line: 1
+    Info (12023): Found entity 1: reg32 File: C:/Users/sbruz/E5-ERV24/project/utils/reg32.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file instruction_parsing/imm_builder.v
-    Info (12023): Found entity 1: imm_builder File: /home/aheir/Documents/alheir/E5-ERV24/project/instruction_parsing/imm_builder.v Line: 2
+    Info (12023): Found entity 1: imm_builder File: C:/Users/sbruz/E5-ERV24/project/instruction_parsing/imm_builder.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file instruction_parsing/decoder.v
-    Info (12023): Found entity 1: decoder File: /home/aheir/Documents/alheir/E5-ERV24/project/instruction_parsing/decoder.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file ifu/IFU.bdf
+    Info (12023): Found entity 1: decoder File: C:/Users/sbruz/E5-ERV24/project/instruction_parsing/decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ifu/ifu.bdf
     Info (12023): Found entity 1: IFU
 Info (12021): Found 1 design units, including 1 entities, in source file ifu/fetch.v
-    Info (12023): Found entity 1: fetch File: /home/aheir/Documents/alheir/E5-ERV24/project/ifu/fetch.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/MemoryPeriphMux.v
-    Info (12023): Found entity 1: MemoryPeriphMux File: /home/aheir/Documents/alheir/E5-ERV24/project/memory_mapping/MemoryPeriphMux.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file ERV24.bdf
+    Info (12023): Found entity 1: fetch File: C:/Users/sbruz/E5-ERV24/project/ifu/fetch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/memoryperiphmux.v
+    Info (12023): Found entity 1: MemoryPeriphMux File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/MemoryPeriphMux.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file erv24.bdf
     Info (12023): Found entity 1: ERV24
-Info (12021): Found 1 design units, including 1 entities, in source file custom_peripherals/GPIO/GPIO.v
-    Info (12023): Found entity 1: GPIO File: /home/aheir/Documents/alheir/E5-ERV24/project/custom_peripherals/GPIO/GPIO.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file core/CSRCounters.v
-    Info (12023): Found entity 1: CSRCounters File: /home/aheir/Documents/alheir/E5-ERV24/project/core/CSRCounters.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/GPIO_address_decoder.v
-    Info (12023): Found entity 1: GPIO_address_decoder File: /home/aheir/Documents/alheir/E5-ERV24/project/memory_mapping/GPIO_address_decoder.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file custom_peripherals/gpio/gpio.v
+    Info (12023): Found entity 1: GPIO File: C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file core/csrcounters.v
+    Info (12023): Found entity 1: CSRCounters File: C:/Users/sbruz/E5-ERV24/project/core/CSRCounters.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/gpio_address_decoder.v
+    Info (12023): Found entity 1: GPIO_address_decoder File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/GPIO_address_decoder.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/peripheral_addr_dec.v
-    Info (12023): Found entity 1: peripheral_addr_dec File: /home/aheir/Documents/alheir/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/PeripheralAdressMatcher.v
-    Info (12023): Found entity 1: PeripheralAddressMatcher File: /home/aheir/Documents/alheir/E5-ERV24/project/memory_mapping/PeripheralAdressMatcher.v Line: 1
+    Info (12023): Found entity 1: peripheral_addr_dec File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/peripheraladressmatcher.v
+    Info (12023): Found entity 1: PeripheralAddressMatcher File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/PeripheralAdressMatcher.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file memory_mapping/peripheral_mux.v
-    Info (12023): Found entity 1: peripheral_mux File: /home/aheir/Documents/alheir/E5-ERV24/project/memory_mapping/peripheral_mux.v Line: 40
+    Info (12023): Found entity 1: peripheral_mux File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/memory_mutator.v
-    Info (12023): Found entity 1: memory_mutator File: /home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/memory_mutator.v Line: 1
+    Info (12023): Found entity 1: memory_mutator File: C:/Users/sbruz/E5-ERV24/project/memory_mutator/memory_mutator.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file utils/bus_mux.v
-    Info (12023): Found entity 1: bus_mux File: /home/aheir/Documents/alheir/E5-ERV24/project/utils/bus_mux.v Line: 40
+    Info (12023): Found entity 1: bus_mux File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file peripheral_and_memory_block_no borrar por favore.bdf
     Info (12023): Found entity 1: peripheral_and_memory_block_no borrar por favore
 Info (12021): Found 1 design units, including 1 entities, in source file pipeline/decode_imm_stage_latch.v
-    Info (12023): Found entity 1: decode_imm_stage_latch File: /home/aheir/Documents/alheir/E5-ERV24/project/pipeline/decode_imm_stage_latch.v Line: 1
+    Info (12023): Found entity 1: decode_imm_stage_latch File: C:/Users/sbruz/E5-ERV24/project/pipeline/decode_imm_stage_latch.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pipeline/op_read_stage_latch.v
-    Info (12023): Found entity 1: op_read_stage_latch File: /home/aheir/Documents/alheir/E5-ERV24/project/pipeline/op_read_stage_latch.v Line: 1
+    Info (12023): Found entity 1: op_read_stage_latch File: C:/Users/sbruz/E5-ERV24/project/pipeline/op_read_stage_latch.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pipeline/alu_stage_latch.v
-    Info (12023): Found entity 1: alu_stage_latch File: /home/aheir/Documents/alheir/E5-ERV24/project/pipeline/alu_stage_latch.v Line: 1
+    Info (12023): Found entity 1: alu_stage_latch File: C:/Users/sbruz/E5-ERV24/project/pipeline/alu_stage_latch.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipeline_halt_control.v
-    Info (12023): Found entity 1: pipeline_halt_control File: /home/aheir/Documents/alheir/E5-ERV24/project/pipeline/pipeline_halt_control.v Line: 1
+    Info (12023): Found entity 1: pipeline_halt_control File: C:/Users/sbruz/E5-ERV24/project/pipeline/pipeline_halt_control.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file utils/sum_2x32b.v
-    Info (12023): Found entity 1: sum_2x32b File: /home/aheir/Documents/alheir/E5-ERV24/project/utils/sum_2x32b.v Line: 40
+    Info (12023): Found entity 1: sum_2x32b File: C:/Users/sbruz/E5-ERV24/project/utils/sum_2x32b.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file utils/bit_scatterer.v
-    Info (12023): Found entity 1: bit_scatterer File: /home/aheir/Documents/alheir/E5-ERV24/project/utils/bit_scatterer.v Line: 1
+    Info (12023): Found entity 1: bit_scatterer File: C:/Users/sbruz/E5-ERV24/project/utils/bit_scatterer.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file jump_control/jmp_ctrl.v
-    Info (12023): Found entity 1: jmp_ctrl File: /home/aheir/Documents/alheir/E5-ERV24/project/jump_control/jmp_ctrl.v Line: 1
+    Info (12023): Found entity 1: jmp_ctrl File: C:/Users/sbruz/E5-ERV24/project/jump_control/jmp_ctrl.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clocking/pll_50_1.v
-    Info (12023): Found entity 1: pll_50_1 File: /home/aheir/Documents/alheir/E5-ERV24/project/clocking/pll_50_1.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/memory_mutator_IDA.v
-    Info (12023): Found entity 1: memory_mutator_IDA File: /home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/memory_mutator_IDA.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/memory_mutator_VUELTA.v
-    Info (12023): Found entity 1: memory_mutator_VUELTA File: /home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/memory_mutator_VUELTA.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/IDA_test.bdf
+    Info (12023): Found entity 1: pll_50_1 File: C:/Users/sbruz/E5-ERV24/project/clocking/pll_50_1.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/memory_mutator_ida.v
+    Info (12023): Found entity 1: memory_mutator_IDA File: C:/Users/sbruz/E5-ERV24/project/memory_mutator/memory_mutator_IDA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/memory_mutator_vuelta.v
+    Info (12023): Found entity 1: memory_mutator_VUELTA File: C:/Users/sbruz/E5-ERV24/project/memory_mutator/memory_mutator_VUELTA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/ida_test.bdf
     Info (12023): Found entity 1: IDA_test
-Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/VUELTA_test.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/vuelta_test.bdf
     Info (12023): Found entity 1: VUELTA_test
-Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/dataMem_test.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/datamem_test.bdf
     Info (12023): Found entity 1: dataMem_test
-Info (12127): Elaborating entity "dataMem_test" for the top level hierarchy
-Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:inst3"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "DataMemory:inst3|altsyncram:altsyncram_component" File: /home/aheir/Documents/alheir/E5-ERV24/project/utils/DataMemory.v Line: 92
-Info (12130): Elaborated megafunction instantiation "DataMemory:inst3|altsyncram:altsyncram_component" File: /home/aheir/Documents/alheir/E5-ERV24/project/utils/DataMemory.v Line: 92
-Info (12133): Instantiated megafunction "DataMemory:inst3|altsyncram:altsyncram_component" with the following parameter: File: /home/aheir/Documents/alheir/E5-ERV24/project/utils/DataMemory.v Line: 92
+Info (12021): Found 1 design units, including 1 entities, in source file utils/reg_generic.v
+    Info (12023): Found entity 1: register File: C:/Users/sbruz/E5-ERV24/project/utils/reg_generic.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memory_mutator/memory_mutator_latch.v
+    Info (12023): Found entity 1: memory_mutator_latch File: C:/Users/sbruz/E5-ERV24/project/memory_mutator/memory_mutator_latch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file custom_peripherals/gpio/gpio8b.v
+    Info (12023): Found entity 1: GPIO_8bit File: C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO8b.v Line: 1
+Info (12127): Elaborating entity "ERV24" for the top level hierarchy
+Warning (275013): Port "clk" of type jmp_ctrl and instance "inst11" is missing source signal
+Info (12128): Elaborating entity "jmp_ctrl" for hierarchy "jmp_ctrl:inst11"
+Info (12128): Elaborating entity "alu" for hierarchy "alu:inst9"
+Info (12128): Elaborating entity "op_read_stage_latch" for hierarchy "op_read_stage_latch:inst5"
+Info (12128): Elaborating entity "pipeline_halt_control" for hierarchy "pipeline_halt_control:inst1"
+Info (12128): Elaborating entity "IFU" for hierarchy "IFU:inst2"
+Info (12128): Elaborating entity "bus_mux" for hierarchy "IFU:inst2|bus_mux:inst5"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "IFU:inst2|bus_mux:inst5|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 69
+Info (12130): Elaborated megafunction instantiation "IFU:inst2|bus_mux:inst5|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 69
+Info (12133): Instantiated megafunction "IFU:inst2|bus_mux:inst5|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/utils/bus_mux.v Line: 69
+    Info (12134): Parameter "lpm_size" = "2"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "32"
+    Info (12134): Parameter "lpm_widths" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_rsc.tdf
+    Info (12023): Found entity 1: mux_rsc File: C:/Users/sbruz/E5-ERV24/project/db/mux_rsc.tdf Line: 23
+Info (12128): Elaborating entity "mux_rsc" for hierarchy "IFU:inst2|bus_mux:inst5|lpm_mux:LPM_MUX_component|mux_rsc:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "ProgramMemory" for hierarchy "IFU:inst2|ProgramMemory:inst4"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 85
+Info (12130): Elaborated megafunction instantiation "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 85
+Info (12133): Instantiated megafunction "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/utils/ProgramMemory.v Line: 85
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "program.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "2048"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "11"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_40b1.tdf
+    Info (12023): Found entity 1: altsyncram_40b1 File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_40b1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_40b1" for hierarchy "IFU:inst2|ProgramMemory:inst4|altsyncram:altsyncram_component|altsyncram_40b1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "reg32" for hierarchy "IFU:inst2|reg32:PCreg"
+Info (12128): Elaborating entity "fetch" for hierarchy "IFU:inst2|fetch:inst"
+Info (12128): Elaborating entity "sum_2x32b" for hierarchy "IFU:inst2|sum_2x32b:inst10"
+Info (12128): Elaborating entity "parallel_add" for hierarchy "IFU:inst2|sum_2x32b:inst10|parallel_add:parallel_add_component" File: C:/Users/sbruz/E5-ERV24/project/utils/sum_2x32b.v Line: 64
+Info (12130): Elaborated megafunction instantiation "IFU:inst2|sum_2x32b:inst10|parallel_add:parallel_add_component" File: C:/Users/sbruz/E5-ERV24/project/utils/sum_2x32b.v Line: 64
+Info (12133): Instantiated megafunction "IFU:inst2|sum_2x32b:inst10|parallel_add:parallel_add_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/utils/sum_2x32b.v Line: 64
+    Info (12134): Parameter "msw_subtract" = "NO"
+    Info (12134): Parameter "pipeline" = "0"
+    Info (12134): Parameter "representation" = "UNSIGNED"
+    Info (12134): Parameter "result_alignment" = "LSB"
+    Info (12134): Parameter "shift" = "0"
+    Info (12134): Parameter "size" = "2"
+    Info (12134): Parameter "width" = "32"
+    Info (12134): Parameter "widthr" = "32"
+Info (12021): Found 1 design units, including 1 entities, in source file db/par_add_bve.tdf
+    Info (12023): Found entity 1: par_add_bve File: C:/Users/sbruz/E5-ERV24/project/db/par_add_bve.tdf Line: 25
+Info (12128): Elaborating entity "par_add_bve" for hierarchy "IFU:inst2|sum_2x32b:inst10|parallel_add:parallel_add_component|par_add_bve:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/parallel_add.tdf Line: 148
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "IFU:inst2|LPM_CONSTANT:inst14"
+Info (12130): Elaborated megafunction instantiation "IFU:inst2|LPM_CONSTANT:inst14"
+Info (12133): Instantiated megafunction "IFU:inst2|LPM_CONSTANT:inst14" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "13"
+    Info (12134): Parameter "LPM_WIDTH" = "32"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_constant_4j4.tdf
+    Info (12023): Found entity 1: lpm_constant_4j4 File: C:/Users/sbruz/E5-ERV24/project/db/lpm_constant_4j4.tdf Line: 23
+Info (12128): Elaborating entity "lpm_constant_4j4" for hierarchy "IFU:inst2|LPM_CONSTANT:inst14|lpm_constant_4j4:ag" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_constant.tdf Line: 46
+Info (12128): Elaborating entity "imm_builder" for hierarchy "imm_builder:inst6"
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:inst7"
+Warning (10230): Verilog HDL assignment warning at decoder.v(37): truncated value with size 32 to match size of target (2) File: C:/Users/sbruz/E5-ERV24/project/instruction_parsing/decoder.v Line: 37
+Warning (10235): Verilog HDL Always Construct warning at decoder.v(131): variable "funct3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sbruz/E5-ERV24/project/instruction_parsing/decoder.v Line: 131
+Warning (10235): Verilog HDL Always Construct warning at decoder.v(133): variable "inst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sbruz/E5-ERV24/project/instruction_parsing/decoder.v Line: 133
+Warning (10235): Verilog HDL Always Construct warning at decoder.v(136): variable "inst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sbruz/E5-ERV24/project/instruction_parsing/decoder.v Line: 136
+Warning (10235): Verilog HDL Always Construct warning at decoder.v(149): variable "inst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sbruz/E5-ERV24/project/instruction_parsing/decoder.v Line: 149
+Info (12128): Elaborating entity "alu_stage_latch" for hierarchy "alu_stage_latch:inst12"
+Info (12128): Elaborating entity "decode_imm_stage_latch" for hierarchy "decode_imm_stage_latch:inst4"
+Info (12128): Elaborating entity "regbank" for hierarchy "regbank:inst3"
+Info (12128): Elaborating entity "regMux" for hierarchy "regbank:inst3|regMux:inst11"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/regbank/regMux.v Line: 157
+Info (12130): Elaborated megafunction instantiation "regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/regbank/regMux.v Line: 157
+Info (12133): Instantiated megafunction "regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/regbank/regMux.v Line: 157
+    Info (12134): Parameter "lpm_size" = "32"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "32"
+    Info (12134): Parameter "lpm_widths" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_iuc.tdf
+    Info (12023): Found entity 1: mux_iuc File: C:/Users/sbruz/E5-ERV24/project/db/mux_iuc.tdf Line: 23
+Info (12128): Elaborating entity "mux_iuc" for hierarchy "regbank:inst3|regMux:inst11|lpm_mux:LPM_MUX_component|mux_iuc:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "dec_5_32" for hierarchy "regbank:inst3|dec_5_32:inst"
+Info (12128): Elaborating entity "lpm_decode" for hierarchy "regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component" File: C:/Users/sbruz/E5-ERV24/project/regbank/dec_5_32.v Line: 187
+Info (12130): Elaborated megafunction instantiation "regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component" File: C:/Users/sbruz/E5-ERV24/project/regbank/dec_5_32.v Line: 187
+Info (12133): Instantiated megafunction "regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/regbank/dec_5_32.v Line: 187
+    Info (12134): Parameter "lpm_decodes" = "32"
+    Info (12134): Parameter "lpm_type" = "LPM_DECODE"
+    Info (12134): Parameter "lpm_width" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_41g.tdf
+    Info (12023): Found entity 1: decode_41g File: C:/Users/sbruz/E5-ERV24/project/db/decode_41g.tdf Line: 23
+Info (12128): Elaborating entity "decode_41g" for hierarchy "regbank:inst3|dec_5_32:inst|lpm_decode:LPM_DECODE_component|decode_41g:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf Line: 77
+Info (12128): Elaborating entity "memory_mutator_VUELTA" for hierarchy "memory_mutator_VUELTA:inst13"
+Info (10264): Verilog HDL Case Statement information at memory_mutator_VUELTA.v(21): all case item expressions in this case statement are onehot File: C:/Users/sbruz/E5-ERV24/project/memory_mutator/memory_mutator_VUELTA.v Line: 21
+Info (12128): Elaborating entity "memory_mutator_latch" for hierarchy "memory_mutator_latch:inst29"
+Info (12128): Elaborating entity "memory_mutator_IDA" for hierarchy "memory_mutator_IDA:inst8"
+Info (12128): Elaborating entity "MemoryPeriphMux" for hierarchy "MemoryPeriphMux:inst20"
+Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:inst17"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "DataMemory:inst17|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v Line: 92
+Info (12130): Elaborated megafunction instantiation "DataMemory:inst17|altsyncram:altsyncram_component" File: C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v Line: 92
+Info (12133): Instantiated megafunction "DataMemory:inst17|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/utils/DataMemory.v Line: 92
     Info (12134): Parameter "byte_size" = "8"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
@@ -511,43 +1212,58 @@ Info (12133): Instantiated megafunction "DataMemory:inst3|altsyncram:altsyncram_
     Info (12134): Parameter "width_a" = "32"
     Info (12134): Parameter "width_byteena_a" = "4"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_evi1.tdf
-    Info (12023): Found entity 1: altsyncram_evi1 File: /home/aheir/Documents/alheir/E5-ERV24/project/db/altsyncram_evi1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_evi1" for hierarchy "DataMemory:inst3|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated" File: /opt/intelFPGA/23.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "memory_mutator_IDA" for hierarchy "memory_mutator_IDA:inst"
-Info (12128): Elaborating entity "memory_mutator_VUELTA" for hierarchy "memory_mutator_VUELTA:inst2"
-Info (10264): Verilog HDL Case Statement information at memory_mutator_VUELTA.v(21): all case item expressions in this case statement are onehot File: /home/aheir/Documents/alheir/E5-ERV24/project/memory_mutator/memory_mutator_VUELTA.v Line: 21
+    Info (12023): Found entity 1: altsyncram_evi1 File: C:/Users/sbruz/E5-ERV24/project/db/altsyncram_evi1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_evi1" for hierarchy "DataMemory:inst17|altsyncram:altsyncram_component|altsyncram_evi1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "peripheral_mux" for hierarchy "peripheral_mux:inst321"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "peripheral_mux:inst321|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v Line: 85
+Info (12130): Elaborated megafunction instantiation "peripheral_mux:inst321|lpm_mux:LPM_MUX_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v Line: 85
+Info (12133): Instantiated megafunction "peripheral_mux:inst321|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_mux.v Line: 85
+    Info (12134): Parameter "lpm_size" = "8"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "32"
+    Info (12134): Parameter "lpm_widths" = "3"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3tc.tdf
+    Info (12023): Found entity 1: mux_3tc File: C:/Users/sbruz/E5-ERV24/project/db/mux_3tc.tdf Line: 23
+Info (12128): Elaborating entity "mux_3tc" for hierarchy "peripheral_mux:inst321|lpm_mux:LPM_MUX_component|mux_3tc:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "GPIO_8bit" for hierarchy "GPIO_8bit:inst85"
+Warning (10036): Verilog HDL or VHDL warning at GPIO8b.v(15): object "PSOR" assigned a value but never read File: C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO8b.v Line: 15
+Warning (10036): Verilog HDL or VHDL warning at GPIO8b.v(16): object "PCOR" assigned a value but never read File: C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO8b.v Line: 16
+Warning (10036): Verilog HDL or VHDL warning at GPIO8b.v(17): object "PTOR" assigned a value but never read File: C:/Users/sbruz/E5-ERV24/project/custom_peripherals/GPIO/GPIO8b.v Line: 17
+Info (12128): Elaborating entity "peripheral_addr_dec" for hierarchy "peripheral_addr_dec:inst21"
+Info (12128): Elaborating entity "lpm_decode" for hierarchy "peripheral_addr_dec:inst21|lpm_decode:LPM_DECODE_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 91
+Info (12130): Elaborated megafunction instantiation "peripheral_addr_dec:inst21|lpm_decode:LPM_DECODE_component" File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 91
+Info (12133): Instantiated megafunction "peripheral_addr_dec:inst21|lpm_decode:LPM_DECODE_component" with the following parameter: File: C:/Users/sbruz/E5-ERV24/project/memory_mapping/peripheral_addr_dec.v Line: 91
+    Info (12134): Parameter "lpm_decodes" = "8"
+    Info (12134): Parameter "lpm_type" = "LPM_DECODE"
+    Info (12134): Parameter "lpm_width" = "3"
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_lvf.tdf
+    Info (12023): Found entity 1: decode_lvf File: C:/Users/sbruz/E5-ERV24/project/db/decode_lvf.tdf Line: 23
+Info (12128): Elaborating entity "decode_lvf" for hierarchy "peripheral_addr_dec:inst21|lpm_decode:LPM_DECODE_component|decode_lvf:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf Line: 77
+Info (13014): Ignored 192 buffer(s)
+    Info (13019): Ignored 192 SOFT buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "data_addr[1]" is stuck at GND
+    Warning (13410): Pin "data_addr[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/sbruz/E5-ERV24/project/output_files/ERV24.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 19 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rawaddress[31]"
-    Warning (15610): No output dependent on input pin "rawaddress[30]"
-    Warning (15610): No output dependent on input pin "rawaddress[29]"
-    Warning (15610): No output dependent on input pin "rawaddress[28]"
-    Warning (15610): No output dependent on input pin "rawaddress[27]"
-    Warning (15610): No output dependent on input pin "rawaddress[26]"
-    Warning (15610): No output dependent on input pin "rawaddress[25]"
-    Warning (15610): No output dependent on input pin "rawaddress[24]"
-    Warning (15610): No output dependent on input pin "rawaddress[23]"
-    Warning (15610): No output dependent on input pin "rawaddress[22]"
-    Warning (15610): No output dependent on input pin "rawaddress[21]"
-    Warning (15610): No output dependent on input pin "rawaddress[20]"
-    Warning (15610): No output dependent on input pin "rawaddress[19]"
-    Warning (15610): No output dependent on input pin "rawaddress[18]"
-    Warning (15610): No output dependent on input pin "rawaddress[17]"
-    Warning (15610): No output dependent on input pin "rawaddress[16]"
-    Warning (15610): No output dependent on input pin "rawaddress[15]"
-    Warning (15610): No output dependent on input pin "rawaddress[14]"
-    Warning (15610): No output dependent on input pin "rawaddress[13]"
-Info (21057): Implemented 392 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 70 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 226 logic cells
-    Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 437 megabytes
-    Info: Processing ended: Sun Jun  9 00:53:59 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:29
+Info (21057): Implemented 4749 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 82 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 4593 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4863 megabytes
+    Info: Processing ended: Mon Jun 10 01:33:49 2024
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:42
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/sbruz/E5-ERV24/project/output_files/ERV24.map.smsg.
 
 
