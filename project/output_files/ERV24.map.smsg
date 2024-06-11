@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at GPIO8b.v(46): always construct contains both blocking and non-blocking assignments File: /home/aheir/Documents/alheir/E5-ERV24/project/custom_peripherals/GPIO/GPIO8b.v Line: 46

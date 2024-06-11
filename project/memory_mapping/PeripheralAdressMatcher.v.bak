@@ -1,5 +1,0 @@
-module PeripheralAddressMatcher(
-	input address[31:0],
-	output reg match,
-	output reg error
-);
