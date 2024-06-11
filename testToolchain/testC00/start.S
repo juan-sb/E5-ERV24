@@ -8,7 +8,7 @@
 
 start:
     li   gp, IO_BASE
-	li   sp, 0x1800   # allocate space for stack
+	li   sp, 0x400   # allocate space for stack
 	call main
 	ebreak
     

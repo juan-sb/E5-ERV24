@@ -1,0 +1,17 @@
+# Archivos binarios generados
+*.bin
+
+# Archivos objeto
+*.o
+
+# Archivos ELF
+*.elf
+
+# Archivos de mapa de memoria
+*.dis
+
+# Archivos hexadecimales
+*.hex
+
+# Archivos de dependencias del compilador
+*.d
