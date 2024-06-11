@@ -1,5 +1,5 @@
 --lpm_mux CASCADE_CHAIN="MANUAL" DEVICE_FAMILY="Cyclone IV E" IGNORE_CASCADE_BUFFERS="OFF" LPM_SIZE=2 LPM_WIDTH=32 LPM_WIDTHS=1 data result sel
---VERSION_BEGIN 23.1 cbx_lpm_mux 2023:11:29:19:36:37:SC cbx_mgl 2023:11:29:19:36:47:SC  VERSION_END
+--VERSION_BEGIN 23.1 cbx_lpm_mux 2023:11:29:19:33:05:SC cbx_mgl 2023:11:29:19:43:53:SC  VERSION_END
 
 
 -- Copyright (C) 2023  Intel Corporation. All rights reserved.

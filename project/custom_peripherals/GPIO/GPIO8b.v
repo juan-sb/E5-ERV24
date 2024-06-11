@@ -29,7 +29,7 @@ genvar i;
 generate
 	for(i=0; i < 8; i = i+1) begin : generation_block
 		alt_iobuf io0 (.i(PDOR[i]), .oe(PDDR[i]), .o(PDIR[i]), .io(port[i]));
-		defparam io0.io_standard = "3.3-V PCI";
+		defparam io0.io_standard = "3.3-V LVCMOS";
 		defparam io0.current_strength = "minimum current";
 		// defparam io0.slow_slew_rate = "on";
 		// defparam io0.location = "iobank_1";

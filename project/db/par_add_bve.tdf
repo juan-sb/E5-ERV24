@@ -1,5 +1,5 @@
 --parallel_add DEVICE_FAMILY="Cyclone IV E" MSW_SUBTRACT="NO" PIPELINE=0 REPRESENTATION="UNSIGNED" RESULT_ALIGNMENT="LSB" SHIFT=0 SIZE=2 WIDTH=32 WIDTHR=32 data result
---VERSION_BEGIN 23.1 cbx_cycloneii 2023:11:29:19:36:39:SC cbx_lpm_add_sub 2023:11:29:19:36:39:SC cbx_mgl 2023:11:29:19:36:47:SC cbx_nadder 2023:11:29:19:36:39:SC cbx_padd 2023:11:29:19:36:37:SC cbx_parallel_add 2023:11:29:19:36:37:SC cbx_stratix 2023:11:29:19:36:39:SC cbx_stratixii 2023:11:29:19:36:39:SC cbx_util_mgl 2023:11:29:19:36:39:SC  VERSION_END
+--VERSION_BEGIN 23.1 cbx_cycloneii 2023:11:29:19:33:06:SC cbx_lpm_add_sub 2023:11:29:19:33:06:SC cbx_mgl 2023:11:29:19:43:53:SC cbx_nadder 2023:11:29:19:33:06:SC cbx_padd 2023:11:29:19:33:05:SC cbx_parallel_add 2023:11:29:19:33:05:SC cbx_stratix 2023:11:29:19:33:06:SC cbx_stratixii 2023:11:29:19:33:05:SC cbx_util_mgl 2023:11:29:19:33:06:SC  VERSION_END
 
 
 -- Copyright (C) 2023  Intel Corporation. All rights reserved.

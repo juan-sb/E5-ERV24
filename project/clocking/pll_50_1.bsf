@@ -60,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 		(text "Ph (dg)" (rect 103 91 235 192)(font "Arial" ))
 		(text "DC (%)" (rect 136 91 302 192)(font "Arial" ))
 		(text "c0" (rect 61 104 131 218)(font "Arial" ))
-		(text "1/50" (rect 79 104 175 218)(font "Arial" ))
+		(text "1/2" (rect 82 104 176 218)(font "Arial" ))
 		(text "0.00" (rect 108 104 233 218)(font "Arial" ))
 		(text "50.00" (rect 139 104 300 218)(font "Arial" ))
 		(line (pt 0 0)(pt 241 0))
