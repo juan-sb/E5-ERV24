@@ -1,0 +1,21 @@
+
+module csr_handler(
+	input clk,
+	input nrst,
+	input[2:0] funct3,
+	input[11:0] CSR_add,
+	output[3:0] csr_sel,
+	output[1:0] rw_mode
+);
+
+assign rw_mode[1:0] = funct3[1:0];
+// Transformamos el address para que se ajuste a los CSRs que implementamos (C00-C02 y C80-C82).
+// Se puede alterar para considerar otros address para los CSR genericos.
+assign csr_sel[3:0] = {CSR_add[7], CSR_add[2:0]};		
+
+always(posedge clk, negedge nrst) begin
+
+
+end
+
+endmodule

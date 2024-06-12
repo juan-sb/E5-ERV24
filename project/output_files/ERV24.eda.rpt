@@ -1,6 +1,6 @@
 EDA Netlist Writer report for ERV24
-Mon Jun 10 01:34:42 2024
-Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Wed Jun 12 03:29:15 2024
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
 ---------------------
@@ -37,9 +37,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Jun 10 01:34:42 2024 ;
+; EDA Netlist Writer Status ; Successful - Wed Jun 12 03:29:15 2024 ;
 ; Revision Name             ; ERV24                                 ;
-; Top-level Entity Name     ; ERV24                                 ;
+; Top-level Entity Name     ; csr_full_test                         ;
 ; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -51,8 +51,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                                            ; Setting                     ;
 +---------------------------------------------------------------------------------------------------+-----------------------------+
 ; Tool Name                                                                                         ; Questa Intel FPGA (Verilog) ;
-; Generate functional simulation netlist                                                            ; Off                         ;
-; Time scale                                                                                        ; 1 ps                        ;
+; Generate functional simulation netlist                                                            ; On                          ;
 ; Truncate long hierarchy paths                                                                     ; Off                         ;
 ; Map illegal HDL characters                                                                        ; Off                         ;
 ; Flatten buses into individual nodes                                                               ; Off                         ;
@@ -67,20 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+-----------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Simulation Generated Files                                                      ;
-+---------------------------------------------------------------------------------+
-; Generated Files                                                                 ;
-+---------------------------------------------------------------------------------+
-; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_6_1200mv_85c_slow.vo     ;
-; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_6_1200mv_0c_slow.vo      ;
-; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_min_1200mv_0c_fast.vo    ;
-; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24.vo                       ;
-; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_6_1200mv_85c_v_slow.sdo  ;
-; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_6_1200mv_0c_v_slow.sdo   ;
-; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_min_1200mv_0c_v_fast.sdo ;
-; C:/Users/sbruz/E5-ERV24/project/simulation/qsim//ERV24_v.sdo                    ;
-+---------------------------------------------------------------------------------+
++----------------------------------------------------------------+
+; Simulation Generated Files                                     ;
++----------------------------------------------------------------+
+; Generated Files                                                ;
++----------------------------------------------------------------+
+; C:/Users/User/Repos/E5-ERV24/project/simulation/qsim//ERV24.vo ;
++----------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,7 +80,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
     Info: Copyright (C) 2023  Intel Corporation. All rights reserved.
     Info: Your use of Intel Corporation's design tools, logic functions 
     Info: and other software and tools, and any partner logic 
@@ -103,21 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Jun 10 01:34:38 2024
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
+    Info: Processing started: Wed Jun 12 03:29:14 2024
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/Repos/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file ERV24_6_1200mv_85c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_6_1200mv_0c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_min_1200mv_0c_fast.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_6_1200mv_85c_v_slow.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_6_1200mv_0c_v_slow.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_min_1200mv_0c_v_fast.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
-Info (204019): Generated file ERV24_v.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file ERV24.vo in folder "C:/Users/User/Repos/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4706 megabytes
-    Info: Processing ended: Mon Jun 10 01:34:42 2024
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4653 megabytes
+    Info: Processing ended: Wed Jun 12 03:29:15 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

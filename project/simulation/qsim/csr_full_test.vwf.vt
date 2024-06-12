@@ -1,0 +1,258 @@
+// Copyright (C) 2023  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/12/2024 03:29:14"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          csr_full_test
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module csr_full_test_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg [31:0] inst_in;
+reg nrst;
+// wires                                               
+wire [3:0] csr_sel_out;
+wire [31:0] csrrd_out;
+wire [31:0] csrwr_out;
+wire [4:0] rd_out;
+wire [1:0] rdwr_mode;
+wire rs1_en_out;
+wire [4:0] rs1_out;
+wire [31:0] zimm_out;
+
+// assign statements (if any)                          
+csr_full_test i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.csr_sel_out(csr_sel_out),
+	.csrrd_out(csrrd_out),
+	.csrwr_out(csrwr_out),
+	.inst_in(inst_in),
+	.nrst(nrst),
+	.rd_out(rd_out),
+	.rdwr_mode(rdwr_mode),
+	.rs1_en_out(rs1_en_out),
+	.rs1_out(rs1_out),
+	.zimm_out(zimm_out)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #5000 1'b1;
+	#5000;
+end 
+
+// nrst
+initial
+begin
+	nrst = 1'b0;
+	nrst = #50000 1'b1;
+end 
+// inst_in[ 31 ]
+initial
+begin
+	inst_in[31] = 1'b1;
+end 
+// inst_in[ 30 ]
+initial
+begin
+	inst_in[30] = 1'b1;
+end 
+// inst_in[ 29 ]
+initial
+begin
+	inst_in[29] = 1'b0;
+end 
+// inst_in[ 28 ]
+initial
+begin
+	inst_in[28] = 1'b0;
+end 
+// inst_in[ 27 ]
+initial
+begin
+	inst_in[27] = 1'b0;
+	inst_in[27] = #750000 1'b1;
+end 
+// inst_in[ 26 ]
+initial
+begin
+	inst_in[26] = 1'b0;
+end 
+// inst_in[ 25 ]
+initial
+begin
+	inst_in[25] = 1'b0;
+end 
+// inst_in[ 24 ]
+initial
+begin
+	inst_in[24] = 1'b0;
+end 
+// inst_in[ 23 ]
+initial
+begin
+	inst_in[23] = 1'b0;
+end 
+// inst_in[ 22 ]
+initial
+begin
+	inst_in[22] = 1'b1;
+end 
+// inst_in[ 21 ]
+initial
+begin
+	inst_in[21] = 1'b0;
+end 
+// inst_in[ 20 ]
+initial
+begin
+	inst_in[20] = 1'b0;
+end 
+// inst_in[ 19 ]
+initial
+begin
+	inst_in[19] = 1'b1;
+	inst_in[19] = #280000 1'b0;
+end 
+// inst_in[ 18 ]
+initial
+begin
+	inst_in[18] = 1'b0;
+	inst_in[18] = #280000 1'b1;
+	inst_in[18] = #210000 1'b0;
+end 
+// inst_in[ 17 ]
+initial
+begin
+	inst_in[17] = 1'b0;
+	inst_in[17] = #490000 1'b1;
+end 
+// inst_in[ 16 ]
+initial
+begin
+	inst_in[16] = 1'b1;
+	inst_in[16] = #280000 1'b0;
+end 
+// inst_in[ 15 ]
+initial
+begin
+	inst_in[15] = 1'b0;
+	inst_in[15] = #280000 1'b1;
+	inst_in[15] = #210000 1'b0;
+end 
+// inst_in[ 14 ]
+initial
+begin
+	inst_in[14] = 1'b1;
+	inst_in[14] = #490000 1'b0;
+end 
+// inst_in[ 13 ]
+initial
+begin
+	inst_in[13] = 1'b0;
+	inst_in[13] = #280000 1'b1;
+	inst_in[13] = #210000 1'b0;
+end 
+// inst_in[ 12 ]
+initial
+begin
+	inst_in[12] = 1'b1;
+	inst_in[12] = #280000 1'b0;
+	inst_in[12] = #210000 1'b1;
+end 
+// inst_in[ 11 ]
+initial
+begin
+	inst_in[11] = 1'b0;
+	inst_in[11] = #750000 1'b1;
+end 
+// inst_in[ 10 ]
+initial
+begin
+	inst_in[10] = 1'b0;
+end 
+// inst_in[ 9 ]
+initial
+begin
+	inst_in[9] = 1'b1;
+end 
+// inst_in[ 8 ]
+initial
+begin
+	inst_in[8] = 1'b0;
+	inst_in[8] = #280000 1'b1;
+end 
+// inst_in[ 7 ]
+initial
+begin
+	inst_in[7] = 1'b0;
+	inst_in[7] = #280000 1'b1;
+	inst_in[7] = #210000 1'b0;
+end 
+// inst_in[ 6 ]
+initial
+begin
+	inst_in[6] = 1'b1;
+end 
+// inst_in[ 5 ]
+initial
+begin
+	inst_in[5] = 1'b1;
+end 
+// inst_in[ 4 ]
+initial
+begin
+	inst_in[4] = 1'b1;
+end 
+// inst_in[ 3 ]
+initial
+begin
+	inst_in[3] = 1'b0;
+end 
+// inst_in[ 2 ]
+initial
+begin
+	inst_in[2] = 1'b0;
+end 
+// inst_in[ 1 ]
+initial
+begin
+	inst_in[1] = 1'b1;
+end 
+// inst_in[ 0 ]
+initial
+begin
+	inst_in[0] = 1'b1;
+end 
+endmodule
+

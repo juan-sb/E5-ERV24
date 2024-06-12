@@ -22,16 +22,19 @@ always @* begin
 		5'b01000: begin								// Type S
 			imm = {{21{inst[31]}}, inst[30:25], inst[11:8], inst[7]};
 		end
-		5'b11001, 5'b00000: begin // Type I
+		5'b11001, 5'b00000: begin 					// Type I
 			imm = {{21{inst[31]}}, inst[30:20]};
 		end
-		5'b00100: begin		// Type I, funct7 specs
+		5'b00100: begin								// Type I, funct7 specs
 			case(inst[14:12])
 				3'b001, 3'b101: imm = {27'b0, inst[24:20]};
 				default: imm = {{21{inst[31]}}, inst[30:20]};
 			endcase
 		end
-		default: begin 	// Type R or invalid opcode
+		5'b11100: begin								// Type CSR
+			imm = {{27'h0000}, inst[19:15]};
+		end
+		default: begin 								// Type R or invalid opcode
 			imm = 32'h0000;
 		end
     endcase

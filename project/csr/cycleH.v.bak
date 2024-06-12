@@ -1,0 +1,25 @@
+module cycleH_reg
+(
+ input[31:0] d,
+ input clk,
+ input nreset,
+ input ena,
+ output carry,
+ output [31:0] qo
+ );
+
+	reg[31:0] q;
+ 
+	always @(posedge clk, negedge nreset) begin
+		if (!nreset) begin
+			q <= 0;
+		end
+		else begin
+			q <= q + 1;
+		end
+	end
+
+	assign qo = q;
+
+
+endmodule

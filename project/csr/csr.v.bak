@@ -1,0 +1,33 @@
+module csr_reg
+(
+ input[31:0] d,
+ input clk,
+ input nreset,
+ input wr_mode[1:0],
+ output [31:0] qo
+ );
+
+	reg[31:0] q;
+ 
+	always @(posedge clk, negedge nreset) begin
+		if (!nreset) begin
+			q <= 0;
+		end
+		else if (wr_mode == 1'b01) begin
+			q <= d;									// CSRRW
+		end
+		else if (wr_mode == 1'b10) begin
+			q <= q | d;								// CSRRS
+		end
+		else if (wr_mode == 1'b11) begin
+			q <= q & d;								// CSRRC
+		end
+		else begin
+			// Lo que sea que haga el CSR
+		end
+	end
+
+	assign qo = q;
+
+
+endmodule
