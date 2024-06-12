@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY "ERV24-toProgram"
+set_global_assignment -name TOP_LEVEL_ENTITY ERV24
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:02:22  APRIL 24, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -121,6 +121,7 @@ set_location_assignment PIN_A11 -to GPIO[3]
 set_location_assignment PIN_B13 -to GPIO[2]
 set_location_assignment PIN_A13 -to GPIO[1]
 set_global_assignment -name BDF_FILE "ERV24-toProgram.bdf"
+set_global_assignment -name SDC_FILE "ERV24-toProgram.sdc"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -142,5 +143,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[4]
-set_global_assignment -name SDC_FILE "ERV24-toProgram.sdc"
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name HEX_FILE program2.hex
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

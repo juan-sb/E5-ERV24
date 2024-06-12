@@ -7,7 +7,7 @@ Note: if both Questa Intel FPGA Edition and ModelSim executables are available, 
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source="C:/Users/sbruz/E5-ERV24/project/memory_mutator/mem_pip_test.vwf" --testbench_file="C:/Users/sbruz/E5-ERV24/project/simulation/qsim/mem_pip_test.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source="C:/Users/sbruz/E5-ERV24/project/Waveform.vwf" --testbench_file="C:/Users/sbruz/E5-ERV24/project/simulation/qsim/Waveform.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,13 +26,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Jun 10 01:34:37 2024
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=C:/Users/sbruz/E5-ERV24/project/memory_mutator/mem_pip_test.vwf --testbench_file=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/mem_pip_test.vwf.vt
+    Info: Processing started: Wed Jun 12 01:42:43 2024
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ERV24 -c ERV24 --vector_source=C:/Users/sbruz/E5-ERV24/project/Waveform.vwf --testbench_file=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/Waveform.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-rning (201005): Ignoring output pin "instr[18]" in vector source file when writing test bench files
+(201005): Ignoring output pin "alu_f3[1]" in vector source file when writing test bench files
 
-in vector source file when writing test bench files
+ector source file when writing test bench files
+
+(on all processors): 00:00:01
 
 Completed successfully. 
 
@@ -59,7 +61,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Jun 10 01:34:38 2024
+    Info: Processing started: Wed Jun 12 01:42:44 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ ERV24 -c ERV24
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file ERV24_6_1200mv_85c_slow.vo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
@@ -71,10 +73,10 @@ Info (204019): Generated file ERV24_6_1200mv_0c_v_slow.sdo in folder "C:/Users/s
 Info (204019): Generated file ERV24_min_1200mv_0c_v_fast.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info (204019): Generated file ERV24_v.sdo in folder "C:/Users/sbruz/E5-ERV24/project/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4706 megabytes
-    Info: Processing ended: Mon Jun 10 01:34:42 2024
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4698 megabytes
+    Info: Processing ended: Wed Jun 12 01:42:49 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 Completed successfully. 
 
@@ -100,7 +102,7 @@ Reading pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 01:34:42 on Jun 10,2024
+# Start time: 01:42:50 on Jun 12,2024
 # vlog -work work ERV24.vo 
 
 # -- Compiling module ERV24
@@ -108,17 +110,17 @@ Reading pref.tcl
 # -- Compiling module hard_block
 
 # 
-# Top level modules:
 
+# Top level modules:
 # 	ERV24
 
-# End time: 01:34:43 on Jun 10,2024, Elapsed time: 0:00:01
+# End time: 01:42:51 on Jun 12,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 01:34:43 on Jun 10,2024
-# vlog -work work mem_pip_test.vwf.vt 
+# Start time: 01:42:51 on Jun 12,2024
+# vlog -work work Waveform.vwf.vt 
 
 # -- Compiling module ERV24_vlg_vec_tst
 
@@ -127,12 +129,12 @@ Reading pref.tcl
 
 # 	ERV24_vlg_vec_tst
 
-# End time: 01:34:43 on Jun 10,2024, Elapsed time: 0:00:00
+# End time: 01:42:52 on Jun 12,2024, Elapsed time: 0:00:01
 
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ERV24_vlg_vec_tst 
-# Start time: 01:34:43 on Jun 10,2024
+# Start time: 01:42:52 on Jun 12,2024
 # Loading work.ERV24_vlg_vec_tst
 # Loading work.ERV24
 # Loading work.hard_block
@@ -150,33 +152,111 @@ Reading pref.tcl
 # 
 # Loading instances from ERV24_v.sdo
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 12625 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 12767 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # Loading timing data from ERV24_v.sdo
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Instance: /ERV24_vlg_vec_tst File: mem_pip_test.vwf.vt
+#    Time: 0 ps  Iteration: 0  Instance: /ERV24_vlg_vec_tst File: Waveform.vwf.vt
 
 # after#26
 
 # Simulation time: 0 ps
 
-# ** Note: $finish    : mem_pip_test.vwf.vt(67)
-#    Time: 2 us  Iteration: 0  Instance: /ERV24_vlg_vec_tst
+# Simulation time: 0 ps
 
-# End time: 01:34:49 on Jun 10,2024, Elapsed time: 0:00:06
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 3782830 ps
+
+# Simulation time: 3782830 ps
+
+# Simulation time: 3782830 ps
+
+# ** Note: $finish    : Waveform.vwf.vt(95)
+#    Time: 10 us  Iteration: 0  Instance: /ERV24_vlg_vec_tst
+
+# End time: 01:43:24 on Jun 12,2024, Elapsed time: 0:00:32
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/sbruz/E5-ERV24/project/memory_mutator/mem_pip_test.vwf...
+Reading C:/Users/sbruz/E5-ERV24/project/Waveform.vwf...
 
 Reading C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24_20240610013449.sim.vwf
+Warning: alu_out[7] - signal not found in VCD.
+
+Warning: alu_out[6] - signal not found in VCD.
+
+Warning: alu_out[5] - signal not found in VCD.
+
+Warning: alu_out[4] - signal not found in VCD.
+
+Warning: alu_out[3] - signal not found in VCD.
+
+Warning: alu_out[2] - signal not found in VCD.
+
+Warning: alu_out[1] - signal not found in VCD.
+
+Warning: alu_out[0] - signal not found in VCD.
+
+Warning: alu_rd[4] - signal not found in VCD.
+
+Warning: alu_rd[3] - signal not found in VCD.
+
+Warning: alu_rd[2] - signal not found in VCD.
+
+Warning: alu_rd[1] - signal not found in VCD.
+
+Warning: alu_rd[0] - signal not found in VCD.
+
+Warning: alu_flags[7] - signal not found in VCD.
+
+Warning: alu_flags[6] - signal not found in VCD.
+
+Warning: alu_flags[5] - signal not found in VCD.
+
+Warning: alu_flags[4] - signal not found in VCD.
+
+Warning: alu_flags[3] - signal not found in VCD.
+
+Warning: alu_flags[2] - signal not found in VCD.
+
+Warning: alu_flags[1] - signal not found in VCD.
+
+Warning: alu_flags[0] - signal not found in VCD.
+
+Warning: ra_flags[7] - signal not found in VCD.
+
+Warning: ra_flags[6] - signal not found in VCD.
+
+Warning: ra_flags[5] - signal not found in VCD.
+
+Warning: ra_flags[4] - signal not found in VCD.
+
+Warning: ra_flags[3] - signal not found in VCD.
+
+Warning: ra_flags[2] - signal not found in VCD.
+
+Warning: ra_flags[1] - signal not found in VCD.
+
+Warning: ra_flags[0] - signal not found in VCD.
+
+Writing the resulting VWF to C:/Users/sbruz/E5-ERV24/project/simulation/qsim/ERV24_20240612014324.sim.vwf
 
 Finished VCD to VWF conversion.
 

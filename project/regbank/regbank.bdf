@@ -2839,7 +2839,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 320 280)
 )
 (connector
-	(text "rs1[4..0]" (rect 1064 2086 1083 2139)(font "Intel Clear" )(vertical))
+	(text "rs1[4..0]" (rect 1056 2078 1075 2131)(font "Intel Clear" )(vertical))
 	(pt 1080 2080)
 	(pt 1080 2136)
 	(bus)
@@ -3747,7 +3747,7 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "rs2[4..0]" (rect 1520 2078 1539 2131)(font "Intel Clear" )(vertical))
+	(text "rs2[4..0]" (rect 1504 2078 1523 2131)(font "Intel Clear" )(vertical))
 	(pt 1536 2072)
 	(pt 1536 2128)
 	(bus)
