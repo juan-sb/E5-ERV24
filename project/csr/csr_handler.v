@@ -2,6 +2,7 @@
 module csr_handler(
 	input clk,
 	input nreset,
+	input csr_en,
 	input[2:0] funct3,
 	input[11:0] CSR_add,
 	input[4:0] rs1,				// Para catchear los casos de rs1 == 0
@@ -22,6 +23,10 @@ always @(posedge clk, negedge nreset) begin
 		rw_mode <= 2'b00;
 		csr_rd <= 1'b0;
 		end
+	else if (!csr_en) begin
+		rw_mode <= 2'b00;
+		csr_rd <= 1'b0;
+	end
 	else if (rs1 == 5'b00000 && funct3[1]) begin
 		rw_mode <= 2'b00;
 		csr_rd <= 1'b1;

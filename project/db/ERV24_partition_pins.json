@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "csr_en_out",
+					"strict" : false
+				},
+				{
 					"name" : "csr_sel_out[3]",
 					"strict" : false
 				},
