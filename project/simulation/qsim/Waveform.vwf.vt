@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/12/2024 01:42:44"
+// Generated on "06/13/2024 00:03:14"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          ERV24
 // 
@@ -44,6 +44,7 @@ wire [7:0] alub;
 wire aluibranch;
 wire aluisel;
 wire branch_taken;
+wire fetch_en;
 wire [7:0] GPIO;
 wire gpioen;
 wire [7:0] immed;
@@ -74,6 +75,7 @@ ERV24 i1 (
 	.aluisel(aluisel),
 	.branch_taken(branch_taken),
 	.clk(clk),
+	.fetch_en(fetch_en),
 	.GPIO(GPIO),
 	.gpioen(gpioen),
 	.immed(immed),
@@ -92,7 +94,7 @@ ERV24 i1 (
 );
 initial 
 begin 
-#10000000 $finish;
+#30000000 $finish;
 end 
 
 // nreset
@@ -106,8 +108,8 @@ end
 always
 begin
 	clk = 1'b0;
-	clk = #20000 1'b1;
-	#20000;
+	clk = #10000 1'b1;
+	#10000;
 end 
 // GPIO[ 7 ]
 initial

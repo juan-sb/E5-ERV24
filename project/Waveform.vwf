@@ -21,6 +21,7 @@ after 2500 simTimestamp
 run -all
 quit -f
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,6 +40,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
@@ -71,7 +73,7 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 10000.0;
+	DATA_DURATION = 30000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
@@ -1198,6 +1200,26 @@ SIGNAL("alu_pred_taken")
 	PARENT = "";
 }
 
+SIGNAL("pc_wr_flag")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("fetch_en")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clk")
 {
 	NODE
@@ -1205,9 +1227,9 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 250;
-			LEVEL 0 FOR 20.0;
-			LEVEL 1 FOR 20.0;
+			REPEAT = 1500;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 		}
 	}
 }
@@ -1218,7 +1240,7 @@ TRANSITION_LIST("nreset")
 	{
 		REPEAT = 1;
 		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 9980.0;
+		LEVEL 1 FOR 29980.0;
 	}
 }
 
@@ -1228,7 +1250,7 @@ TRANSITION_LIST("alu_f3[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1238,7 +1260,7 @@ TRANSITION_LIST("alu_f3[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1248,7 +1270,7 @@ TRANSITION_LIST("alu_f3[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1258,7 +1280,7 @@ TRANSITION_LIST("alu_out[7]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1268,7 +1290,7 @@ TRANSITION_LIST("alu_out[6]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1278,7 +1300,7 @@ TRANSITION_LIST("alu_out[5]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1288,7 +1310,7 @@ TRANSITION_LIST("alu_out[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1298,7 +1320,7 @@ TRANSITION_LIST("alu_out[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1308,7 +1330,7 @@ TRANSITION_LIST("alu_out[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1318,7 +1340,7 @@ TRANSITION_LIST("alu_out[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1328,7 +1350,7 @@ TRANSITION_LIST("alu_out[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1338,7 +1360,7 @@ TRANSITION_LIST("alua[7]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1348,7 +1370,7 @@ TRANSITION_LIST("alua[6]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1358,7 +1380,7 @@ TRANSITION_LIST("alua[5]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1368,7 +1390,7 @@ TRANSITION_LIST("alua[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1378,7 +1400,7 @@ TRANSITION_LIST("alua[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1388,7 +1410,7 @@ TRANSITION_LIST("alua[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1398,7 +1420,7 @@ TRANSITION_LIST("alua[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1408,7 +1430,7 @@ TRANSITION_LIST("alua[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1418,7 +1440,7 @@ TRANSITION_LIST("alub[7]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1428,7 +1450,7 @@ TRANSITION_LIST("alub[6]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1438,7 +1460,7 @@ TRANSITION_LIST("alub[5]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1448,7 +1470,7 @@ TRANSITION_LIST("alub[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1458,7 +1480,7 @@ TRANSITION_LIST("alub[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1468,7 +1490,7 @@ TRANSITION_LIST("alub[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1478,7 +1500,7 @@ TRANSITION_LIST("alub[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1488,7 +1510,7 @@ TRANSITION_LIST("alub[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1498,7 +1520,7 @@ TRANSITION_LIST("alu_rd[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1508,7 +1530,7 @@ TRANSITION_LIST("alu_rd[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1518,7 +1540,7 @@ TRANSITION_LIST("alu_rd[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1528,7 +1550,7 @@ TRANSITION_LIST("alu_rd[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1538,7 +1560,7 @@ TRANSITION_LIST("alu_rd[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1548,7 +1570,7 @@ TRANSITION_LIST("alu_flags[7]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1558,7 +1580,7 @@ TRANSITION_LIST("alu_flags[6]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1568,7 +1590,7 @@ TRANSITION_LIST("alu_flags[5]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1578,7 +1600,7 @@ TRANSITION_LIST("alu_flags[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1588,7 +1610,7 @@ TRANSITION_LIST("alu_flags[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1598,7 +1620,7 @@ TRANSITION_LIST("alu_flags[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1608,7 +1630,7 @@ TRANSITION_LIST("alu_flags[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1618,7 +1640,7 @@ TRANSITION_LIST("alu_flags[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1628,7 +1650,7 @@ TRANSITION_LIST("ra_flags[7]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1638,7 +1660,7 @@ TRANSITION_LIST("ra_flags[6]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1648,7 +1670,7 @@ TRANSITION_LIST("ra_flags[5]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1658,7 +1680,7 @@ TRANSITION_LIST("ra_flags[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1668,7 +1690,7 @@ TRANSITION_LIST("ra_flags[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1678,7 +1700,7 @@ TRANSITION_LIST("ra_flags[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1688,7 +1710,7 @@ TRANSITION_LIST("ra_flags[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1698,7 +1720,7 @@ TRANSITION_LIST("ra_flags[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1708,7 +1730,7 @@ TRANSITION_LIST("rd[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1718,7 +1740,7 @@ TRANSITION_LIST("rd[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1728,7 +1750,7 @@ TRANSITION_LIST("rd[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1738,7 +1760,7 @@ TRANSITION_LIST("rd[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1748,7 +1770,7 @@ TRANSITION_LIST("rd[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1758,7 +1780,7 @@ TRANSITION_LIST("rddata[7]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1768,7 +1790,7 @@ TRANSITION_LIST("rddata[6]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1778,7 +1800,7 @@ TRANSITION_LIST("rddata[5]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1788,7 +1810,7 @@ TRANSITION_LIST("rddata[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1798,7 +1820,7 @@ TRANSITION_LIST("rddata[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1808,7 +1830,7 @@ TRANSITION_LIST("rddata[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1818,7 +1840,7 @@ TRANSITION_LIST("rddata[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1828,7 +1850,7 @@ TRANSITION_LIST("rddata[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 9001.0;
+		LEVEL 0 FOR 29001.0;
 	}
 }
 
@@ -1838,7 +1860,7 @@ TRANSITION_LIST("PC[7]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1848,7 +1870,7 @@ TRANSITION_LIST("PC[6]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1858,7 +1880,7 @@ TRANSITION_LIST("PC[5]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1868,7 +1890,7 @@ TRANSITION_LIST("PC[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1878,7 +1900,7 @@ TRANSITION_LIST("PC[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1888,7 +1910,7 @@ TRANSITION_LIST("PC[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1898,7 +1920,7 @@ TRANSITION_LIST("PC[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1908,7 +1930,7 @@ TRANSITION_LIST("PC[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1918,7 +1940,7 @@ TRANSITION_LIST("instr[11]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1928,7 +1950,7 @@ TRANSITION_LIST("instr[10]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1938,7 +1960,7 @@ TRANSITION_LIST("instr[9]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1948,7 +1970,7 @@ TRANSITION_LIST("instr[8]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1958,7 +1980,7 @@ TRANSITION_LIST("instr[7]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1968,7 +1990,7 @@ TRANSITION_LIST("instr[6]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1978,7 +2000,7 @@ TRANSITION_LIST("instr[5]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1988,7 +2010,7 @@ TRANSITION_LIST("instr[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -1998,7 +2020,7 @@ TRANSITION_LIST("instr[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2008,7 +2030,7 @@ TRANSITION_LIST("instr[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2018,7 +2040,7 @@ TRANSITION_LIST("instr[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2028,7 +2050,7 @@ TRANSITION_LIST("instr[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2038,7 +2060,7 @@ TRANSITION_LIST("rd_en")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2048,7 +2070,7 @@ TRANSITION_LIST("GPIO[7]")
 	{
 		REPEAT = 1;
 		LEVEL Z FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2058,7 +2080,7 @@ TRANSITION_LIST("GPIO[6]")
 	{
 		REPEAT = 1;
 		LEVEL Z FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2068,7 +2090,7 @@ TRANSITION_LIST("GPIO[5]")
 	{
 		REPEAT = 1;
 		LEVEL Z FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2078,7 +2100,7 @@ TRANSITION_LIST("GPIO[4]")
 	{
 		REPEAT = 1;
 		LEVEL Z FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2088,7 +2110,7 @@ TRANSITION_LIST("GPIO[3]")
 	{
 		REPEAT = 1;
 		LEVEL Z FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2098,7 +2120,7 @@ TRANSITION_LIST("GPIO[2]")
 	{
 		REPEAT = 1;
 		LEVEL Z FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2108,7 +2130,7 @@ TRANSITION_LIST("GPIO[1]")
 	{
 		REPEAT = 1;
 		LEVEL Z FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2118,7 +2140,7 @@ TRANSITION_LIST("GPIO[0]")
 	{
 		REPEAT = 1;
 		LEVEL Z FOR 3999.0;
-		LEVEL 0 FOR 6001.0;
+		LEVEL 0 FOR 26001.0;
 	}
 }
 
@@ -2127,7 +2149,8 @@ TRANSITION_LIST("alu_z")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
 	}
 }
 
@@ -2136,7 +2159,8 @@ TRANSITION_LIST("predicted_taken")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
 	}
 }
 
@@ -2145,7 +2169,8 @@ TRANSITION_LIST("branch_taken")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
 	}
 }
 
@@ -2154,7 +2179,8 @@ TRANSITION_LIST("aluibranch")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
 	}
 }
 
@@ -2163,7 +2189,8 @@ TRANSITION_LIST("jmpen")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
 	}
 }
 
@@ -2172,7 +2199,8 @@ TRANSITION_LIST("pred_taken_dec")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
 	}
 }
 
@@ -2181,7 +2209,8 @@ TRANSITION_LIST("reg_pred_taken")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
 	}
 }
 
@@ -2190,7 +2219,28 @@ TRANSITION_LIST("alu_pred_taken")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
+	}
+}
+
+TRANSITION_LIST("pc_wr_flag")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
+	}
+}
+
+TRANSITION_LIST("fetch_en")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 9999.0;
+		LEVEL 0 FOR 20001.0;
 	}
 }
 
@@ -3300,6 +3350,24 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 111;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pc_wr_flag";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 112;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "fetch_en";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 113;
 	TREE_LEVEL = 0;
 }
 
