@@ -1,8 +1,8 @@
 .globl _boot
 .section .text
 
-.equ RAM_BASE, 0x00000000
-.equ STACK_SIZE, 0x200
+.equ RAM_BASE, 0x00010000
+.equ STACK_SIZE, 0x800
 
 _boot:
     # Configurar stack
