@@ -58,6 +58,49 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name SEARCH_PATH ../project
+set_location_assignment PIN_R8 -to CLOCK_50
+set_location_assignment PIN_L3 -to GPIO[7]
+set_location_assignment PIN_B1 -to GPIO[6]
+set_location_assignment PIN_F3 -to GPIO[5]
+set_location_assignment PIN_D1 -to GPIO[4]
+set_location_assignment PIN_A15 -to GPIO[0]
+set_location_assignment PIN_A11 -to GPIO[3]
+set_location_assignment PIN_B13 -to GPIO[2]
+set_location_assignment PIN_A13 -to GPIO[1]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[6]
+set_instance_assignment -name IO_STANDARD "1.2 V" -to decoded_pc[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[4]
+set_global_assignment -name VERILOG_FILE csr/timeH.v
+set_global_assignment -name VERILOG_FILE csr/time.v
+set_global_assignment -name VERILOG_FILE csr/mux_16_4.v
+set_global_assignment -name QIP_FILE csr/mux_16_4.qip
+set_global_assignment -name VERILOG_FILE csr/dec_4_16.v
+set_global_assignment -name QIP_FILE csr/dec_4_16.qip
+set_global_assignment -name VERILOG_FILE csr/cycleH.v
+set_global_assignment -name VERILOG_FILE csr/cycle.v
+set_global_assignment -name BDF_FILE csr/csr_test.bdf
+set_global_assignment -name BDF_FILE csr/csr_regbank.bdf
+set_global_assignment -name VERILOG_FILE csr/csr_handler.v
+set_global_assignment -name BDF_FILE csr/csr_full_test.bdf
+set_global_assignment -name VERILOG_FILE csr/csr.v
 set_global_assignment -name BSF_FILE utils/DataMemory.bsf
 set_global_assignment -name QIP_FILE utils/DataMemory.qip
 set_global_assignment -name VECTOR_WAVEFORM_FILE ifu/ifu_test.vwf
@@ -111,38 +154,8 @@ set_global_assignment -name VERILOG_FILE utils/reg_generic.v
 set_global_assignment -name VERILOG_FILE memory_mutator/memory_mutator_latch.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE memory_mutator/mem_pip_test.vwf
 set_global_assignment -name VERILOG_FILE custom_peripherals/GPIO/GPIO8b.v
-set_location_assignment PIN_R8 -to CLOCK_50
-set_location_assignment PIN_L3 -to GPIO[7]
-set_location_assignment PIN_B1 -to GPIO[6]
-set_location_assignment PIN_F3 -to GPIO[5]
-set_location_assignment PIN_D1 -to GPIO[4]
-set_location_assignment PIN_A15 -to GPIO[0]
-set_location_assignment PIN_A11 -to GPIO[3]
-set_location_assignment PIN_B13 -to GPIO[2]
-set_location_assignment PIN_A13 -to GPIO[1]
 set_global_assignment -name BDF_FILE "ERV24-toProgram.bdf"
 set_global_assignment -name SDC_FILE "ERV24-toProgram.sdc"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[7]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[7]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[6]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[5]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[3]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[4]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[1]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[2]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO[0]
-set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to GPIO
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[6]
-set_instance_assignment -name IO_STANDARD "1.2 V" -to decoded_pc[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO[4]
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name HEX_FILE program2.hex
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

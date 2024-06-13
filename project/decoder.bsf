@@ -185,6 +185,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "access_size[1..0]" (rect 120 347 187 359)(font "Arial" ))
 		(line (pt 208 352)(pt 192 352)(line_width 3))
 	)
+	(port
+		(pt 208 368)
+		(output)
+		(text "csr[11..0]" (rect 0 0 35 12)(font "Arial" ))
+		(text "csr[11..0]" (rect 152 363 187 375)(font "Arial" ))
+		(line (pt 208 368)(pt 192 368)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 192 384)(line_width 1))
 	)

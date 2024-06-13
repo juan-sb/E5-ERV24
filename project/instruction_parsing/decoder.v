@@ -23,7 +23,8 @@ module decoder(
 	output reg is_system,
 	output reg is_invalid,
 	output wire unsign,					// Indica si la lectura de memoria es signada o no
-	output wire[1:0] access_size	// Indica la cantidad de bytes del acceso a memoria
+	output wire[1:0] access_size,	// Indica la cantidad de bytes del acceso a memoria
+	output wire[11:0] csr
 );
 
 wire is_reset = !nreset || (inst == 32'h13); // NOP = addi x0, x0, 0
@@ -33,9 +34,10 @@ assign funct3 = is_reset ? 3'b0 : inst[14:12];
 assign rs1 = is_reset || (opcode[3] && opcode[2] && opcode[0]) ? 5'b0 : inst[19:15];	// LUI requiere rs1 = 0
 assign rs2 = is_reset ? 5'b0 : inst[24:20];
 assign rw = is_reset ? 1'b0 : !inst[5];				// rw = 0 si es STORE, = 1 si es LOAD
-assign unsign = is_reset ? 1'b0 : inst[14];		// unsign = 1 si LBU o LHU
+assign unsign = is_reset ? 1'b0 : inst[14];			// unsign = 1 si LBU o LHU
 assign access_size = is_reset ? 2'b0 : inst[13:12] + 1;
 assign is_jmp = is_jalr || is_jal || is_branch;
+assign csr = is_reset ? 12'b0 : inst[31:20];
 
 always @(is_reset, opcode)
 begin
@@ -47,7 +49,7 @@ begin
 		imm_en = 1'b0;
 		//imm_enb = 1'b0;
 		//pc_ena = 1'b0;
-		ALU_flag = 0;
+		ALU_flag = 1'b0;
 		ALU_en = 1'b0;
 		is_jal = 1'b0;
 		is_jalr = 1'b0;
@@ -66,7 +68,7 @@ begin
 			imm_en = 1'b1;
 			//imm_enb = 1'b1;
 			rs2_enb = 1'b0;
-			ALU_flag = 0;
+			ALU_flag = 1'b0;
 			mem_en = 1'b0;
 			is_jal = 1'b0;
 			is_jalr = 1'b0;
@@ -88,7 +90,7 @@ begin
 			//imm_enb = 1'b0;
 			//pc_ena = opcode[1];	// El PC va al Add Builder si es JAL
 			mem_en = 1'b0;
-			ALU_flag = 0;
+			ALU_flag = 1'b0;
 			is_fence = 1'b0;
 			is_system = 1'b0;
 			is_invalid = 1'b0;
@@ -102,7 +104,7 @@ begin
 			rd_enc = !opcode[3];		// rd_enc = 1 si es LOAD
 			//imm_enb = 1'b0;
 			//pc_ena = 1'b0;
-			ALU_flag = 0;
+			ALU_flag = 1'b0;
 			ALU_en = 1'b0;
 			is_jal = 1'b0;
 			is_jalr = 1'b0;
@@ -137,16 +139,16 @@ begin
 		end
 		// FENCE (R) or SYSTEM (R)
 		5'b00011, 5'b11100: begin		
-			is_fence = opcode[0];	
+			is_fence = opcode[0];
 			is_system = opcode[4];
-			rd_enc = 1'b0;
-			rs1_ena = 1'b0;
+			rd_enc = opcode[4];
+			rs1_ena = opcode[4] && !inst[14];
 			rs2_enb = 1'b0;
-			imm_en = 1'b0;
+			imm_en = opcode[4] && inst[14];		// zimm: inst[19:15] si funct3 = 1xx0
 			//pc_ena = 1'b0;
 			//imm_enb = 1'b0;
 			ALU_en = 1'b0;
-			ALU_flag = inst[30];
+			ALU_flag = 1'b0;
 			mem_en = 1'b0;
 			is_jal = 1'b0;
 			is_jalr = 1'b0;

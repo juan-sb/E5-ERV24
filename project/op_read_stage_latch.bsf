@@ -116,6 +116,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 224)(pt 16 224)(line_width 3))
 	)
 	(port
+		(pt 0 240)
+		(input)
+		(text "csr[11..0]" (rect 0 0 35 12)(font "Arial" ))
+		(text "csr[11..0]" (rect 21 235 56 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 3))
+	)
+	(port
 		(pt 240 32)
 		(output)
 		(text "imm_out[31..0]" (rect 0 0 59 12)(font "Arial" ))
@@ -170,6 +177,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "acc_size_out[1..0]" (rect 0 0 70 12)(font "Arial" ))
 		(text "acc_size_out[1..0]" (rect 149 139 219 151)(font "Arial" ))
 		(line (pt 240 144)(pt 224 144)(line_width 3))
+	)
+	(port
+		(pt 240 160)
+		(output)
+		(text "csr_out[11..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "csr_out[11..0]" (rect 166 155 219 167)(font "Arial" ))
+		(line (pt 240 160)(pt 224 160)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 224 256)(line_width 1))
