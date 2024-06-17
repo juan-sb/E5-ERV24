@@ -25,33 +25,24 @@ _boot:
     li      t4, DELAY
 
 loop:
-    nop
     addi    t3, t3, 0x1
-    nop
     bne     t3, t4, loop
 
     sb      t2, GPIO_OFF_PDOR(t0)           # Escribir t2 al GPIO
 
     # Cambiar dirección si alcanza el bit 7 o bit 0
     andi    a1, t2, 0x80                    # Chequear si t2 es 0x80 (bit 7)
-    nop
     bne    a1, zero, change_dir_right            # Si es 0x80, cambia a derecha
-    nop
     andi    a1, t2, 0x00                    # Chequear si t2 es 0x01 (bit 0)
-    nop
     bne    a1, zero, change_dir_left             # Si es 0x01, cambia a izquierda
-    nop
 
 shift:
     bne    t5, zero, shift_right                 # Si t5 es 0, shift izquierda
-    nop
     sll     t2, t2, 1                       # Shift izquierda
     j       update
 
 shift_right:
-    nop
     srl     t2, t2, 1                       # Shift derecha
-    nop
 
 update:
     addi    t3, zero, 0x1                   # Reset contador de delay

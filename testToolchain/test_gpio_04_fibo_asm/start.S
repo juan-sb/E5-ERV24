@@ -1,7 +1,7 @@
 .globl _boot
 .section .text
 
-.equ DELAY, 100000
+.equ DELAY, 12500000
 
 .equ GPIO_BASE, 0x40000
 .equ GPIO_OFF_PDOR, 0x0

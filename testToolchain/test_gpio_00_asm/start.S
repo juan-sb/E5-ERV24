@@ -14,7 +14,7 @@
 
 _boot:
     lui     t0, GPIO_BASE
-    addi    t1, zero, 0xFE
+    addi    t1, zero, 0b11100000
 
     sb      t1, GPIO_OFF_PDDR(t0)
     sb      t1, GPIO_OFF_PDOR(t0)
