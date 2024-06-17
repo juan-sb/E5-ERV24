@@ -7,6 +7,10 @@
 volatile unsigned char *gpio_pdor = (unsigned char *)(GPIO_BASE + GPIO_OFF_PDOR);
 volatile unsigned char *gpio_pddr = (unsigned char *)(GPIO_BASE + GPIO_OFF_PDDR);
 
+const char testconst = 10;
+
+ int testVarGlobal = testconst;
+
 void delay(volatile int count)
 {
     while (count--)
@@ -23,6 +27,8 @@ int main()
 
     unsigned char fib_n_minus_1 = 1; // Fibonacci n-1
     unsigned char fib_n = 1;         // Fibonacci n
+
+    int testVar = testconst;
 
     while (1)
     {

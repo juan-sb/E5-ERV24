@@ -1,7 +1,7 @@
 .globl _boot
 .section .text
 
-.equ RAM_BASE, 0x00010000
+.equ RAM_BASE, 0x00000000
 .equ STACK_SIZE, 0x800
 
 _boot:
@@ -15,5 +15,4 @@ _boot:
     # Bucle infinito después de main
 loop:
     j loop
-
-.section .data
+    

@@ -4,16 +4,15 @@ __stack_size    = 0x800;  /* required amount of stack */
 
 MEMORY
 {
-    ROM (rwx) : ORIGIN = 0x00000000, LENGTH = 0x02000
-    RAM (rwx) : ORIGIN = 0x00010000, LENGTH = 0x02000
+    ROM (x!rw) : ORIGIN = 0x00000000, LENGTH = 0x02000
+    RAM (rw!x) : ORIGIN = 0x00002000, LENGTH = 0x02000
 }
 SECTIONS
 {
     .text :
     {
-        . = ALIGN(4);
-        start.o (.text)
-        *(.text)
+        *start*.o(.text)
+        *(.text*)
         *(.rodata*)
     } > ROM
 
@@ -23,6 +22,7 @@ SECTIONS
         *(.data)
         *(.bss)
         *(.sbss)
+        *(.rela*)
         *(COMMON)
     } > RAM
 
