@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "riscv-csr.h": "c",
+        "riscv-interrupts.h": "c",
+        "string.h": "c",
+        "utils.h": "c",
+        "*.tcc": "c"
+    }
+}
