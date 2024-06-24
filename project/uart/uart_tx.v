@@ -39,6 +39,7 @@ module uart_tx #(parameter BAUD_RATE = 115200, parameter CLK_VAL_MHZ = 50)(
 
                     if (bit_count == 10) begin
                         tx_ready <= 1'b1;
+                        tx <= 1'b1;
                         transmitting <= 1'b0;
                     end
                 end else begin
