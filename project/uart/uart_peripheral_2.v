@@ -8,7 +8,7 @@ module uart_peripheral_2 #(
     input wire r_w,             // 1: read, 0: write
     input wire [3:0] byte_EN,   // Byte enable
     input wire [31:0] datain,   // Data input
-    input wire [31:0] addressin,// Address input (8 bits)
+    input wire addressin,			// Address input
     output reg [31:0] dataout,  // Data output
     output wire tx,
     input wire rx
@@ -59,30 +59,35 @@ module uart_peripheral_2 #(
             rx_ready_reg <= rx_ready; // Update temporary registers
 
             if (r_w) begin  // Read operation
-                case (addressin[7:0])
-                    8'h01: dataout <= {24'b0, rx_data}; // Read Rx FIFO
-                    8'h02: dataout <= {24'b0, control_reg}; // Read control and status register
-                    default: dataout <= 32'h0;
-                endcase
+					if(!addressin) begin
+						case(byte_EN)
+							4'b0010: dataout <= {24'b0, rx_data};
+							4'b0100: dataout <= {24'b0, control_reg}; 
+							4'b0110: dataout <= {26'b0, control_reg, rx_data}; 
+							default: dataout <= 32'h0;
+						endcase
+					end
             end else begin  // Write operation
-                case (addressin[7:0])
-                    8'h00: begin
-                        tx_data <= datain[7:0]; // Write Tx FIFO
-                        tx_enable <= 1;
-                    end
-                    8'h02: begin
-                        control_reg <= datain[7:0]; // Write control register
+					if(!addressin) begin
+						case(byte_EN)
+							4'b0001: tx_data <= datain[7:0]; // Write Tx FIFO
+							4'b0100: begin
+								control_reg <= datain[7:0]; // Write control register
                         tx_enable <= datain[0];
                         rx_enable <= datain[1];
                         tx_reset <= datain[2];
                         rx_reset <= datain[3];
-                    end
-                endcase
+							end
+							default: ;
+						endcase
+					end				
+         
             end
 
             // Update control register with ready status
             control_reg[4] <= tx_ready_reg; // Tx ready status
             control_reg[5] <= rx_ready_reg; // Rx ready status
+				
         end else begin
             tx_enable <= 0;
             rx_enable <= 0;

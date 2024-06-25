@@ -9,92 +9,116 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/sbruz/E5-ERV24/project/simulation/qsim
-vdataMem_test
-Z1 !s110 1717905676
+v\ERV24-toProgram 
+!s110 1719334431
 !i10b 1
-!s100 NL1Jke0hAdC;WbY8MFhf]1
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-If_4l0lK]l9aE=YZif0ke93
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-Z4 d/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim
-w1717905675
-Z5 8ERV24.vo
-Z6 FERV24.vo
-!i122 543
-L0 32 7787
-Z7 OV;L;2020.1;71
+!s100 AV:4^kMYm^=KK6@HB]0la0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IF1>m^<90KFaSL6@@f1WX>0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/aheir/Documents/alheir/E5-ERV24/project/simulation/qsim
+w1719334429
+Z4 8ERV24.vo
+Z5 FERV24.vo
+!i122 804
+L0 32 107679
+Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z8 !s108 1717905676.000000
-Z9 !s107 ERV24.vo|
-Z10 !s90 -work|work|ERV24.vo|
+!s108 1719334430.000000
+Z7 !s107 ERV24.vo|
+Z8 !s90 -work|work|ERV24.vo|
 !i113 1
-Z11 o-work work
-Z12 tCvgOpt 0
+Z9 o-work work
+Z10 tCvgOpt 0
+n@134@e@r@v24-to@program@040
+vdataMem_test
+Z11 !s110 1717905676
+!i10b 1
+!s100 NL1Jke0hAdC;WbY8MFhf]1
+R1
+If_4l0lK]l9aE=YZif0ke93
+R2
+R3
+w1717905675
+R4
+R5
+!i122 543
+L0 32 7787
+R6
+r1
+!s85 0
+31
+Z12 !s108 1717905676.000000
+R7
+R8
+!i113 1
+R9
+R10
 ndata@mem_test
 vdataMem_test_vlg_vec_tst
-R1
+R11
 !i10b 1
 !s100 AP1aif_<<lk8oefWj<Y:30
-R2
+R1
 Ij6oDkVhi7zDk`Y26fl6[C3
+R2
 R3
-R4
 w1717905674
 8dataMem_test2.vwf.vt
 FdataMem_test2.vwf.vt
 !i122 544
 L0 30 431
-R7
+R6
 r1
 !s85 0
 31
-R8
+R12
 !s107 dataMem_test2.vwf.vt|
 !s90 -work|work|dataMem_test2.vwf.vt|
 !i113 1
-R11
-R12
+R9
+R10
 ndata@mem_test_vlg_vec_tst
 vERV24
-Z13 !s110 1718310108
+!s110 1718310108
 !i10b 1
 !s100 _N>QNK=>k1N_G^3H`ikcW1
-R2
+R1
 IGB7804RHz1oznT0N7<Pz[3
-R3
+R2
 R0
-Z14 w1718310103
+w1718310103
+R4
 R5
-R6
 !i122 771
 L0 32 123215
-R7
+R6
 r1
 !s85 0
 31
-Z15 !s108 1718310107.000000
+!s108 1718310107.000000
+R7
+R8
+!i113 1
 R9
 R10
-!i113 1
-R11
-R12
 n@e@r@v24
 vERV24_vlg_vec_tst
 !s110 1718310109
 !i10b 1
 !s100 ;3dT[<^Bz^FQO1HR2MjCf1
-R2
+R1
 IYD6z^8=LHIC89`0D5@34Q2
-R3
+R2
 R0
 w1718310100
 8Waveform.vwf.vt
 FWaveform.vwf.vt
 !i122 772
 L0 30 103
-R7
+R6
 r1
 !s85 0
 31
@@ -102,70 +126,70 @@ r1
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
-R11
-R12
+R9
+R10
 n@e@r@v24_vlg_vec_tst
 vhard_block
-R13
+Z13 !s110 1719334797
 !i10b 1
-!s100 10DlOFfgj055I[jR<dcf;3
+!s100 VdRmbB6`PIf@_8VE5bXUj1
+R1
+I8MljOe<nS:1AK1_b]IgN11
 R2
-IO];3=49mTYgSm`6E^^@^30
 R3
-R0
-R14
+Z14 w1719334796
+R4
 R5
+!i122 811
+L0 3145 34
 R6
-!i122 771
-L0 123248 34
-R7
 r1
 !s85 0
 31
-R15
+Z15 !s108 1719334797.000000
+R7
+R8
+!i113 1
 R9
 R10
-!i113 1
-R11
-R12
 vIDA_test
 Z16 !s110 1717895899
 !i10b 1
 !s100 ;M@=Xe0f4P1GaAX`X2[ea2
-R2
+R1
 ImYKYRgJEiRBYY7kNQc_NX1
+R2
 R3
-R4
 w1717895898
+R4
 R5
-R6
 !i122 499
 L0 32 4160
-R7
+R6
 r1
 !s85 0
 31
 Z17 !s108 1717895899.000000
+R7
+R8
+!i113 1
 R9
 R10
-!i113 1
-R11
-R12
 n@i@d@a_test
 vIDA_test_vlg_vec_tst
 R16
 !i10b 1
 !s100 Y=e7V=BaRPUA4R1M@IgKZ1
-R2
+R1
 II]AQU8CkI9RMzimEYMCEk3
+R2
 R3
-R4
 w1717895897
 8IDA_test.vwf.vt
 FIDA_test.vwf.vt
 !i122 500
 L0 30 403
-R7
+R6
 r1
 !s85 0
 31
@@ -173,47 +197,47 @@ R17
 !s107 IDA_test.vwf.vt|
 !s90 -work|work|IDA_test.vwf.vt|
 !i113 1
-R11
-R12
+R9
+R10
 n@i@d@a_test_vlg_vec_tst
 vIFU
 Z18 !s110 1717680494
 !i10b 1
 !s100 IR=MCV98mOb7[dh777;`C2
-R2
+R1
 I@=CTHZ6Fe^NLnA9[Ed]?j0
-R3
+R2
 R0
 Z19 w1717680493
+R4
 R5
-R6
 !i122 319
 L0 32 7110
-R7
+R6
 r1
 !s85 0
 31
 Z20 !s108 1717680494.000000
+R7
+R8
+!i113 1
 R9
 R10
-!i113 1
-R11
-R12
 n@i@f@u
 vIFU_vlg_vec_tst
 R18
 !i10b 1
 !s100 ;SaV?QUe;K7Y[R@[z>F[V3
-R2
+R1
 I@X4?T`UWJ8Seibz:M<V5l0
-R3
+R2
 R0
 R19
 8ifu_test_jfs.vwf.vt
 Fifu_test_jfs.vwf.vt
 !i122 320
 L0 30 226
-R7
+R6
 r1
 !s85 0
 31
@@ -221,47 +245,93 @@ R20
 !s107 ifu_test_jfs.vwf.vt|
 !s90 -work|work|ifu_test_jfs.vwf.vt|
 !i113 1
-R11
-R12
+R9
+R10
 n@i@f@u_vlg_vec_tst
+vvga_peripheral_adapter_test
+R13
+!i10b 1
+!s100 g5j5[kCPgNPKMQ`kl@;ad0
+R1
+IQ>RgFDcG9iEE@46K:E48N1
+R2
+R3
+R14
+R4
+R5
+!i122 811
+L0 32 3112
+R6
+r1
+!s85 0
+31
+R15
+R7
+R8
+!i113 1
+R9
+R10
+vvga_peripheral_adapter_test_vlg_vec_tst
+!s110 1719334798
+!i10b 1
+!s100 SGgk2nH:9PJzZ5D276P=V2
+R1
+ILnhYGmE^UgF6eiZdSj:U92
+R2
+R3
+w1719334795
+8vga_peripheral_adapter_test.vwf.vt
+Fvga_peripheral_adapter_test.vwf.vt
+!i122 812
+L0 30 270
+R6
+r1
+!s85 0
+31
+R15
+!s107 vga_peripheral_adapter_test.vwf.vt|
+!s90 -work|work|vga_peripheral_adapter_test.vwf.vt|
+!i113 1
+R9
+R10
 vVUELTA_test
 Z21 !s110 1717893567
 !i10b 1
 !s100 K^NkRCSU[@T?TZ5fA5M@[1
-R2
+R1
 IQ5b[MBUn=90b34iZB2UWi0
+R2
 R3
-R4
 w1717893566
+R4
 R5
-R6
 !i122 489
 L0 32 3623
-R7
+R6
 r1
 !s85 0
 31
 Z22 !s108 1717893567.000000
+R7
+R8
+!i113 1
 R9
 R10
-!i113 1
-R11
-R12
 n@v@u@e@l@t@a_test
 vVUELTA_test_vlg_vec_tst
 R21
 !i10b 1
 !s100 J4jU89V5b[ZkCVDo?8HSB0
-R2
+R1
 Ic<E5f<1MTKb2C5>M;01Qg0
+R2
 R3
-R4
 w1717893565
 8VUELTA_test.vwf.vt
 FVUELTA_test.vwf.vt
 !i122 490
 L0 30 293
-R7
+R6
 r1
 !s85 0
 31
@@ -269,6 +339,6 @@ R22
 !s107 VUELTA_test.vwf.vt|
 !s90 -work|work|VUELTA_test.vwf.vt|
 !i113 1
-R11
-R12
+R9
+R10
 n@v@u@e@l@t@a_test_vlg_vec_tst

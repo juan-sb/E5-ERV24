@@ -18,10 +18,10 @@ entity vga_data is
 		i_color_fg	:	in		std_logic_vector((r_depth+g_depth+b_depth-1) downto 0);
 		i_color_bg	:	in		std_logic_vector((r_depth+g_depth+b_depth-1) downto 0);
 		
-		i_icon_w		:	in		unsigned(15 downto 10);
+		i_icon_w		:	in		unsigned(5 downto 0);
 		i_icon_x		:	in		unsigned(9 downto 0);
 		
-		i_icon_h		:	in		unsigned(15 downto 10);
+		i_icon_h		:	in		unsigned(5 downto 0);
 		i_icon_y		:	in		unsigned(9 downto 0);
 		
 		o_r			:	out	std_logic_vector((r_depth-1) downto 0);
